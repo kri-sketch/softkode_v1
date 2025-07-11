@@ -1,0 +1,82 @@
+.testimonialsWrapper {
+  padding: 60px 20px;
+  background-color: #fdfcff;
+  font-family: "Poppins", sans-serif;
+  text-align: center;
+}
+
+.testimonialCard {
+  background-color: #f9f4ff;
+  padding: 40px;
+  border-radius: 30px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 30px;
+  margin-bottom: 50px;
+}
+
+.leftColumn {
+  flex: 1;
+  min-width: 250px;
+  text-align: left;
+}
+
+.rightColumn {
+  flex: 2;
+  min-width: 300px;
+  text-align: left;
+}
+
+.highlight {
+  color: #a259ff;
+}
+
+.quoteIcon {
+  font-size: 3rem;
+  color: #a259ff;
+}
+
+.feedback {
+  font-size: 1rem;
+  color: #333;
+  margin: 15px 0;
+}
+
+.clientName {
+  font-weight: bold;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.clientRole {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+.logoRow {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+  align-items: center;
+}
+
+.logoRow img {
+  height: 40px;
+  object-fit: contain;
+  max-width: 100px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .testimonialCard {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .leftColumn,
+  .rightColumn {
+    text-align: center;
+  }
+}

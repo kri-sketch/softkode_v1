@@ -1,0 +1,92 @@
+.pricingContainer {
+  text-align: center;
+  padding: 60px 20px;
+  font-family: "Poppins", sans-serif;
+  background-color: #fdfcff;
+}
+
+.heading {
+  font-size: 2rem;
+  margin-bottom: 40px;
+  font-weight: 600;
+}
+
+.highlight {
+  color: #a259ff; /* Gradient-like purple */
+}
+
+.cardContainer {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 30px;
+}
+
+.card {
+  width: 300px;
+  padding: 30px 20px;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: 10px;
+  font-weight: 600;
+}
+
+.card p {
+  font-size: 0.95rem;
+  margin: 10px 0;
+}
+
+.offer {
+  font-weight: bold;
+  margin-top: 15px;
+}
+
+.button {
+  margin-top: 20px;
+  padding: 10px 20px;
+  border: none;
+  background-color: #000;
+  color: white;
+  border-radius: 25px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #333;
+}
+
+/* Gradient backgrounds */
+.pink {
+  background: linear-gradient(to bottom, #fce4ec, #f8bbd0);
+}
+
+.purple {
+  background: linear-gradient(to bottom, #ede7f6, #d1c4e9);
+}
+
+.blue {
+  background: linear-gradient(to bottom, #e3f2fd, #b3e5fc);
+}
+
+/* Responsive Design */
+@media (max-width: 960px) {
+  .cardContainer {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card {
+    width: 90%;
+  }
+}

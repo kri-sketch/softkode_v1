@@ -1,0 +1,92 @@
+.aboutContainer {
+  font-family: "Poppins", sans-serif;
+  padding: 40px 20px;
+  text-align: center;
+  background-color: #fdfcff;
+}
+
+/* Belief Section */
+.beliefSection {
+  margin-bottom: 80px;
+  position: relative;
+}
+
+.beliefFaded {
+  font-size: 2rem;
+  color: #d3d3d3;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.beliefText {
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #000;
+}
+
+.highlight {
+  color: #a259ff; /* violet-pink */
+  font-weight: bold;
+}
+
+.progressBar {
+  width: 60%;
+  height: 10px;
+  background-color: #eee;
+  border-radius: 5px;
+  margin: 40px auto 10px;
+  position: relative;
+}
+
+.progressFilled {
+  width: 15%;
+  height: 100%;
+  background: linear-gradient(90deg, #a259ff, #f443cc);
+  border-radius: 5px;
+}
+
+.progressLabel {
+  font-size: 0.8rem;
+  color: #000;
+  margin-top: 5px;
+}
+
+/* Software Section */
+.softwareSection {
+  padding: 20px 0;
+}
+
+.softwareHeading {
+  font-size: 1.8rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 20px;
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  padding: 20px;
+  width: 140px;
+  text-align: center;
+  transition: transform 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+.iconPlaceholder {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 10px;
+  background-color: #eee;
+  border-radius: 8px;
+}

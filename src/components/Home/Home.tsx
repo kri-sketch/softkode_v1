@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Home.module.css";
-import { HOME_CONTENT } from "../../shared/constants/homeContent";
+import { HOME_CONTENT } from "../../shared/constants/homeConstant.ts";
 
 const Home: React.FC = () => {
   return (

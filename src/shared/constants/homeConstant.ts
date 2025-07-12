@@ -1,4 +1,4 @@
-// src/shared/constants/homeContent.ts
+// src/shared/constants/homeConstant.ts
 
 export const HOME_CONTENT = {
   logo: "Soft Kode",

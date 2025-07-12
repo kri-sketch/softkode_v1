@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Software.module.css";
+import { BELIEF_TEXT, SOFTWARE_TOOLS, PROGRESS_LABEL } from "../../shared/constants/softwareConstant.ts";
 
 const Software: React.FC = () => {
   return (
@@ -8,13 +9,26 @@ const Software: React.FC = () => {
       <section className={styles.beliefSection}>
         <h2 className={styles.beliefFaded}>We believe</h2>
         <h3 className={styles.beliefText}>
-          “Streamlined processes boost <span className={styles.highlight}>efficiency</span> and <span className={styles.highlight}>productivity</span>.”
+          “{BELIEF_TEXT.split(" ").map((word, i) =>
+            word === "efficiency" || word === "productivity" ? (
+              <span key={i} className={styles.highlight}>{word} </span>
+            ) : (
+              `${word} `
+            )
+          )}”
         </h3>
 
         <div className={styles.progressBar}>
           <div className={styles.progressFilled}></div>
         </div>
-        <p className={styles.progressLabel}>Discovery <br /> and <br /> planning</p>
+        <p className={styles.progressLabel}>
+          {PROGRESS_LABEL.split("\n").map((line, i) => (
+            <React.Fragment key={i}>
+              {line}
+              <br />
+            </React.Fragment>
+          ))}
+        </p>
       </section>
 
       {/* Software Providers Section */}
@@ -24,15 +38,7 @@ const Software: React.FC = () => {
         </h2>
 
         <div className={styles.grid}>
-          {[
-            "React",
-            "Git",
-            "Google Cloud",
-            "Figma",
-            "AWS",
-            "Docker",
-            "Visual Studio Code",
-          ].map((tool, index) => (
+          {SOFTWARE_TOOLS.map((tool, index) => (
             <div className={styles.card} key={index}>
               <div className={styles.iconPlaceholder}></div>
               <p>{tool}</p>

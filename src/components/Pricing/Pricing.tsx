@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./Pricing.module.css";
+import { PRICING_CARDS } from "../../shared/constants/pricingConstant.ts";
 
 const Pricing: React.FC = () => {
   return (
@@ -9,29 +10,14 @@ const Pricing: React.FC = () => {
       </h2>
 
       <div className={styles.cardContainer}>
-        {/* Card 1 */}
-        <div className={`${styles.card} ${styles.pink}`}>
-          <h3>Get a consultant</h3>
-          <p>Get Instant Access to Top Talent!</p>
-          <p className={styles.offer}>Limited Offer: Get 20% OFF on your first Quick Call Consultation!</p>
-          <button className={styles.button}>Get in touch</button>
-        </div>
-
-        {/* Card 2 */}
-        <div className={`${styles.card} ${styles.purple}`}>
-          <h3>Yearly Services - Contact Sales</h3>
-          <p>Scale Your Business with Dedicated Yearly Support</p>
-          <p className={styles.offer}>Exclusive Offer: Get 3 Months FREE on an annual plan!</p>
-          <button className={styles.button}>Get in touch</button>
-        </div>
-
-        {/* Card 3 */}
-        <div className={`${styles.card} ${styles.blue}`}>
-          <h3>Magic with Web Development</h3>
-          <p>Stay Ahead with Cutting-Edge Web Technologies!</p>
-          <p className={styles.offer}>Special Offer: Get 1 FREE Consultation when you add “Magic with Web Development” to your cart!</p>
-          <button className={styles.button}>Get in touch</button>
-        </div>
+        {PRICING_CARDS.map((card, index) => (
+          <div key={index} className={`${styles.card} ${styles[card.theme]}`}>
+            <h3>{card.title}</h3>
+            <p>{card.subtitle}</p>
+            <p className={styles.offer}>{card.offer}</p>
+            <button className={styles.button}>Get in touch</button>
+          </div>
+        ))}
       </div>
     </div>
   );

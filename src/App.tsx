@@ -10,14 +10,19 @@ import Footer from "./shared/Footer/Footer.tsx";
 import Header from "./components/Header/Header.tsx";
 const App: React.FC = () => {
   return (
-    <div className="App">
-      <Header />
-      <Home />
+     
+   <div className="App">
+      {/* Background section */}
+      <div className="heroWrapper" id="home">
+        <Header />
+        <Home />
+      </div>
+
       <Software />
-      <Pricing/>
-      <Client/>
-      <GetForm/>
-      <Footer/>
+      <Pricing />
+      <Client />
+      <GetForm />
+      <Footer />
     </div>
   );
 };

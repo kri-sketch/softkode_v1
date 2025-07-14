@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Header.module.css";
 import { FaBars } from "react-icons/fa";
-import softkodeLogo from "../../shared/image/softkodeLogo.jpg"; // Adjust the path as necessary
+import softkodeLogo from "../../shared/image/softkode.jpg";
 
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);

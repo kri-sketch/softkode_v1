@@ -1,18 +1,23 @@
+// src/components/HeroTitle/HeroTitle.tsx
 import React from "react";
-import styles from "./Home.module.css";
 import { HOME_CONTENT } from "../../shared/constants/homeConstant.ts";
+
+import styles from "./Home.module.css";
 
 const Home: React.FC = () => {
   return (
-    <div className={styles.home}>
-      {/* Hero Section */}
-      <section className={styles.hero}>
-        <h1>{HOME_CONTENT.heroTitle}</h1>
-        <p>{HOME_CONTENT.heroDescription}</p>
-        <button className={styles.ctaButton}>{HOME_CONTENT.ctaButtonText}</button>
-        <div className={styles.scrollIndicator}>{HOME_CONTENT.scrollIndicator}</div>
-      </section>
-    </div>
+    <section className={styles.heroSection}>
+      
+      <div className={styles.content}>
+        <h1 className={styles.title}>{HOME_CONTENT.heroTitle}</h1>
+        <p className={styles.subtitle}>
+          We are a cross-disciplinary team, blending our expertise <br />
+          to deliver impactful digital solutions across industries.
+        </p>
+        <button className={styles.cta}>{HOME_CONTENT.ctaButtonText}</button>
+        <div className={styles.scrollIndicator}>↓</div>
+      </div>
+    </section>
   );
 };
 

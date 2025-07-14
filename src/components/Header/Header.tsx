@@ -1,16 +1,18 @@
 import React, { useState } from "react";
 import styles from "./Header.module.css";
 import { FaBars } from "react-icons/fa";
+import softkodeLogo from "../../shared/image/softkodeLogo.jpg"; // Adjust the path as necessary
 
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
 
   const toggleMenu = () => setMenuOpen(!isMenuOpen);
+  
 
   return (
     <header className={styles.header}>
       <div className={styles.logo}> 
-        <img src="/logo.png" alt="SoftKode Logo" />
+       <img src={softkodeLogo} alt="Softkode Logo" />
         <span>Soft<br />Kode</span>
       </div>
 

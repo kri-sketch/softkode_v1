@@ -1,92 +1,121 @@
 .aboutContainer {
-  font-family: "Poppins", sans-serif;
-  padding: 40px 20px;
-  text-align: center;
-  background-color: #fdfcff;
+  padding: 2rem;
 }
 
-/* Belief Section */
 .beliefSection {
-  margin-bottom: 80px;
-  position: relative;
+  margin-bottom: 4rem;
 }
 
 .beliefFaded {
   font-size: 2rem;
-  color: #d3d3d3;
-  font-weight: 600;
-  margin-bottom: 10px;
+  color: #ccc;
 }
 
 .beliefText {
   font-size: 1.5rem;
   font-weight: 500;
-  color: #000;
+  margin-top: 0.5rem;
 }
 
 .highlight {
-  color: #a259ff; /* violet-pink */
+  color: #2575fc;
   font-weight: bold;
 }
 
-.progressBar {
-  width: 60%;
-  height: 10px;
-  background-color: #eee;
-  border-radius: 5px;
-  margin: 40px auto 10px;
+/* Progress bar styles */
+.progressContainer {
+  margin-top: 2rem;
+  position: relative;
+  width: 100%;
+  padding: 1rem 0;
+}
+
+.progressTrack {
+  height: 6px;
+  background-color: #e0e0e0;
+  position: relative;
+  border-radius: 4px;
+  overflow: hidden;
+}
+
+.progressFill {
+  height: 100%;
+  background: linear-gradient(90deg, #6a11cb, #2575fc);
+  width: 0%;
+  transition: width 1s ease-in-out;
+}
+
+.progressSteps {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 0.5rem;
   position: relative;
 }
 
-.progressFilled {
-  width: 15%;
-  height: 100%;
-  background: linear-gradient(90deg, #a259ff, #f443cc);
-  border-radius: 5px;
+.progressStep {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-.progressLabel {
-  font-size: 0.8rem;
-  color: #000;
-  margin-top: 5px;
+.progressStep.reveal {
+  opacity: 1;
+  transform: translateY(0);
 }
 
-/* Software Section */
+.dot {
+  width: 14px;
+  height: 14px;
+  background-color: #ccc;
+  border-radius: 50%;
+  margin-bottom: 0.5rem;
+  transition: background-color 0.4s ease;
+}
+
+.dot.active {
+  background-color: #2575fc;
+}
+
+.stepLabel {
+  font-size: 0.85rem;
+  color: #444;
+  text-align: center;
+  max-width: 80px;
+}
+
+/* Grid Styles */
 .softwareSection {
-  padding: 20px 0;
+  margin-top: 4rem;
 }
 
 .softwareHeading {
   font-size: 1.8rem;
-  font-weight: 600;
-  margin-bottom: 40px;
+  text-align: center;
+  margin-bottom: 2rem;
 }
 
 .grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(120px, 1fr));
+  gap: 1.5rem;
+  justify-items: center;
 }
 
 .card {
-  background-color: #fff;
-  border-radius: 16px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
-  padding: 20px;
-  width: 140px;
+  background-color: #f9f9f9;
+  padding: 1rem;
+  border-radius: 10px;
   text-align: center;
-  transition: transform 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
 }
 
 .iconPlaceholder {
   width: 40px;
   height: 40px;
-  margin: 0 auto 10px;
-  background-color: #eee;
-  border-radius: 8px;
+  background-color: #ddd;
+  border-radius: 50%;
+  margin: 0 auto 0.5rem;
 }

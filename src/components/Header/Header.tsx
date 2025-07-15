@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import styles from "./Header.module.css";
 import { FaBars } from "react-icons/fa";
-import softkodeLogo from "../../shared/image/softkode.jpg";
+import softkodeLogo from "../../shared/image/logo.jpg";
 
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
@@ -12,7 +12,7 @@ const Header = () => {
   return (
     <header className={styles.header}>
       <div className={styles.logo}> 
-       <img src={softkodeLogo} alt="Softkode Logo" />
+       <img src={softkodeLogo} alt="Softkode Logo" className={styles.softkode} />
         <span>Soft<br />Kode</span>
       </div>
 

@@ -55,7 +55,31 @@
 }
 
 .scrollIndicator {
-  margin-top: 2rem;
+  margin: 4rem auto 0;
   font-size: 1.5rem;
-  color: #333;
+  color: #fff;
+  width: 48px;
+  height: 48px;
+  background-color: black;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  transition: background 0.3s;
+  
 }
+
+
+
+
+
+
+
+/* Mobile view */
+@media screen and (max-width: 768px) {
+  .heroSection {
+ 
+ margin-top: 50px;
+}
+  }

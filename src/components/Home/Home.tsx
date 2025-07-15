@@ -15,7 +15,9 @@ const Home: React.FC = () => {
           to deliver impactful digital solutions across industries.
         </p>
         <button className={styles.cta}>{HOME_CONTENT.ctaButtonText}</button>
+       
         <div className={styles.scrollIndicator}>↓</div>
+
       </div>
     </section>
   );

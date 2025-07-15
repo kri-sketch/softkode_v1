@@ -11,4 +11,12 @@ export const SOFTWARE_TOOLS = [
   "Visual Studio Code",
 ];
 
-export const PROGRESS_LABEL = "Discovery\nand\nplanning";
+//*export const PROGRESS_LABEL = "Discovery\nand\nplanning";*\\
+export const PROGRESS_LABEL = [
+  "Discovery and Planning",
+  "UI & UX",
+  "Development",
+  "Launch",
+  "Quality Assurance",
+  "Support and Maintenance",
+];

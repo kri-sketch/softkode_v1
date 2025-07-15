@@ -7,8 +7,7 @@ import {
 } from "../../shared/constants/softwareConstant.ts";
 
 const Software: React.FC = () => {
-  const [activeStep, setActiveStep] = useState(-1); // Start with -1 so the bar starts from 0
-  // const timelineRef = useRef<HTMLDivElement>(null);
+  const [activeStep, setActiveStep] = useState(-1);
 
   useEffect(() => {
     let step = 0;
@@ -20,13 +19,17 @@ const Software: React.FC = () => {
       } else {
         clearInterval(interval);
       }
-    }, 1000); // Reveal one step every second
+    }, 1000);
 
     return () => clearInterval(interval);
   }, []);
 
+  const progressPercent =
+    (activeStep / (PROGRESS_LABEL.length - 1)) * 100 || 0;
+
   return (
     <div className={styles.aboutContainer}>
+      {/* Belief Section */}
       <section className={styles.beliefSection}>
         <h2 className={styles.beliefFaded}>We believe</h2>
         <h3 className={styles.beliefText}>
@@ -39,37 +42,39 @@ const Software: React.FC = () => {
           )}”
         </h3>
 
-        {/* Progress Bar */}
-        <div className={styles.progressContainer}>
-          <div className={styles.progressTrack}>
-            <div
-              className={styles.progressFill}
-              style={{
-                width: `${(activeStep / (PROGRESS_LABEL.length - 1)) * 100}%`,
-              }}
-            ></div>
-          </div>
+        {/* Progress Bar with moving dot */}
+        <div className={styles.progressBar}>
+          <div
+            className={styles.progressFilled}
+            style={{ width: `calc(${progressPercent}% ` }}
+          />
+          <div
+            className={styles.progressDot}
+            style={{
+  left: activeStep <= 0
+    ? "0%"
+    : `calc(${progressPercent}% - 7px)`
+}}
 
-          <div className={styles.progressSteps}>
-            {PROGRESS_LABEL.map((label, index) => {
-              const isActive = index <= activeStep;
-              return (
-                <div
-                  key={index}
-                  className={`${styles.progressStep} ${isActive ? styles.reveal : ""}`}
-                >
-                  <div
-                    className={`${styles.dot} ${isActive ? styles.active : ""}`}
-                  ></div>
-                  <p className={styles.stepLabel}>{label}</p>
-                </div>
-              );
-            })}
-          </div>
+          />
+        </div>
+
+        {/* Labels */}
+        <div className={styles.progressLabels}>
+          {PROGRESS_LABEL.map((label, index) => (
+            <span
+              key={index}
+              className={`${styles.progressLabel} ${
+                index <= activeStep ? styles.labelVisible : ""
+              }`}
+            >
+              {label}
+            </span>
+          ))}
         </div>
       </section>
 
-      {/* Software Grid */}
+      {/* Software Providers Section */}
       <section className={styles.softwareSection}>
         <h2 className={styles.softwareHeading}>
           Our trusted <span className={styles.highlight}>software</span> providers

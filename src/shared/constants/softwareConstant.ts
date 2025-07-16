@@ -13,10 +13,10 @@ export const SOFTWARE_TOOLS = [
 
 //*export const PROGRESS_LABEL = "Discovery\nand\nplanning";*\\
 export const PROGRESS_LABEL = [
-  "Discovery and Planning",
+  "Discovery\nand\nplanning",
   "UI & UX",
   "Development",
-  "Launch",
+  "Deployment\nand\nLaunch",
   "Quality Assurance",
-  "Support and Maintenance",
+  "Support\nand\nMaintenance",
 ];

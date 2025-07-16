@@ -20,6 +20,7 @@
   flex-wrap: wrap;
   justify-content: center;
   gap: 30px;
+
 }
 
 .card {
@@ -36,30 +37,59 @@
 }
 
 .card h3 {
-  font-size: 1.2rem;
-  margin-bottom: 10px;
-  font-weight: 600;
+  
+font-family: Syne;
+font-weight: 700;
+font-style: Bold;
+font-size: 30px;
+
+line-height: 90%;
+letter-spacing: -4%;
+text-align: center;
+vertical-align: middle;
+
 }
 
-.card p {
-  font-size: 0.95rem;
-  margin: 10px 0;
+.subtitle{
+ font-family: serif;
+font-weight: 500;
+font-style: Medium;
+font-size: 19px;
+
+line-height: 100%;
+letter-spacing: 0%;
+text-align: center;
+vertical-align: middle;
+
+
 }
 
 .offer {
-  font-weight: bold;
-  margin-top: 15px;
+  
+font-family: Lexend;
+font-weight: 600;
+font-style: SemiBold;
+font-size: 23px;
+
+line-height: 100%;
+letter-spacing: 0%;
+text-align: center;
+vertical-align: middle;
+
+
 }
 
-.button {
-  margin-top: 20px;
-  padding: 10px 20px;
-  border: none;
-  background-color: #000;
-  color: white;
-  border-radius: 25px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
+.amit {
+width: 138;
+height: 44;
+padding-top: 12px;
+padding-right: 20px;
+padding-bottom: 12px;
+padding-left: 20px;
+gap: 10px;
+opacity: 1;
+border-radius: 100px;
+border-width: 1px;
 }
 
 .button:hover {
@@ -68,15 +98,18 @@
 
 /* Gradient backgrounds */
 .pink {
-  background: linear-gradient(to bottom, #fce4ec, #f8bbd0);
+  background: linear-gradient(180deg, #FFE9EF 0%, #F5DAF0 50%, #DCBFEA 100%);
+
 }
 
 .purple {
-  background: linear-gradient(to bottom, #ede7f6, #d1c4e9);
+  background: linear-gradient(360deg, rgba(187, 181, 244, 0.75) 0%, rgba(219, 216, 250, 0.65) 50%, rgba(254, 254, 255, 0.3) 100%);
+
 }
 
 .blue {
-  background: linear-gradient(to bottom, #e3f2fd, #b3e5fc);
+  background: linear-gradient(180deg, #F9FDFF 0%, #CAE5F8 50%, rgba(161, 204, 246, 0.65) 100%);
+
 }
 
 /* Responsive Design */
@@ -90,3 +123,7 @@
     width: 90%;
   }
 }
+
+
+
+

@@ -2,9 +2,16 @@ import React, { useEffect, useState } from "react";
 import styles from "./Software.module.css";
 import {
   BELIEF_TEXT,
-  SOFTWARE_TOOLS,
   PROGRESS_LABEL,
 } from "../../shared/constants/softwareConstant.ts";
+
+import reactlogo from "../../shared/image/react.png";
+import gitlogo from "../../shared/image/git.png";
+import awslogo from "../../shared/image/aws.png";
+import figmalogo from "../../shared/image/figma.png";
+import dockerlogo from "../../shared/image/docker.png";
+import vscode from "../../shared/image/vscode.png";
+import cloudlogo from "../../shared/image/cloud.png";
 
 const Software: React.FC = () => {
   const [activeStep, setActiveStep] = useState(-1);
@@ -46,16 +53,15 @@ const Software: React.FC = () => {
         <div className={styles.progressBar}>
           <div
             className={styles.progressFilled}
-            style={{ width: `calc(${progressPercent}% ` }}
+            style={{ width: `calc(${progressPercent}%` }}
           />
           <div
             className={styles.progressDot}
             style={{
-  left: activeStep <= 0
-    ? "0%"
-    : `calc(${progressPercent}% - 7px)`
-}}
-
+              left: activeStep <= 0
+                ? "0%"
+                : `calc(${progressPercent}% - 19px)`
+            }}
           />
         </div>
 
@@ -68,7 +74,11 @@ const Software: React.FC = () => {
                 index <= activeStep ? styles.labelVisible : ""
               }`}
             >
-              {label}
+              {label.split("\n").map((line, i) => (
+                <React.Fragment key={i}>
+                  {line}<br />
+                </React.Fragment>
+              ))}
             </span>
           ))}
         </div>
@@ -80,13 +90,53 @@ const Software: React.FC = () => {
           Our trusted <span className={styles.highlight}>software</span> providers
         </h2>
 
-        <div className={styles.grid}>
-          {SOFTWARE_TOOLS.map((tool, index) => (
-            <div className={styles.card} key={index}>
-              <div className={styles.iconPlaceholder}></div>
-              <p>{tool}</p>
+        <div className={styles.iconDiamondGrid}>
+          <div className={styles.row}>
+            <div className={styles.card}>
+              <img src={reactlogo} alt="React Logo" />
+              <div>React</div>
             </div>
-          ))}
+          </div>
+          <div className={styles.row}>
+            <div className={styles.card}>
+              <img src={gitlogo} alt="Git Logo" />
+              <div>Git</div>
+            </div>
+            <div className={styles.card}>
+              <img src={awslogo} alt="AWS Logo" />
+              <div>AWS</div>
+            </div>
+          </div>
+          <div className={styles.row}>
+            <div className={styles.card}>
+              <img src={cloudlogo} alt="Cloud Logo" />
+              <div>Google Cloud</div>
+            </div>
+            <div className={styles.card}>
+              <img src={dockerlogo} alt="Docker Logo" />
+              <div>Docker</div>
+            </div>
+            <div className={styles.card}>
+              <img src={vscode} alt="VSCode Logo" />
+              <div>Visual Studio Code</div>
+            </div>
+          </div>
+          <div className={styles.row}>
+            <div className={styles.card}>
+              <img src={figmalogo} alt="Figma Logo" />
+              <div>Figma</div>
+            </div>
+            <div className={styles.card}>
+              <img src={reactlogo} alt="React Logo" />
+              <div>Visual Studio Code</div>
+            </div>
+          </div>
+          <div className={styles.row}>
+            <div className={styles.card}>
+              <img src={reactlogo} alt="React Logo" />
+              <div>Visual Studio Code</div>
+            </div>
+          </div>
         </div>
       </section>
     </div>

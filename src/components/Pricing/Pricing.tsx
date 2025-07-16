@@ -12,10 +12,17 @@ const Pricing: React.FC = () => {
       <div className={styles.cardContainer}>
         {PRICING_CARDS.map((card, index) => (
           <div key={index} className={`${styles.card} ${styles[card.theme]}`}>
-            <h3>{card.title}</h3>
-            <p>{card.subtitle}</p>
+             <h3>
+              {card.title.split("\n").map((line, idx) => (
+                <React.Fragment key={idx}>
+                  {line}
+                  <br />
+                </React.Fragment>
+              ))}
+            </h3>
+            <p className={styles.subtitle}>{card.subtitle}</p>
             <p className={styles.offer}>{card.offer}</p>
-            <button className={styles.button}>Get in touch</button>
+            <button className={styles.amit}>Get in touch</button>
           </div>
         ))}
       </div>

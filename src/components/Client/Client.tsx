@@ -1,23 +1,53 @@
-import React from "react";
+import React, { useState,  useEffect }  from "react";
 import styles from "./Client.module.css";
 import { CLIENT_TESTIMONIAL, CLIENT_LOGOS } from "../../shared/constants/clientConstant.ts";
 
 const Client: React.FC = () => {
+  const [current, setCurrent] = useState(0);
+  const total = CLIENT_TESTIMONIAL.length;
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrent((prev) => (prev + 1) % total);
+    }, 5000); // 5000ms = 5s
+
+    return () => clearInterval(interval); // Clear on unmount
+  }, [total]);
+
+  
   return (
     <div className={styles.testimonialsWrapper}>
+      <div className={styles.testimonialHeader}>
       <div className={styles.testimonialCard}>
         <div className={styles.leftColumn}>
           <h2>
-            What our <span className={styles.highlight}>clients</span> say
+            What our <br/> <span className={styles.highlight}>clients</span> say
           </h2>
         </div>
 
         <div className={styles.rightColumn}>
-          <span className={styles.quoteIcon}>❝</span>
-          <p className={styles.feedback}>{CLIENT_TESTIMONIAL.message}</p>
-          <p className={styles.clientName}>{CLIENT_TESTIMONIAL.name}</p>
-          <p className={styles.clientRole}>{CLIENT_TESTIMONIAL.role}</p>
-        </div>
+           <span className={styles.quoteIcon}>,</span>
+          <span className={styles.quoteIcon}>,</span>
+
+
+
+      <div className={styles.carousel}>
+            {CLIENT_TESTIMONIAL.map((testimonial, index) => (
+              <div
+                className={`${styles.slide} ${index === current ? styles.active : ""}`}
+                key={index}
+              >
+                <p className={styles.feedback}>{testimonial.message}</p>
+                <p className={styles.clientName}>{testimonial.name}</p>
+                <p className={styles.clientRole}>{testimonial.role}</p>
+              </div>
+            ))}
+           
+          </div>
+        
+        
+      </div>
+
       </div>
 
       {/* Client logos */}
@@ -26,6 +56,8 @@ const Client: React.FC = () => {
           <img key={index} src={logo.src} alt={logo.alt} />
         ))}
       </div>
+      </div>
+      
     </div>
   );
 };

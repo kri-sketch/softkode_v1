@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./GetForm.module.css";
-
+import grouppic from "../../shared/image/group.png"
 const GetForm: React.FC = () => {
   return (
     <div className={styles.contactContainer}>
@@ -31,8 +31,8 @@ const GetForm: React.FC = () => {
       {/* Right: Image */}
       <div className={styles.imageSection}>
         <img
-          src="https://images.unsplash.com/photo-1639762688331-fb12e081aadf"
-          alt="Team working"
+          src={grouppic}
+          alt="Group Pic"
         />
       </div>
     </div>

@@ -1,6 +1,6 @@
 import React from "react";
 import styles from "./Footer.module.css";
-
+import girlpic from "../../shared/image/girl.png";
 const Footer: React.FC = () => {
   return (
     <footer className={styles.footerContainer}>
@@ -8,8 +8,8 @@ const Footer: React.FC = () => {
         {/* Left: Image + Newsletter */}
         <div className={styles.imageBox}>
           <img
-            src="https://images.unsplash.com/photo-1636624498070-d3d90c5c0c9b"
-            alt="Woman digital portrait"
+            src={girlpic}
+            alt="Woman digital portrait" className={styles.girlimage}
           />
           <div className={styles.newsletterBox}>
             <p>Keep in touch</p>

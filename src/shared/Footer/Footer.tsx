@@ -4,20 +4,26 @@ import girlpic from "../../shared/image/girl.png";
 const Footer: React.FC = () => {
   return (
     <footer className={styles.footerContainer}>
+       
       <div className={styles.topSection}>
+         
         {/* Left: Image + Newsletter */}
         <div className={styles.imageBox}>
           <img
             src={girlpic}
             alt="Woman digital portrait" className={styles.girlimage}
           />
-          <div className={styles.newsletterBox}>
-            <p>Keep in touch</p>
-            <div className={styles.inputGroup}>
-              <input type="email" placeholder="Email address" />
-              <button>Get in touch</button>
-            </div>
-          </div>
+         
+  <div className={styles.newsletterBox}>
+    <p className={styles.title}>Keep in touch</p>
+    <div className={styles.inputGroup}>
+      <input type="email" placeholder="Email address" className={styles.gmail}/>
+      <button className={styles.btnn}>Get in touch</button>
+    </div>
+  
+</div>
+
+
         </div>
 
         {/* Right: Footer Navigation */}

@@ -1,5 +1,10 @@
 // src/components/Client/client.constants.ts
 
+import dataeazeLogo from "../../shared/image/dataeaze.png";
+import nttDataLogo from "../../shared/image/nttdata.png";
+import tataAigLogo from "../../shared/image/tata.png"; 
+import enerscriptLogo from "../../shared/image/enerscript.png";
+
 export const CLIENT_TESTIMONIAL = [
   {
   message:
@@ -24,26 +29,26 @@ export const CLIENT_TESTIMONIAL = [
 export const CLIENT_LOGOS = [
   {
     alt: "Dataeaze",
-    src: "https://upload.wikimedia.org/wikipedia/commons/4/41/Dataeaze_Logo.png",
+    src: dataeazeLogo,
   },
   {
     alt: "NTT Data",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/NTT_Data_logo.svg/2560px-NTT_Data_logo.svg.png",
+    src: nttDataLogo,
   },
   {
     alt: "NTT Data",
-    src: "https://upload.wikimedia.org/wikipedia/commons/thumb/8/81/NTT_Data_logo.svg/2560px-NTT_Data_logo.svg.png",
+    src: nttDataLogo,
   },
   {
     alt: "TATA AIG",
-    src: "https://upload.wikimedia.org/wikipedia/en/7/70/TATA_AIG_Life_Logo.png",
+    src: tataAigLogo,
   },
   {
     alt: "Enerscript",
-    src: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Enerscript_logo.png",
+    src: enerscriptLogo,
   },
   {
     alt: "Enerscript",
-    src: "https://upload.wikimedia.org/wikipedia/commons/f/fa/Enerscript_logo.png",
+    src: enerscriptLogo,
   },
 ];

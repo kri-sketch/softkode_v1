@@ -1,6 +1,6 @@
 // src/components/Software/software.constants.ts
 
-export const BELIEF_TEXT = "Streamlined processes boost efficiency and productivity.";
+export const BELIEF_TEXT = "Streamlined processes boost efficiency and productivity";
 export const SOFTWARE_TOOLS = [
   "React",
   "Git",

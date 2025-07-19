@@ -39,15 +39,21 @@ const Software: React.FC = () => {
       {/* Belief Section */}
       <section className={styles.beliefSection}>
         <h2 className={styles.beliefFaded}>We believe</h2>
+       
+
         <h3 className={styles.beliefText}>
-          “{BELIEF_TEXT.split(" ").map((word, i) =>
-            word === "efficiency" || word === "productivity" ? (
-              <span key={i} className={styles.highlight}>{word} </span>
-            ) : (
-              `${word} `
-            )
-          )}”
-        </h3>
+  “
+  {BELIEF_TEXT.split(" ").map((word, i) => {
+    const needsHighlight = word === "efficiency" || word === "productivity";
+    return needsHighlight ? (
+      <span key={i} className={styles.highlight}>{word}&nbsp;</span>
+    ) : (
+      <span key={i}>{word}&nbsp;</span>
+    );
+  })}
+  ”
+</h3>
+
 
         {/* Progress Bar with moving dot */}
         <div className={styles.progressBar}>

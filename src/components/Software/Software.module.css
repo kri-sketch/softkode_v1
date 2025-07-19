@@ -22,10 +22,16 @@
   font-size: 1.5rem;
   font-weight: 500;
   color: #000;
+
 }
 
 .highlight {
-  color: #a259ff;
+   background: linear-gradient(180deg, rgba(220, 11, 146, 0.8) 20%, rgba(146, 66, 177, 0.8) 50%, rgba(101, 99, 196, 0.8) 80%);
+   background-clip: text;
+  -webkit-text-fill-color: transparent;
+   -webkit-background-clip: text;
+  
+ 
   font-weight: bold;
 }
 

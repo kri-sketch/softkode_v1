@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import { FaBars } from "react-icons/fa";
 import softkodeLogo from "../../shared/image/positive.png";
@@ -18,11 +19,11 @@ const Header = () => {
 
       <nav className={`${styles.nav} ${isMenuOpen ? styles.show : ""}`}>
         <ul>
-          <li><a href="/home">Home</a></li>
+          <li><Link to="/">Home</Link></li>
           <li><a href="/about">About</a></li>
           <li><a href="/services">Services</a></li>
           <li><a href="/pricing">Pricing</a></li>
-          <li><a href="/ourStory">Our story</a></li>
+          <li><Link to="/ourStory">Our story</Link></li>
           <li><a href="/caseStudy">Case Study</a></li>
         </ul>
       </nav>

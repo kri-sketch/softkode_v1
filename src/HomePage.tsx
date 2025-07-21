@@ -9,8 +9,8 @@ import Client from "./components/Client/Client.tsx";
 import GetForm from "./shared/GetForm/GetForm.tsx";
 import Footer from "./shared/Footer/Footer.tsx";
 import Header from "./components/Header/Header.tsx";
-import OurStory from "./components/OurStory/OurStory.tsx";
-const App: React.FC = () => {
+// import OurStory from "./components/OurStory/OurStory.tsx";
+const HomePage: React.FC = () => {
   return (
      
    <div className="App">
@@ -24,7 +24,7 @@ const App: React.FC = () => {
       <Pricing />
       <Client />
       <GetForm />
-      <OurStory />
+      {/* <OurStory /> */}
       
       {/* Footer section */}
       <Footer />
@@ -32,4 +32,4 @@ const App: React.FC = () => {
   );
 };
 
-export default App;
+export default HomePage;

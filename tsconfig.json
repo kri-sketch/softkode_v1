@@ -1,0 +1,22 @@
+{
+  "compilerOptions": {
+    "target": "ESNext",
+    "lib": ["DOM", "DOM.Iterable", "ESNext"],
+    "jsx": "react-jsx",                   // Use React 17+ JSX transform
+    "module": "ESNext",
+    "moduleResolution": "Node",
+    "strict": true,
+    "esModuleInterop": true,
+    "skipLibCheck": true,
+    "forceConsistentCasingInFileNames": true,
+    "allowSyntheticDefaultImports": true,
+    "resolveJsonModule": true,
+    "noEmit": true,
+    "allowJs": true,                      // ✅ allow JS files like reportWebVitals.js
+    "checkJs": false,
+    "isolatedModules": true,
+    "allowImportingTsExtensions": true   // ✅ allow `import './Component.tsx'` style
+  },
+  "include": ["src", "tsconfig.json"],                     // ✅ include your app code
+  "exclude": ["node_modules"]
+}

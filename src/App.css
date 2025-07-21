@@ -35,8 +35,9 @@
   background-size: cover;
   background-attachment: fixed; /* keeps image fixed on scroll */
   position: relative;
-  padding-bottom: 60px;
-  height: 100vh; /* full viewport height */
+  padding-bottom: 90px;
+  
+  /* full viewport height */
 }
 
 /* Optional overlay */

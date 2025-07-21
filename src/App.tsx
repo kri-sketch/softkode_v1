@@ -8,6 +8,7 @@ import Client from "./components/Client/Client.tsx";
 import GetForm from "./shared/GetForm/GetForm.tsx";
 import Footer from "./shared/Footer/Footer.tsx";
 import Header from "./components/Header/Header.tsx";
+import OurStory from "./components/OurStory/OurStory.tsx";
 const App: React.FC = () => {
   return (
      
@@ -22,6 +23,9 @@ const App: React.FC = () => {
       <Pricing />
       <Client />
       <GetForm />
+      <OurStory />
+      
+      {/* Footer section */}
       <Footer />
     </div>
   );

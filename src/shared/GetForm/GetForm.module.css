@@ -83,3 +83,49 @@ button:hover {
   border-radius: 20px;
   object-fit: cover;
 }
+
+
+@media (max-width: 768px) {
+  .contactContainer {
+    flex-direction: column-reverse;
+    align-items: center;
+    gap: 30px;
+    padding: 30px 20px;
+  }
+
+  .formSection {
+    margin-right: 0;
+    max-width: 100%;
+    width: 100%;
+  }
+
+  form {
+    align-items: center;
+    width: 100%;
+  }
+
+  form label {
+    width: 100%;
+    align-items: flex-start;
+  }
+
+  input,
+  textarea {
+    width: 90%;
+  }
+
+  button {
+    align-self: center;
+  }
+
+  .imageSection {
+    max-width: 100%;
+    width: 100%;
+    justify-content: center;
+  }
+
+  .imageSection img {
+    max-width: 90%;
+    height: auto;
+  }
+}

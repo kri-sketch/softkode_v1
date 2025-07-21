@@ -24,7 +24,9 @@ const Footer: React.FC = () => {
 </div>
 
 
-        </div>
+        </div>
+
+
 
         {/* Right: Footer Navigation */}
         <div className={styles.footerLinks}>
@@ -65,6 +67,7 @@ const Footer: React.FC = () => {
           <span>❌</span>
         </div>
       </div>
+      
     </footer>
   );
 };

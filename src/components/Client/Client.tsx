@@ -26,9 +26,10 @@ const Client: React.FC = () => {
         </div>
 
         <div className={styles.rightColumn}>
+          <div className={styles.quotesColumn}>
            <span className={styles.quoteIcon}>,</span>
           <span className={styles.quoteIcon}>,</span>
-
+          </div>
 
 
       <div className={styles.carousel}>

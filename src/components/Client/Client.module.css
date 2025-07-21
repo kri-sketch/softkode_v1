@@ -1,3 +1,8 @@
+body {
+  overflow-x: hidden;
+}
+
+
 .testimonialsWrapper {
   padding: 60px 40px;
   background-color: #fdfcff;
@@ -120,17 +125,7 @@ margin: -5px;
 }
 
 /* Responsive */
-@media (max-width: 768px) {
-  .testimonialCard {
-    flex-direction: column;
-    text-align: center;
-  }
 
-  .leftColumn,
-  .rightColumn {
-    text-align: center;
-  }
-}
 
 
 
@@ -188,4 +183,77 @@ margin: -5px;
 .clientRole {
   font-size: 14px;
   color: gray;
+}
+
+
+
+@media (max-width: 768px) {
+  .testimonialsWrapper {
+   padding: 30px 20px;
+    width: 90%;
+  }
+
+  .testimonialHeader {
+    height: auto;
+    padding: 20px;
+    border-radius: 20px;
+  }
+
+  .testimonialCard {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 20px;
+  }
+
+  .leftColumn {
+    font-size: 28px;
+    margin: 0;
+    text-align: center;
+  }
+
+  .rightColumn {
+    margin: 0;
+    text-align: center;
+  }
+
+  .quotesColumn{
+    margin-right: 260px;
+  }
+
+  .quoteIcon {
+    font-size: 4rem;
+   margin: 0px;
+   
+  }
+
+  .carousel {
+    margin: 20px auto 0;
+    margin-left: 0;
+    width: 100%;
+    min-height: 100px;
+  }
+
+  .feedback {
+    width: 100%;
+    font-size: 15px;
+  }
+
+  .clientName {
+    font-size: 16px;
+  }
+
+  .clientRole {
+    font-size: 13px;
+  }
+
+  .logoRow {
+    gap: 30px;
+    padding-top: 20px;
+  }
+
+  .logoRow img {
+    height: 60px;
+    max-width: 70px;
+  }
 }

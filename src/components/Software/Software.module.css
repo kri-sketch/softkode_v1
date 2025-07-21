@@ -1,3 +1,10 @@
+
+body {
+  overflow-x: hidden;
+}
+
+
+
 .aboutContainer {
   font-family: "Poppins", sans-serif;
   padding: 40px 20px;
@@ -173,4 +180,75 @@
 
 .card:hover {
   transform: translateY(-5px);
+}
+
+
+@media screen and (max-width: 768px) {
+ .card {
+  background: #fff;
+  padding: 1rem 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  width: 80px;
+  height: 70px;
+  text-align: center;
+  font-weight: bold;
+  transition: transform 0.3s ease;
+}
+
+.row {
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+  justify-content: center;
+}
+
+
+.iconDiamondGrid {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+.iconImage {
+  width: 45px;
+  height: 45px;
+  margin-bottom: 10px;
+}
+
+.iconText{
+  font-size: 14px;
+  margin-top: -10px;
+}
+
+.beliefSection {
+  margin-bottom: 80px;
+  position: relative;
+
+  flex-wrap: wrap;
+max-width: 100%;
+
+}
+
+.beliefFaded {
+  font-size: 2rem;
+  color: #d3d3d3;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.beliefText {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #000;
+  flex-wrap: wrap;
+   white-space: normal;       /* Allow text to wrap */
+  word-wrap: break-word;     /* Break long words if needed */
+  overflow-wrap: anywhere;   /* Force break if no spaces */
+  max-width: 100%;     
+
+}
+
 }

@@ -99,48 +99,48 @@ const Software: React.FC = () => {
         <div className={styles.iconDiamondGrid}>
           <div className={styles.row}>
             <div className={styles.card}>
-              <img src={reactlogo} alt="React Logo" />
-              <div>React</div>
+              <img src={reactlogo} alt="React Logo"  className={styles.iconImage} />
+              <div className={styles.iconText}>React</div>
             </div>
           </div>
           <div className={styles.row}>
             <div className={styles.card}>
-              <img src={gitlogo} alt="Git Logo" />
-              <div>Git</div>
+              <img src={gitlogo} alt="Git Logo" className={styles.iconImage}/>
+              <div  className={styles.iconText}>Git</div>
             </div>
             <div className={styles.card}>
-              <img src={awslogo} alt="AWS Logo" />
-              <div>AWS</div>
-            </div>
-          </div>
-          <div className={styles.row}>
-            <div className={styles.card}>
-              <img src={cloudlogo} alt="Cloud Logo" />
-              <div>Google Cloud</div>
-            </div>
-            <div className={styles.card}>
-              <img src={dockerlogo} alt="Docker Logo" />
-              <div>Docker</div>
-            </div>
-            <div className={styles.card}>
-              <img src={vscode} alt="VSCode Logo" />
-              <div>Visual Studio Code</div>
+              <img src={awslogo} alt="AWS Logo" className={styles.iconImage} />
+              <div className={styles.iconText}>AWS</div>
             </div>
           </div>
           <div className={styles.row}>
             <div className={styles.card}>
-              <img src={figmalogo} alt="Figma Logo" />
-              <div>Figma</div>
+              <img src={cloudlogo} alt="Cloud Logo" className={styles.iconImage}/>
+              <div className={styles.iconText}>Google Cloud</div>
             </div>
             <div className={styles.card}>
-              <img src={reactlogo} alt="React Logo" />
-              <div>Visual Studio Code</div>
+              <img src={dockerlogo} alt="Docker Logo" className={styles.iconImage}/>
+              <div className={styles.iconText}>Docker</div>
+            </div>
+            <div className={styles.card}>
+              <img src={vscode} alt="VSCode Logo" className={styles.iconImage}/>
+              <div className={styles.iconText}>Visual Studio Code</div>
             </div>
           </div>
           <div className={styles.row}>
             <div className={styles.card}>
-              <img src={reactlogo} alt="React Logo" />
-              <div>Visual Studio Code</div>
+              <img src={figmalogo} alt="Figma Logo" className={styles.iconImage} />
+              <div className={styles.iconText}>Figma</div>
+            </div>
+            <div className={styles.card}>
+              <img src={reactlogo} alt="React Logo" className={styles.iconImage}/>
+              <div className={styles.iconText}>Visual Studio Code</div>
+            </div>
+          </div>
+          <div className={styles.row}>
+            <div className={styles.card}>
+              <img src={reactlogo} alt="React Logo" className={styles.iconImage}/>
+              <div className={styles.iconText}>Visual Studio Code</div>
             </div>
           </div>
         </div>

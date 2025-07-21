@@ -20,11 +20,11 @@ const Header = () => {
       <nav className={`${styles.nav} ${isMenuOpen ? styles.show : ""}`}>
         <ul>
           <li><Link to="/">Home</Link></li>
-          <li><a href="/about">About</a></li>
-          <li><a href="/services">Services</a></li>
-          <li><a href="/pricing">Pricing</a></li>
+          <li><Link to="/about">About</Link></li>
+          <li><Link to="/services">Services</Link></li>
+          <li><Link to="/pricing">Pricing</Link></li>
           <li><Link to="/ourstory">Our story</Link></li>
-          <li><a href="/caseStudy">Case Study</a></li>
+          <li><Link to="/caseStudy">Case Study</Link></li>
         </ul>
       </nav>
 

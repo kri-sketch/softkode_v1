@@ -2,8 +2,7 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
-  /* background: linear-gradient(90deg, #f0e9f8, #c8b6ff); */
+  padding: 0.75rem 1.25rem;
   position: relative;
 }
 
@@ -11,14 +10,14 @@
   display: flex;
   align-items: center;
   font-weight: bold;
-  font-size: 1.2rem;
+  font-size: clamp(1rem, 3.4vw, 1.2rem);
   
 }
 
 .softkode{
-  width: 50px;
-  height: 45px;
-  margin-left: 50px;
+  width: 48px;
+  height: 42px;
+  margin-left: 16px;
  
 }
 
@@ -82,6 +81,10 @@
     transform-origin: top;
     overflow: hidden;
     z-index: 999;
+  }
+
+  .header{
+    padding:0.6rem 0.9rem;
   }
 
   .nav.show {

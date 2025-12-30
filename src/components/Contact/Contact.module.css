@@ -55,6 +55,26 @@
   cursor: pointer;
 }
 
+.successMessage {
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: linear-gradient(90deg, #e6ffed, #ffffff);
+  border: 1px solid #b7f0c6;
+  color: #046a21;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(4, 106, 33, 0.06);
+}
+
+.errorMessage {
+  margin-top: 12px;
+  padding: 12px 14px;
+  background: linear-gradient(90deg, #fff1f0, #ffffff);
+  border: 1px solid #f5c2c0;
+  color: #8a1f1f;
+  border-radius: 8px;
+  box-shadow: 0 6px 18px rgba(138, 31, 31, 0.04);
+}
+
 @media (max-width: 768px) {
   .cardRow {
     flex-direction: column;

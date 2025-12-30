@@ -20,6 +20,10 @@ const TO_EMAIL = process.env.REACT_APP_CONTACT_TO_EMAIL || ACCOUNT_EMAIL || "";
 const Contact: React.FC = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [sending, setSending] = useState(false);
+  const [status, setStatus] = useState<null | {
+    type: "success" | "error";
+    text: string;
+  }>(null);
 
   useEffect(() => {
     if (PUBLIC_KEY) {
@@ -85,14 +89,17 @@ const Contact: React.FC = () => {
         PUBLIC_KEY
       );
       console.log("EmailJS send success:", resp);
-      alert("Message sent — thank you!");
+      setStatus({ type: "success", text: "Message sent — thank you!" });
       form.reset();
     } catch (err: any) {
       console.error("EmailJS send failed:", err);
-      const status = err && err.status;
+      const statusCode = err && err.status;
       const text = err && (err.text || err.message || JSON.stringify(err));
-      console.log("EmailJS error status:", status, "text:", text);
-      alert(`Failed to send message: ${text || "unknown error"}`);
+      console.log("EmailJS error status:", statusCode, "text:", text);
+      setStatus({
+        type: "error",
+        text: `Failed to send message: ${text || "unknown error"}`,
+      });
     } finally {
       setSending(false);
     }
@@ -107,6 +114,18 @@ const Contact: React.FC = () => {
         <div className={styles.cardRow}>
           <div className={styles.card}>
             <h3>Office</h3>
+            {status && (
+              <div
+                className={
+                  status.type === "success"
+                    ? styles.successMessage
+                    : styles.errorMessage
+                }
+                role="status"
+              >
+                {status.text}
+              </div>
+            )}
             <p>Pune, Maharashtra, India, 411033</p>
           </div>
 

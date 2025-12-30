@@ -71,6 +71,20 @@
   gap: 8px;
 }
 
+.newsStatus {
+  margin-top: 8px;
+  font-size: 0.9rem;
+  color: #fff;
+}
+
+.newsStatus.success {
+  color: #9ff3b8;
+}
+
+.newsStatus.error {
+  color: #ffb4b4;
+}
+
 /* Input field */
 .gmail {
   flex: 1;

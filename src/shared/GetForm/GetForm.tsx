@@ -11,6 +11,10 @@ const ACCOUNT_EMAIL = process.env.REACT_APP_CONTACT_TO_EMAIL || "";
 const GetForm: React.FC = () => {
   const formRef = useRef<HTMLFormElement | null>(null);
   const [sending, setSending] = useState(false);
+  const [status, setStatus] = useState<null | {
+    type: "success" | "error";
+    text: string;
+  }>(null);
 
   useEffect(() => {
     if (PUBLIC_KEY) {
@@ -26,9 +30,10 @@ const GetForm: React.FC = () => {
     e.preventDefault();
     if (!formRef.current) return;
     if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
-      alert(
-        "Email service is not configured. Please set EmailJS keys in your environment."
-      );
+      setStatus({
+        type: "error",
+        text: "Email service is not configured. Please set EmailJS keys in your environment.",
+      });
       return;
     }
 
@@ -57,12 +62,15 @@ const GetForm: React.FC = () => {
         PUBLIC_KEY
       );
       console.log("GetForm email sent:", resp);
-      alert("Message sent — thank you!");
+      setStatus({ type: "success", text: "Message sent — thank you!" });
       form.reset();
     } catch (err: any) {
       console.error("GetForm email error:", err);
       const text = err && (err.text || err.message || JSON.stringify(err));
-      alert(`Failed to send message: ${text || "unknown error"}`);
+      setStatus({
+        type: "error",
+        text: text || "Test failed. Check EmailJS configuration and console.",
+      });
     } finally {
       setSending(false);
     }
@@ -116,6 +124,18 @@ const GetForm: React.FC = () => {
             {sending ? "Sending..." : "Get in touch"}
           </button>
         </form>
+        {status && (
+          <div
+            className={
+              status.type === "success"
+                ? styles.successMessage
+                : styles.errorMessage
+            }
+            role="status"
+          >
+            {status.text}
+          </div>
+        )}
       </div>
 
       {/* Right: Image */}

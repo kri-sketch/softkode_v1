@@ -86,7 +86,7 @@ const Footer: React.FC = () => {
   const openSocial = (url: string) => window.open(url, "_blank", "noopener");
 
   return (
-    <footer className={styles.footerContainer}>
+    <footer className={`container ${styles.footerContainer}`}>
       <div className={styles.topSection}>
         {/* Left: Image + Newsletter */}
         <div className={styles.imageBox}>

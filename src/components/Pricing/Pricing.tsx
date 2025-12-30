@@ -4,7 +4,7 @@ import { PRICING_CARDS } from "../../shared/constants/pricingConstant.ts";
 
 const Pricing: React.FC = () => {
   return (
-    <div className={styles.pricingContainer}>
+    <div className={`container ${styles.pricingContainer}`}>
       <h2 className={styles.heading}>
         <span className={styles.highlight}>Pricing</span> plans
       </h2>

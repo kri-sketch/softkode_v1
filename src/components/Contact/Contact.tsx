@@ -106,7 +106,7 @@ const Contact: React.FC = () => {
   };
 
   return (
-    <div className={styles.container}>
+    <div className={`container ${styles.container}`}>
       <div className={styles.inner}>
         <h1>Contact Us</h1>
         <p>We'd love to hear from you — reach out for inquiries or support.</p>

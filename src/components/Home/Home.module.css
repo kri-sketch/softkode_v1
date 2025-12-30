@@ -8,20 +8,18 @@
   background-size: cover;
 } */
 
- .heroSection {
+.heroSection {
   position: relative;
- 
- margin-top: 90px;
-  
+
+  margin-top: 90px;
+
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-family: 'Sora', sans-serif;
+  font-family: "Sora", sans-serif;
   color: #000;
 }
-
-
 
 .content {
   position: relative;
@@ -68,38 +66,26 @@
   align-items: center;
   cursor: pointer;
   transition: background 0.3s;
-  
 }
-
-
-
-
-
-
 
 /* Mobile view */
 @media screen and (max-width: 768px) {
   .heroSection {
- 
- margin-top: 50px;
-}
-
-.scrollIndicator {
-  margin: 4rem auto 0;
-  font-size: 1.5rem;
-  color: #fff;
-  width: 48px;
-  height: 48px;
-  background-color: black;
-  border-radius: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  cursor: pointer;
-  transition: background 0.3s;
-  
-}
-
-
-
+    margin-top: 50px;
   }
+
+  .scrollIndicator {
+    margin: 4rem auto 0;
+    font-size: 1.5rem;
+    color: #fff;
+    width: 48px;
+    height: 48px;
+    background-color: black;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: background 0.3s;
+  }
+}

@@ -16,7 +16,7 @@ const Client: React.FC = () => {
 
   
   return (
-    <div className={styles.testimonialsWrapper}>
+    <div className={`container ${styles.testimonialsWrapper}`}>
       <div className={styles.testimonialHeader}>
       <div className={styles.testimonialCard}>
         <div className={styles.leftColumn}>

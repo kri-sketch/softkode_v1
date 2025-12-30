@@ -35,7 +35,7 @@ const Software: React.FC = () => {
     (activeStep / (PROGRESS_LABEL.length - 1)) * 100 || 0;
 
   return (
-    <div className={styles.aboutContainer}>
+    <div className={`container ${styles.aboutContainer}`}>
       {/* Belief Section */}
       <section className={styles.beliefSection}>
         <h2 className={styles.beliefFaded}>We believe</h2>

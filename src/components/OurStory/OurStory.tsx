@@ -5,7 +5,7 @@ import { FaFacebook, FaXTwitter } from "react-icons/fa6";
 const OurStory: React.FC = () => {
   return (
     <section id="our-story">
-    <div className={styles.wrapper}>
+    <div className={`container ${styles.wrapper}`}>
       <div className={styles.card}>
         <div className={styles.left}>
           <h2 className={styles.heading}>Our story</h2>

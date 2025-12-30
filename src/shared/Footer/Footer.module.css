@@ -271,8 +271,8 @@
     position: relative;
     left: auto;
     bottom: auto;
-    width: 90%;
-    margin-top: -60px;
+    width: 95%;
+    margin-top: -40px;
     padding: 16px;
   }
 
@@ -299,7 +299,7 @@
     padding: 14px 20px;
     border: none;
     cursor: pointer;
-    font-size: 8px;
+    font-size: 12px;
     font-weight: 500;
     border-top-right-radius: 8px;
     border-bottom-right-radius: 8px;
@@ -333,5 +333,38 @@
 
   .socialIcons {
     justify-content: center;
+    position: static;
+    margin-top: 12px;
+  }
+
+  .bottomBar p {
+    position: static;
+    left: auto;
+    transform: none;
+    margin-top: 8px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 420px) {
+  .newsletterBox {
+    margin-top: 12px;
+    padding: 12px;
+  }
+  .inputGroup {
+    flex-direction: column;
+    gap: 8px;
+  }
+  .gmail {
+    width: 100%;
+    padding: 12px 14px;
+  }
+  .btnn {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 8px;
+  }
+  .newsStatus {
+    text-align: center;
   }
 }

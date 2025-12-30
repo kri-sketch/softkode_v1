@@ -79,3 +79,56 @@
 .error {
   color: #d9534f;
 }
+
+/* Mobile adjustments */
+@media (max-width: 768px) {
+  .modal {
+    width: calc(100% - 32px);
+    max-width: 720px;
+    padding: 18px;
+    grid-template-columns: 1fr;
+    gap: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    margin: 0 8px;
+  }
+
+  .closeBtn {
+    right: 8px;
+    top: 8px;
+    font-size: 18px;
+    padding: 6px 8px;
+  }
+
+  .leftImage {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 8px;
+  }
+
+  .form {
+    padding: 0;
+    gap: 10px;
+  }
+
+  .input,
+  .textarea {
+    font-size: 15px;
+    width: 100%;
+  }
+
+  .textarea {height:140px}
+
+  .submitBtn {
+    width: 100%;
+    padding: 12px 14px;
+  }
+
+  .status {font-size:0.95rem}
+}
+
+@media (max-width: 420px) {
+  .modal {padding:12px}
+  .leftImage {height:140px}
+  .closeBtn{font-size:16px}
+}

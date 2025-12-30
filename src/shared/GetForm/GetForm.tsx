@@ -77,7 +77,7 @@ const GetForm: React.FC = () => {
   };
 
   return (
-    <div className={`container ${styles.contactContainer}`}>
+    <div className={styles.contactContainer}>
       {/* Left: Form */}
       <div className={styles.formSection}>
         <h2>Get in touch</h2>

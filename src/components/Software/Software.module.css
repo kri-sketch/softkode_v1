@@ -1,9 +1,6 @@
-
 body {
   overflow-x: hidden;
 }
-
-
 
 .aboutContainer {
   font-family: "Poppins", sans-serif;
@@ -29,16 +26,19 @@ body {
   font-size: 1.5rem;
   font-weight: 500;
   color: #000;
-
 }
 
 .highlight {
-   background: linear-gradient(180deg, rgba(220, 11, 146, 0.8) 20%, rgba(146, 66, 177, 0.8) 50%, rgba(101, 99, 196, 0.8) 80%);
-   background-clip: text;
+  background: linear-gradient(
+    180deg,
+    rgba(220, 11, 146, 0.8) 20%,
+    rgba(146, 66, 177, 0.8) 50%,
+    rgba(101, 99, 196, 0.8) 80%
+  );
+  background-clip: text;
   -webkit-text-fill-color: transparent;
-   -webkit-background-clip: text;
-  
- 
+  -webkit-background-clip: text;
+
   font-weight: bold;
 }
 
@@ -54,7 +54,12 @@ body {
 
 .progressFilled {
   height: 100%;
-  background: linear-gradient(180deg, rgba(220, 11, 146, 0.8) 20%, rgba(146, 66, 177, 0.8) 50%, rgba(101, 99, 196, 0.8) 80%);
+  background: linear-gradient(
+    180deg,
+    rgba(220, 11, 146, 0.8) 20%,
+    rgba(146, 66, 177, 0.8) 50%,
+    rgba(101, 99, 196, 0.8) 80%
+  );
 
   border-radius: 20px;
   transition: width 1s ease-in-out;
@@ -66,8 +71,13 @@ body {
   top: 50%;
   width: 20px;
   height: 20px;
-  background: linear-gradient(180deg, rgba(220, 11, 146, 0.8) 20%, rgba(146, 66, 177, 0.8) 50%, rgba(101, 99, 196, 0.8) 80%);
- 
+  background: linear-gradient(
+    180deg,
+    rgba(220, 11, 146, 0.8) 20%,
+    rgba(146, 66, 177, 0.8) 50%,
+    rgba(101, 99, 196, 0.8) 80%
+  );
+
   border-radius: 50%;
   transform: translateY(-50%);
   transition: left 1s ease-in-out;
@@ -140,17 +150,6 @@ body {
   border-radius: 8px;
 }
 
-
-
-
-
-
-
-
-
-
-
-
 .iconDiamondGrid {
   display: flex;
   flex-direction: row;
@@ -171,8 +170,8 @@ body {
   padding: 1.5rem 1rem;
   border-radius: 12px;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  width: 110px;
-  height: 80px;
+  width: 120px;
+  height: 90px;
   text-align: center;
   font-weight: bold;
   transition: transform 0.3s ease;
@@ -182,73 +181,68 @@ body {
   transform: translateY(-5px);
 }
 
-
 @media screen and (max-width: 768px) {
- .card {
-  background: #fff;
-  padding: 1rem 1rem;
-  border-radius: 12px;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
-  width: 80px;
-  height: 70px;
-  text-align: center;
-  font-weight: bold;
-  transition: transform 0.3s ease;
-}
+  .card {
+    background: #fff;
+    padding: 1rem 1rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    width: 80px;
+    height: 70px;
+    text-align: center;
+    font-weight: bold;
+    transition: transform 0.3s ease;
+  }
 
-.row {
-  display: flex;
-  flex-direction: row;
-  gap: 1rem;
-  justify-content: center;
-}
+  .row {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: center;
+  }
 
+  .iconDiamondGrid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+  }
 
-.iconDiamondGrid {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  gap: 1rem;
-}
+  .iconImage {
+    width: 45px;
+    height: 45px;
+    margin-bottom: 10px;
+  }
 
-.iconImage {
-  width: 45px;
-  height: 45px;
-  margin-bottom: 10px;
-}
+  .iconText {
+    font-size: 14px;
+    margin-top: -10px;
+  }
 
-.iconText{
-  font-size: 14px;
-  margin-top: -10px;
-}
+  .beliefSection {
+    margin-bottom: 80px;
+    position: relative;
 
-.beliefSection {
-  margin-bottom: 80px;
-  position: relative;
+    flex-wrap: wrap;
+    max-width: 100%;
+  }
 
-  flex-wrap: wrap;
-max-width: 100%;
+  .beliefFaded {
+    font-size: 2rem;
+    color: #d3d3d3;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
 
-}
-
-.beliefFaded {
-  font-size: 2rem;
-  color: #d3d3d3;
-  font-weight: 600;
-  margin-bottom: 10px;
-}
-
-.beliefText {
-  font-size: 1.6rem;
-  font-weight: 500;
-  color: #000;
-  flex-wrap: wrap;
-   white-space: normal;       /* Allow text to wrap */
-  word-wrap: break-word;     /* Break long words if needed */
-  overflow-wrap: anywhere;   /* Force break if no spaces */
-  max-width: 100%;     
-
-}
-
+  .beliefText {
+    font-size: 1.6rem;
+    font-weight: 500;
+    color: #000;
+    flex-wrap: wrap;
+    white-space: normal; /* Allow text to wrap */
+    word-wrap: break-word; /* Break long words if needed */
+    overflow-wrap: anywhere; /* Force break if no spaces */
+    max-width: 100%;
+  }
 }

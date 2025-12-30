@@ -11,8 +11,8 @@ const CONTACT_TO = process.env.REACT_APP_CONTACT_TO_EMAIL || "";
 
 const Footer: React.FC = () => {
   const [email, setEmail] = useState("");
-  const [, setSending] = useState(false);
-  const [, setStatus] = useState<null | {
+  const [sending, setSending] = useState(false);
+  const [status, setStatus] = useState<null | {
     type: "success" | "error";
     text: string;
   }>(null);
@@ -108,10 +108,27 @@ const Footer: React.FC = () => {
                 onChange={(e) => setEmail(e.target.value)}
                 aria-label="Newsletter email"
               />
-              <button className={styles.btnn} onClick={submitNewsletter}>
-                Get in touch
+              <button
+                className={styles.btnn}
+                onClick={submitNewsletter}
+                disabled={sending}
+                aria-disabled={sending}
+              >
+                {sending ? "Sending..." : "Get in touch"}
               </button>
             </div>
+            {status && (
+              <div
+                className={`${styles.newsStatus} ${
+                  status.type === "success"
+                    ? styles.newsSuccess
+                    : styles.newsError
+                }`}
+                role="status"
+              >
+                {status.text}
+              </div>
+            )}
           </div>
                   
         </div>

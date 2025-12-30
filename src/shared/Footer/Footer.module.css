@@ -85,6 +85,15 @@
   color: #ffb4b4;
 }
 
+/* Module-scoped helpers for status colors */
+.newsSuccess {
+  color: #9ff3b8;
+}
+
+.newsError {
+  color: #ffb4b4;
+}
+
 /* Input field */
 .gmail {
   flex: 1;

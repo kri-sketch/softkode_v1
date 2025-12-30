@@ -41,10 +41,13 @@ const Footer: React.FC = () => {
             <div className={styles.inputGroup}>
               <input
                 type="email"
+                id="newsletterEmail"
+                name="newsletterEmail"
                 placeholder="Email address"
                 className={styles.gmail}
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
+                aria-label="Newsletter email"
               />
               <button className={styles.btnn} onClick={submitNewsletter}>
                 Get in touch

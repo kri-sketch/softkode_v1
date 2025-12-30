@@ -4,14 +4,14 @@ body {
 }
 
 .testimonialsWrapper {
-  padding: 60px 40px;
+  padding: 60px 20px;
   background-color: #fdfcff;
   font-family: "Poppins", sans-serif;
   text-align: center;
-  width: 85%;
-
-  display: inline-block;
-  justify-content: center;
+  width: 100%;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  display: block;
 }
 
 .testimonialHeader {

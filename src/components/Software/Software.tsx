@@ -31,29 +31,29 @@ const Software: React.FC = () => {
     return () => clearInterval(interval);
   }, []);
 
-  const progressPercent =
-    (activeStep / (PROGRESS_LABEL.length - 1)) * 100 || 0;
+  const progressPercent = (activeStep / (PROGRESS_LABEL.length - 1)) * 100 || 0;
 
   return (
     <div className={`container ${styles.aboutContainer}`}>
       {/* Belief Section */}
       <section className={styles.beliefSection}>
         <h2 className={styles.beliefFaded}>We believe</h2>
-       
 
         <h3 className={styles.beliefText}>
-  “
-  {BELIEF_TEXT.split(" ").map((word, i) => {
-    const needsHighlight = word === "efficiency" || word === "productivity";
-    return needsHighlight ? (
-      <span key={i} className={styles.highlight}>{word}&nbsp;</span>
-    ) : (
-      <span key={i}>{word}&nbsp;</span>
-    );
-  })}
-  ”
-</h3>
-
+          “
+          {BELIEF_TEXT.split(" ").map((word, i) => {
+            const needsHighlight =
+              word === "efficiency" || word === "productivity";
+            return needsHighlight ? (
+              <span key={i} className={styles.highlight}>
+                {word}&nbsp;
+              </span>
+            ) : (
+              <span key={i}>{word}&nbsp;</span>
+            );
+          })}
+          ”
+        </h3>
 
         {/* Progress Bar with moving dot */}
         <div className={styles.progressBar}>
@@ -64,9 +64,7 @@ const Software: React.FC = () => {
           <div
             className={styles.progressDot}
             style={{
-              left: activeStep <= 0
-                ? "0%"
-                : `calc(${progressPercent}% - 19px)`
+              left: activeStep <= 0 ? "0%" : `calc(${progressPercent}% - 19px)`,
             }}
           />
         </div>
@@ -82,7 +80,8 @@ const Software: React.FC = () => {
             >
               {label.split("\n").map((line, i) => (
                 <React.Fragment key={i}>
-                  {line}<br />
+                  {line}
+                  <br />
                 </React.Fragment>
               ))}
             </span>
@@ -93,20 +92,25 @@ const Software: React.FC = () => {
       {/* Software Providers Section */}
       <section className={styles.softwareSection}>
         <h2 className={styles.softwareHeading}>
-          Our trusted <span className={styles.highlight}>software</span> providers
+          Our trusted <span className={styles.highlight}>software</span>{" "}
+          providers
         </h2>
 
         <div className={styles.iconDiamondGrid}>
           <div className={styles.row}>
             <div className={styles.card}>
-              <img src={reactlogo} alt="React Logo"  className={styles.iconImage} />
+              <img
+                src={reactlogo}
+                alt="React Logo"
+                className={styles.iconImage}
+              />
               <div className={styles.iconText}>React</div>
             </div>
           </div>
           <div className={styles.row}>
             <div className={styles.card}>
-              <img src={gitlogo} alt="Git Logo" className={styles.iconImage}/>
-              <div  className={styles.iconText}>Git</div>
+              <img src={gitlogo} alt="Git Logo" className={styles.iconImage} />
+              <div className={styles.iconText}>Git</div>
             </div>
             <div className={styles.card}>
               <img src={awslogo} alt="AWS Logo" className={styles.iconImage} />
@@ -115,31 +119,55 @@ const Software: React.FC = () => {
           </div>
           <div className={styles.row}>
             <div className={styles.card}>
-              <img src={cloudlogo} alt="Cloud Logo" className={styles.iconImage}/>
+              <img
+                src={cloudlogo}
+                alt="Cloud Logo"
+                className={styles.iconImage}
+              />
               <div className={styles.iconText}>Google Cloud</div>
             </div>
             <div className={styles.card}>
-              <img src={dockerlogo} alt="Docker Logo" className={styles.iconImage}/>
+              <img
+                src={dockerlogo}
+                alt="Docker Logo"
+                className={styles.iconImage}
+              />
               <div className={styles.iconText}>Docker</div>
             </div>
             <div className={styles.card}>
-              <img src={vscode} alt="VSCode Logo" className={styles.iconImage}/>
+              <img
+                src={vscode}
+                alt="VSCode Logo"
+                className={styles.iconImage}
+              />
               <div className={styles.iconText}>Visual Studio Code</div>
             </div>
           </div>
           <div className={styles.row}>
             <div className={styles.card}>
-              <img src={figmalogo} alt="Figma Logo" className={styles.iconImage} />
+              <img
+                src={figmalogo}
+                alt="Figma Logo"
+                className={styles.iconImage}
+              />
               <div className={styles.iconText}>Figma</div>
             </div>
             <div className={styles.card}>
-              <img src={reactlogo} alt="React Logo" className={styles.iconImage}/>
+              <img
+                src={reactlogo}
+                alt="React Logo"
+                className={styles.iconImage}
+              />
               <div className={styles.iconText}>Visual Studio Code</div>
             </div>
           </div>
           <div className={styles.row}>
             <div className={styles.card}>
-              <img src={reactlogo} alt="React Logo" className={styles.iconImage}/>
+              <img
+                src={reactlogo}
+                alt="React Logo"
+                className={styles.iconImage}
+              />
               <div className={styles.iconText}>Visual Studio Code</div>
             </div>
           </div>

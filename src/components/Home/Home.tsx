@@ -5,6 +5,8 @@ import { useNavigate } from "react-router-dom";
 import styles from "./Home.module.css";
 import ContactPopup from "../../shared/ContactPopup/ContactPopup";
 
+import initReveal from "../../shared/hooks/useReveal";
+
 const Home: React.FC = () => {
   const navigate = useNavigate();
   const [popupOpen, setPopupOpen] = useState(false);
@@ -14,8 +16,21 @@ const Home: React.FC = () => {
     return () => clearTimeout(timer);
   }, []);
 
+  useEffect(() => {
+    // initialize reveal animations for this view
+    initReveal();
+  }, []);
+
+  useEffect(() => {
+    // apply themed scrollbar while on Home
+    document.body.classList.add("home-scroll-theme");
+    return () => {
+      document.body.classList.remove("home-scroll-theme");
+    };
+  }, []);
+
   return (
-    <section className={styles.heroSection}>
+    <section className={styles.heroSection} data-reveal>
       <div className={styles.content}>
         <h1 className={styles.title}>{HOME_CONTENT.heroTitle}</h1>
         <p className={styles.subtitle}>

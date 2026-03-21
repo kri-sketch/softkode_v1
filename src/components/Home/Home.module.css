@@ -10,62 +10,99 @@
 
 .heroSection {
   position: relative;
-
-  margin-top: 90px;
-
+  margin-top: 72px;
+  min-height: 72vh;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   font-family: "Sora", sans-serif;
-  color: #000;
+  color: var(--text);
+  background:
+    radial-gradient(
+      1200px 600px at 10% 20%,
+      rgba(123, 97, 255, 0.08),
+      transparent
+    ),
+    radial-gradient(
+      1000px 500px at 90% 80%,
+      rgba(255, 110, 199, 0.06),
+      transparent
+    );
+
+  overflow: hidden;
 }
 
 .content {
   position: relative;
   z-index: 2;
-  max-width: 800px;
+  max-width: 900px;
+  padding: 2rem 1rem;
+  animation: fadeUp 700ms ease both;
 }
 
 .title {
-  font-size: 3.5rem;
-  font-size: clamp(0.95rem, 2.2vw, 1.2rem);
-  line-height: 1.2;
+  font-size: clamp(2.1rem, 6vw, 3.6rem);
+  line-height: 1.05;
   margin-bottom: 1rem;
-  color: #111;
+  color: #0f1720;
+  font-weight: 800;
 }
 
 .subtitle {
-  font-size: 1.2rem;
-  max-width: 800px;
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  max-width: 760px;
   padding: 0 1rem;
-  color: #333;
-  margin-bottom: 2rem;
+  color: var(--muted);
+  margin: 0.5rem auto 1.8rem;
 }
 
 .cta {
-  padding: 0.75rem 1.5rem;
-  font-weight: 600;
+  padding: 0.85rem 1.6rem;
+  font-weight: 700;
   border: none;
-  border-radius: 30px;
-  background-color: #000;
+  border-radius: 999px;
+  background: var(--gradient);
   color: #fff;
   cursor: pointer;
+  box-shadow: 0 8px 24px rgba(123, 97, 255, 0.14);
+  transition:
+    transform 220ms ease,
+    box-shadow 220ms ease;
+}
+
+.cta:hover {
+  transform: translateY(-4px) scale(1.01);
+  box-shadow: 0 18px 36px rgba(123, 97, 255, 0.18);
 }
 
 .scrollIndicator {
-  margin: 4rem auto 0;
+  margin: 3rem auto 0;
   font-size: 1.5rem;
   color: #fff;
-  width: 48px;
-  height: 48px;
-  background-color: black;
+  width: 54px;
+  height: 54px;
+  background: var(--text);
   border-radius: 50%;
   display: flex;
   justify-content: center;
   align-items: center;
   cursor: pointer;
-  transition: background 0.3s;
+  transition: transform 300ms linear;
+  box-shadow: 0 6px 20px rgba(2, 6, 23, 0.12);
+  animation: bounce 1.8s infinite;
+}
+
+@keyframes bounce {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
 }
 
 /* Mobile view */
@@ -74,18 +111,47 @@
     margin-top: 50px;
   }
 
+  .title {
+    font-size: clamp(1.6rem, 6vw, 2.4rem);
+  }
+  .subtitle {
+    padding: 0 0.5rem;
+  }
   .scrollIndicator {
-    margin: 4rem auto 0;
-    font-size: 1.5rem;
-    color: #fff;
     width: 48px;
     height: 48px;
-    background-color: black;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    transition: background 0.3s;
+  }
+}
+
+/* Themed scrollbar for home page (Chrome/Edge/Safari + Firefox fallback) */
+:global(.home-scroll-theme) {
+  /* Firefox fallback color pairing */
+  scrollbar-color: var(--primary-2) rgba(123, 97, 255, 0.06);
+  scrollbar-width: thin;
+}
+
+/* WebKit-based browsers */
+:global(.home-scroll-theme)::-webkit-scrollbar {
+  width: 12px;
+  height: 12px;
+}
+:global(.home-scroll-theme)::-webkit-scrollbar-track {
+  background: rgba(123, 97, 255, 0.06);
+  border-radius: 999px;
+}
+:global(.home-scroll-theme)::-webkit-scrollbar-thumb {
+  background: linear-gradient(90deg, var(--primary-1), var(--primary-2));
+  border-radius: 999px;
+  box-shadow: inset 0 0 0 3px rgba(255, 255, 255, 0.06);
+}
+:global(.home-scroll-theme)::-webkit-scrollbar-thumb:hover {
+  transform: scale(1.02);
+  filter: brightness(0.95);
+}
+
+/* Small screens: narrower thumb */
+@media (max-width: 420px) {
+  :global(.home-scroll-theme)::-webkit-scrollbar {
+    width: 8px;
   }
 }

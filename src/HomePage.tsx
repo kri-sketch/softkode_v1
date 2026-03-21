@@ -2,6 +2,7 @@ import React from "react";
 import Home from "./components/Home/Home.tsx";
 import "./App.css";
 import Software from "./components/Software/Software.tsx";
+import Hiring from "./components/Hiring/Hiring";
 
 import Pricing from "./components/Pricing/Pricing.tsx";
 import Client from "./components/Client/Client.tsx";
@@ -17,6 +18,7 @@ const HomePage: React.FC = () => {
         <Home />
       </div>
 
+      <Hiring />
       <Software />
       <Pricing />
       <Client />

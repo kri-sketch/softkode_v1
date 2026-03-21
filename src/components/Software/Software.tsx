@@ -36,7 +36,7 @@ const Software: React.FC = () => {
   return (
     <div className={styles.aboutContainer}>
       {/* Belief Section */}
-      <section className={styles.beliefSection}>
+      <section className={styles.beliefSection} data-reveal>
         <h2 className={styles.beliefFaded}>We believe</h2>
 
         <h3 className={styles.beliefText}>
@@ -90,7 +90,7 @@ const Software: React.FC = () => {
       </section>
 
       {/* Software Providers Section */}
-      <section className={styles.softwareSection}>
+      <section className={styles.softwareSection} data-reveal>
         <h2 className={styles.softwareHeading}>
           Our trusted <span className={styles.highlight}>software</span>{" "}
           providers

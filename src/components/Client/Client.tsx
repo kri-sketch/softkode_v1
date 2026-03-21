@@ -18,7 +18,7 @@ const Client: React.FC = () => {
   }, [total]);
 
   return (
-    <div className={styles.testimonialsWrapper}>
+    <div className={styles.testimonialsWrapper} data-reveal>
       <div className={styles.testimonialHeader}>
         <div className={styles.testimonialCard}>
           <div className={styles.leftColumn}>

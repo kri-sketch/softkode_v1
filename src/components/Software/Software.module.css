@@ -4,9 +4,10 @@ body {
 
 .aboutContainer {
   font-family: "Poppins", sans-serif;
-  padding: 40px 20px;
+  padding: 20px 16px 16px;
   text-align: center;
   background-color: #fdfcff;
+  overflow: hidden;
 }
 
 /* Belief Section */
@@ -112,20 +113,78 @@ body {
 
 /* Software Section */
 .softwareSection {
-  padding: 20px 0;
+  padding: 24px 0 20px;
+  max-width: 1100px;
+  margin: 0 auto;
+  text-align: center;
 }
 
 .softwareHeading {
-  font-size: 1.8rem;
+  font-size: clamp(2rem, 5.2vw, 3.2rem);
+  font-weight: 900;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.45rem;
+}
+
+.softwareSubheading {
+  font-size: 1.05rem;
+  color: #4c558a;
+  margin-bottom: 1.2rem;
+  max-width: 760px;
+  margin-inline: auto;
+}
+
+.softwareBars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.45rem;
+  margin-bottom: 2.4rem;
+}
+
+.barPrimary,
+.barAccent {
+  width: 80px;
+  height: 8px;
+  border-radius: 999px;
+}
+
+.barPrimary {
+  background: linear-gradient(90deg, #6d5cff 0%, #7184ff 90%);
+}
+
+.barAccent {
+  background: linear-gradient(90deg, #ff80c9, #ff4dbf);
+}
+
+.sectionTabs {
+  display: inline-flex;
+  border: 1px solid rgba(115, 110, 206, 0.35);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.75);
+  overflow: hidden;
+  margin: 0 auto 1rem;
+  box-shadow: 0 8px 16px rgba(90, 95, 175, 0.1);
+}
+
+.tabButton {
+  border: none;
+  background: transparent;
+  padding: 0.55rem 1rem;
   font-weight: 600;
-  margin-bottom: 40px;
+  color: #5c64a8;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.activeTab {
+  background: linear-gradient(90deg, #5b68ff 0%, #d64aff 100%);
+  color: #ffffff;
+  box-shadow: inset 0 0 0 0px rgba(91, 104, 255, 0.5);
 }
 
 .grid {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 20px;
+  display: none;
 }
 
 .card {
@@ -219,30 +278,328 @@ body {
     font-size: 14px;
     margin-top: -10px;
   }
+}
 
-  .beliefSection {
-    margin-bottom: 80px;
+/* Hub-and-spoke partner section (new design) */
+.hubContainer {
+  position: relative;
+  width: min(1020px, 100%);
+  height: 520px;
+  max-height: 76vh;
+  min-height: 500px;
+  margin: 0 auto;
+  padding: 1rem 1.5rem 1.2rem;
+  display: grid;
+  place-items: center;
+  background: radial-gradient(circle at 50% 40%, #f6f4ff, #f3f6ff 52%, #fafbff);
+  overflow: hidden;
+}
+
+.connections {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.orbitCircle,
+.orbitCircleInner,
+.orbitCenterGlow {
+  position: absolute;
+  border-radius: 50%;
+}
+
+.orbitCircle {
+  width: 380px;
+  height: 380px;
+  border: 2px dashed rgba(128, 120, 255, 0.32);
+  box-shadow: 0 0 0 5px rgba(110, 75, 255, 0.06);
+  z-index: 2;
+}
+
+.orbitCircleInner {
+  width: 290px;
+  height: 290px;
+  border: 2px dashed rgba(118, 110, 255, 0.22);
+  z-index: 3;
+}
+
+.orbitCenterGlow {
+  width: 225px;
+  height: 225px;
+  background: radial-gradient(
+    circle,
+    rgba(112, 83, 255, 0.2),
+    rgba(112, 83, 255, 0.02) 65%,
+    transparent 88%
+  );
+  z-index: 4;
+}
+
+.centerHub {
+  position: absolute;
+  width: 180px;
+  height: 180px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 5px solid #4764fd;
+  box-shadow:
+    0 14px 24px rgba(110, 90, 255, 0.2),
+    0 0 0 10px rgba(125, 105, 255, 0.2);
+  z-index: 10;
+}
+
+.centerIcon {
+  width: 58px;
+  height: 58px;
+  margin-bottom: 0.7rem;
+}
+
+.centerTitle {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #17224b;
+}
+
+.centerTag {
+  margin-top: 0.2rem;
+  font-size: 0.9rem;
+  color: #6b79b2;
+  background: linear-gradient(
+    90deg,
+    rgba(99, 60, 255, 0.15),
+    rgba(83, 193, 255, 0.12)
+  );
+  border-radius: 999px;
+  padding: 0.2rem 0.8rem;
+  letter-spacing: 0.01em;
+}
+
+.partnerNode {
+  position: absolute;
+  width: 230px;
+  min-height: 90px;
+  padding: 0.9rem 1rem;
+  border-radius: 999px;
+  background: #ffffff;
+  border: 1px solid rgba(213, 206, 255, 0.7);
+  box-shadow: 0 16px 32px rgba(82, 89, 145, 0.16);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  z-index: 12;
+  transition:
+    transform 0.22s ease,
+    box-shadow 0.22s ease,
+    border-color 0.22s ease;
+}
+
+.partnerNode:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 22px 42px rgba(66, 72, 130, 0.24);
+  border-color: rgba(106, 92, 255, 0.85);
+}
+
+.partnerNode::before,
+.partnerNode::after {
+  display: none;
+}
+
+.partnerNode.nodeTopLeft::before,
+.partnerNode.nodeLeft::before,
+.partnerNode.nodeBottomLeft::before {
+  right: calc(100% + 14px);
+}
+
+.partnerNode.nodeTopLeft::after,
+.partnerNode.nodeLeft::after,
+.partnerNode.nodeBottomLeft::after {
+  right: calc(100% + 8px);
+}
+
+.partnerNode.nodeTopRight::before,
+.partnerNode.nodeRight::before,
+.partnerNode.nodeBottomRight::before {
+  left: calc(100% + 14px);
+  background: linear-gradient(
+    90deg,
+    #00c7ff 0%,
+    var(--line-color, #7b61ff) 100%
+  );
+}
+
+.partnerNode.nodeTopRight::after,
+.partnerNode.nodeRight::after,
+.partnerNode.nodeBottomRight::after {
+  left: calc(100% + 8px);
+}
+
+.partnerIcon {
+  width: 46px;
+  height: 46px;
+  object-fit: contain;
+  border-radius: 50%;
+  background-color: #ffffff;
+  box-shadow: 0 2px 12px rgba(45, 55, 112, 0.12);
+  padding: 6px;
+}
+
+.partnerTextWrapper {
+  text-align: left;
+}
+
+.partnerName {
+  font-size: 1.05rem;
+  font-weight: 800;
+  color: #172453;
+  line-height: 1.1;
+}
+
+.partnerTag {
+  font-size: 0.82rem;
+  color: #5d6393;
+  margin-top: 0.25rem;
+}
+
+.nodeTopLeft {
+  top: 18%;
+  left: 6%;
+}
+
+.nodeTopRight {
+  top: 18%;
+  right: 6%;
+}
+
+.nodeLeft {
+  top: 43%;
+  left: 5.2%;
+}
+
+.nodeRight {
+  top: 43%;
+  right: 5.2%;
+}
+
+.nodeBottomLeft {
+  bottom: 14%;
+  left: 6.8%;
+}
+
+.nodeBottomRight {
+  bottom: 14%;
+  right: 6.8%;
+}
+
+.bottomFeatures {
+  margin-top: 1.4rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0.8rem;
+  background: rgba(255, 255, 255, 0.78);
+  border: 1px solid rgba(209, 206, 255, 0.75);
+  border-radius: 14px;
+  box-shadow: 0 6px 18px rgba(47, 62, 118, 0.08);
+}
+
+.featureCard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-width: 160px;
+  padding: 0.7rem 0.9rem;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(73, 80, 129, 0.09);
+}
+
+.featureIcon {
+  font-size: 1.25rem;
+  margin-bottom: 0.4rem;
+}
+
+.featureCard h4 {
+  font-size: 1rem;
+  margin: 0;
+  font-weight: 800;
+  color: #212f67;
+}
+
+.featureCard p {
+  margin: 0;
+  padding: 0;
+  font-size: 0.82rem;
+  color: #6d76a9;
+}
+
+@media screen and (max-width: 900px) {
+  .hubContainer {
+    height: auto;
+    padding: 1.5rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(150px, 1fr));
+    grid-template-rows: auto auto auto;
+    gap: 0.75rem;
+  }
+
+  .centerHub {
+    grid-column: 1 / -1;
+    width: 170px;
+    height: 170px;
+  }
+
+  .partnerNode,
+  .nodeTopLeft,
+  .nodeTopRight,
+  .nodeLeft,
+  .nodeRight,
+  .nodeBottomLeft,
+  .nodeBottomRight {
     position: relative;
-
-    flex-wrap: wrap;
-    max-width: 100%;
+    top: auto;
+    bottom: auto;
+    left: auto;
+    right: auto;
+    transform: none;
+    width: min(220px, 100%);
   }
 
-  .beliefFaded {
-    font-size: 2rem;
-    color: #d3d3d3;
-    font-weight: 600;
-    margin-bottom: 10px;
+  .partnerNode::before {
+    display: none;
   }
+}
 
-  .beliefText {
-    font-size: 1.6rem;
-    font-weight: 500;
-    color: #000;
-    flex-wrap: wrap;
-    white-space: normal; /* Allow text to wrap */
-    word-wrap: break-word; /* Break long words if needed */
-    overflow-wrap: anywhere; /* Force break if no spaces */
-    max-width: 100%;
-  }
+.beliefSection {
+  margin-bottom: 80px;
+  position: relative;
+
+  flex-wrap: wrap;
+  max-width: 100%;
+}
+
+.beliefFaded {
+  font-size: 2rem;
+  color: #d3d3d3;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.beliefText {
+  font-size: 1.6rem;
+  font-weight: 500;
+  color: #000;
+  flex-wrap: wrap;
+  white-space: normal; /* Allow text to wrap */
+  word-wrap: break-word; /* Break long words if needed */
+  overflow-wrap: anywhere; /* Force break if no spaces */
+  max-width: 100%;
 }

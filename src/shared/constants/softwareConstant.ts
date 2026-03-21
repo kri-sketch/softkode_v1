@@ -1,6 +1,7 @@
 // src/components/Software/software.constants.ts
 
-export const BELIEF_TEXT = "Streamlined processes boost efficiency and productivity";
+export const BELIEF_TEXT =
+  "Streamlined processes boost efficiency and productivity";
 export const SOFTWARE_TOOLS = [
   "React",
   "Git",
@@ -13,10 +14,10 @@ export const SOFTWARE_TOOLS = [
 
 //*export const PROGRESS_LABEL = "Discovery\nand\nplanning";*\\
 export const PROGRESS_LABEL = [
-  "Discovery\nand\nplanning",
+  "Discovery",
   "UI & UX",
   "Development",
-  "Deployment\nand\nLaunch",
+  "Deployment",
   "Quality Assurance",
-  "Support\nand\nMaintenance",
+  "Support",
 ];

@@ -2,14 +2,30 @@ import React, { useEffect, useMemo, useState } from "react";
 import styles from "./Hiring.module.css";
 import initReveal from "../../shared/hooks/useReveal";
 import StepCard from "./StepCard";
-import FeatureCard from "./FeatureCard";
 import { FaCircle, FaCheckCircle } from "react-icons/fa";
 
 const Hiring: React.FC = () => {
   const [activeStep, setActiveStep] = useState(0);
 
   const steps = useMemo(
-    () => ["Sourcing", "Screening", "Matching", "Onboarding"],
+    () => [
+      {
+        title: "Sourcing",
+        desc: "Build a funnel from enterprise-ready sourcing channels.",
+      },
+      {
+        title: "Screening",
+        desc: "Technical and culture fit review on all short-listed profiles.",
+      },
+      {
+        title: "Matching",
+        desc: "Data-driven matching to role, team, and project goals.",
+      },
+      {
+        title: "Onboarding",
+        desc: "Smooth client-vendor onboarding with SLA and compliance.",
+      },
+    ],
     [],
   );
 
@@ -18,12 +34,13 @@ const Hiring: React.FC = () => {
   }, []);
 
   useEffect(() => {
-    const interval = window.setInterval(() => {
+  const delay = activeStep === steps.length - 1 ? 2000 : 4200;
+    const timer = window.setTimeout(() => {
       setActiveStep((value) => (value + 1) % steps.length);
-    }, 4200);
+    }, delay);
 
-    return () => window.clearInterval(interval);
-  }, [steps.length]);
+    return () => window.clearTimeout(timer);
+  }, [activeStep, steps.length]);
 
   return (
     <section className={styles.hiringSection} id="hiring" data-reveal>
@@ -42,21 +59,17 @@ const Hiring: React.FC = () => {
 
           <div className={styles.processingPanel}>
             <div className={styles.processingHeader}>
-              <h3>Candidate Flow & Screening Animation</h3>
-              <p>
-                Live process simulation: sourcing ➜ screening ➜ matching ➜
-                onboarding. The current step is automatically highlighted.
-              </p>
+              <h3>Candidate Flow & Screening Process</h3>
             </div>
 
             <div className={styles.processingFlow}>
-              {steps.map((label, idx) => {
+              {steps.map((step, idx) => {
                 const isActive = idx === activeStep;
                 const isDone = idx < activeStep;
 
                 return (
                   <div
-                    key={label}
+                    key={step.title}
                     className={`${styles.processingStep} ${
                       isActive ? styles.activeStep : ""
                     } ${isDone ? styles.doneStep : ""}`}
@@ -64,7 +77,7 @@ const Hiring: React.FC = () => {
                     <div className={styles.stepPulse} />
                     <div className={styles.stepLabel}>
                       {isDone ? <FaCheckCircle /> : <FaCircle />}
-                      <span>{label}</span>
+                      <span>{step.title}</span>
                     </div>
                     <div className={styles.stepStatus}>
                       {isActive
@@ -78,77 +91,38 @@ const Hiring: React.FC = () => {
               })}
             </div>
 
-            <div className={styles.processingBarWrap}>
+            <div
+              className={styles.processingBarWrap}
+              style={{ "--tmp": activeStep } as React.CSSProperties}
+            >
               <div
                 className={styles.processingBar}
                 style={{ width: `${((activeStep + 1) / steps.length) * 100}%` }}
               />
               <div className={styles.processingPulse} />
             </div>
+
+            <div className={styles.cards}>
+              {steps.map((step, idx) => (
+                <StepCard
+                  key={`${step.title}-${idx}`}
+                  number={idx + 1}
+                  title={step.title}
+                  desc={step.desc}
+                  delay={idx * 80}
+                />
+              ))}
+            </div>
           </div>
 
-          <div className={styles.processCol} aria-hidden={false}>
-            <StepCard
-              number={1}
-              title="Sourcing"
-              desc="Targeted outreach and talent pools."
-              delay={80}
-            />
-            <StepCard
-              number={2}
-              title="Screening"
-              desc="Technical tests and live challenges."
-              delay={160}
-            />
-            <StepCard
-              number={3}
-              title="Matching"
-              desc="Culture and skill fit for your team."
-              delay={240}
-            />
-            <StepCard
-              number={4}
-              title="Onboarding"
-              desc="Smooth ramp and periodic check-ins."
-              delay={320}
-            />
+          <div className={styles.primaryCtaGroup}>
+            <button
+              className="btn cardBtn"
+              onClick={() => window.location.assign("/contact")}
+            >
+              Hire Now
+            </button>
           </div>
-          <button
-            className="btn cardBtn"
-            onClick={() => window.location.assign("/contact")}
-          >
-            Talk to us
-          </button>
-        </div>
-
-        <div className={styles.cards}>
-          <FeatureCard
-            title="Partner with us"
-            text={
-              "Create strategic hiring partnerships and scale teams rapidly with our vetted talent."
-            }
-            cta="Partner"
-            href="/ourstory"
-            delay={140}
-          />
-          <FeatureCard
-            title="Hire vetted resources"
-            text={
-              "Access screened developers and engineers matched to your technical needs and culture."
-            }
-            cta="Hire now"
-            href="/contact"
-            delay={220}
-          />
-          <FeatureCard
-            title="Developer screening"
-            text={
-              "We perform coding rounds, technical interviews and live challenges to ensure quality and fit."
-            }
-            cta="Learn more"
-            href="/services"
-            delay={300}
-          />
         </div>
       </div>
     </section>

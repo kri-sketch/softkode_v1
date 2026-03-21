@@ -10,8 +10,18 @@ import initReveal from "../../shared/hooks/useReveal";
 const Home: React.FC = () => {
   const navigate = useNavigate();
   const [popupOpen, setPopupOpen] = useState(false);
+  const [popupSuppressed, setPopupSuppressed] = useState(false);
 
   useEffect(() => {
+    const saved = localStorage.getItem("popupSuppressedUntil");
+    if (saved) {
+      const until = Number(saved);
+      if (Number.isFinite(until) && until > Date.now()) {
+        setPopupSuppressed(true);
+        return;
+      }
+    }
+
     const timer = setTimeout(() => setPopupOpen(true), 60_000); // show after 60s
     return () => clearTimeout(timer);
   }, []);
@@ -29,6 +39,14 @@ const Home: React.FC = () => {
     };
   }, []);
 
+  const handlePopupClose = () => {
+    setPopupOpen(false);
+    const muteMinutes = 15;
+    const until = Date.now() + muteMinutes * 60 * 1000;
+    localStorage.setItem("popupSuppressedUntil", String(until));
+    setPopupSuppressed(true);
+  };
+
   return (
     <section className={styles.heroSection} data-reveal>
       <div className={styles.content}>
@@ -44,7 +62,10 @@ const Home: React.FC = () => {
         <div className={styles.scrollIndicator}>↓</div>
       </div>
 
-      <ContactPopup open={popupOpen} onClose={() => setPopupOpen(false)} />
+      <ContactPopup
+        open={popupOpen && !popupSuppressed}
+        onClose={handlePopupClose}
+      />
     </section>
   );
 };

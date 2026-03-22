@@ -10,7 +10,7 @@
 
 .heroSection {
   position: relative;
-  margin-top: 72px;
+  /* margin-top: 72px; */
   min-height: 72vh;
   display: flex;
   align-items: center;
@@ -109,17 +109,45 @@
 @media screen and (max-width: 768px) {
   .heroSection {
     margin-top: 50px;
+    padding: 1rem 0.75rem;
+  }
+
+  .content {
+    width: 100%;
+    max-width: 100%;
+    padding: 1rem 0.75rem;
   }
 
   .title {
-    font-size: clamp(1.6rem, 6vw, 2.4rem);
+    font-size: clamp(1.6rem, 7vw, 2.4rem);
   }
   .subtitle {
-    padding: 0 0.5rem;
+    padding: 0 0.7rem;
+    font-size: 1rem;
   }
+
+  .cta {
+    width: min(100%, 320px);
+    margin: 0 auto;
+  }
+
   .scrollIndicator {
     width: 48px;
     height: 48px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .title {
+    font-size: 1.5rem;
+  }
+  .subtitle {
+    font-size: 0.94rem;
+  }
+  .cta {
+    width: 100%;
+    font-size: 0.95rem;
+    padding: 0.8rem 1rem;
   }
 }
 

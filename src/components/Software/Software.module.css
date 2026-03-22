@@ -106,6 +106,40 @@ body {
   font-family: 600;
 }
 
+@media screen and (max-width: 768px) {
+  .progressLabels {
+    width: min(100%, 90%);
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .progressLabel {
+    flex: 0 0 calc(50% - 0.5rem);
+    text-align: center;
+    font-size: 0.9rem;
+    min-width: 130px;
+    line-height: 1.2;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .progressLabels {
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    gap: 6px;
+  }
+
+  .progressLabel {
+    flex: 0 0 auto;
+    min-width: 0;
+    width: 100%;
+    max-width: 320px;
+    padding: 0.25rem 0.35rem;
+    font-size: 0.85rem;
+  }
+}
+
 .labelVisible {
   opacity: 1;
   color: #000;
@@ -522,11 +556,52 @@ body {
   box-shadow: 0 4px 12px rgba(73, 80, 129, 0.09);
 }
 
-.featureIcon {
-  font-size: 1.25rem;
-  margin-bottom: 0.4rem;
+.featureIconBase {
+  width: 42px;
+  height: 42px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(92, 112, 255, 0.18);
+  color: #1e256c;
+  font-size: 1.15rem;
+  margin-bottom: 0.35rem;
+  box-shadow: inset 0 0 0 2px rgba(91, 104, 255, 0.35);
+  animation: heartbeat 1.8s ease-in-out infinite;
 }
 
+.featureIconGif {
+  width: 42px;
+  height: 42px;
+  object-fit: cover;
+  border-radius: 50%;
+  margin-bottom: 0.45rem;
+  border: 1px solid rgba(124, 115, 255, 0.25);
+  animation: pulseGrow 2.4s ease-in-out infinite;
+}
+
+@keyframes pulseGrow {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.08);
+  }
+}
+
+@keyframes heartbeat {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  30% {
+    transform: scale(1.08);
+  }
+  60% {
+    transform: scale(0.98);
+  }
+}
 .featureCard h4 {
   font-size: 1rem;
   margin: 0;
@@ -555,6 +630,7 @@ body {
     grid-column: 1 / -1;
     width: 170px;
     height: 170px;
+    margin: 0 auto;
   }
 
   .partnerNode,
@@ -571,10 +647,90 @@ body {
     right: auto;
     transform: none;
     width: min(220px, 100%);
+    margin: 0 auto;
   }
 
   .partnerNode::before {
     display: none;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  .hubContainer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    height: auto;
+    padding: 1rem;
+  }
+
+  .centerHub {
+    width: 150px;
+    height: 150px;
+    grid-column: auto;
+  }
+
+  .partnerNode {
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    justify-content: center;
+    gap: 0.55rem;
+    padding: 0.8rem;
+  }
+
+  .partnerTextWrapper {
+    text-align: left;
+    width: 100%;
+  }
+
+  .partnerName {
+    font-size: 0.95rem;
+  }
+
+  .partnerTag {
+    font-size: 0.8rem;
+  }
+
+  .bottomFeatures {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .featureCard {
+    width: min(100%, 320px);
+  }
+
+  .softwareSection {
+    padding: 22px 12px 20px;
+  }
+
+  .softwareHeading {
+    font-size: clamp(1.5rem, 7vw, 2.4rem);
+    line-height: 1.2;
+    margin-bottom: 0.6rem;
+  }
+
+  .softwareSubheading {
+    font-size: 0.95rem;
+    max-width: 100%;
+    padding: 0 0.6rem;
+  }
+
+  .sectionTabs {
+    width: min(95%, 420px);
+    margin: 0 auto 0.8rem;
+  }
+
+  .tabButton {
+    padding: 0.46rem 0.75rem;
+    font-size: 0.82rem;
+  }
+
+  .hubContainer {
+    min-height: auto;
+    max-height: none;
   }
 }
 

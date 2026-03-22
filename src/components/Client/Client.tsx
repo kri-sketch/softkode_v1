@@ -54,7 +54,13 @@ const Client: React.FC = () => {
         {/* Client logos */}
         <div className={styles.logoRow}>
           {CLIENT_LOGOS.map((logo, index) => (
-            <img key={index} src={logo.src} alt={logo.alt} />
+            <img
+              key={index}
+              src={logo.src}
+              alt={logo.alt}
+              loading="lazy"
+              decoding="async"
+            />
           ))}
         </div>
       </div>

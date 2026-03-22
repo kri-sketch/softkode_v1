@@ -56,7 +56,7 @@ const Footer: React.FC = () => {
         SERVICE_ID,
         TEMPLATE_ID,
         templateParams,
-        PUBLIC_KEY
+        PUBLIC_KEY,
       );
       console.log("Footer newsletter sent:", resp);
       setStatus({
@@ -80,7 +80,7 @@ const Footer: React.FC = () => {
   const openMap = () =>
     window.open(
       "https://www.google.com/maps/search/?api=1&query=Pune,+Maharashtra,+India",
-      "_blank"
+      "_blank",
     );
 
   const openSocial = (url: string) => window.open(url, "_blank", "noopener");
@@ -95,6 +95,8 @@ const Footer: React.FC = () => {
               src={girlpic}
               alt="Woman digital portrait"
               className={styles.girlimage}
+              loading="lazy"
+              decoding="async"
             />
             <div className={styles.newsletterBox}>
               <p className={styles.title}>Keep in touch</p>

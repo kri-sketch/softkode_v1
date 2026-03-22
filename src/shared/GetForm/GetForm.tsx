@@ -59,7 +59,7 @@ const GetForm: React.FC = () => {
         SERVICE_ID,
         TEMPLATE_ID,
         templateParams,
-        PUBLIC_KEY
+        PUBLIC_KEY,
       );
       console.log("GetForm email sent:", resp);
       setStatus({ type: "success", text: "Message sent — thank you!" });
@@ -140,7 +140,7 @@ const GetForm: React.FC = () => {
 
       {/* Right: Image */}
       <div className={styles.imageSection}>
-        <img src={grouppic} alt="Group Pic" />
+        <img src={grouppic} alt="Group Pic" loading="lazy" decoding="async" />
       </div>
     </div>
   );

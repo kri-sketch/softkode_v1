@@ -242,6 +242,29 @@ const Software: React.FC = () => {
   const centerTitle = activeSection === "providers" ? "React" : "Angular";
   const centerTag = activeSection === "providers" ? "Frontend" : "Framework";
 
+  const featureCards = [
+    {
+      title: "Modern",
+      subtitle: "Tech Stack",
+      emoji: "⚡",
+    },
+    {
+      title: "Fast",
+      subtitle: "Development",
+      emoji: "🚀",
+    },
+    {
+      title: "Scalable",
+      subtitle: "Solutions",
+      emoji: "💜",
+    },
+    {
+      title: "Enterprise",
+      subtitle: "Grade",
+      emoji: "🛡️",
+    },
+  ];
+
   const updateConnections = React.useCallback(() => {
     const centerEl = centerRef.current;
     const containerEl = containerRef.current;
@@ -423,6 +446,8 @@ const Software: React.FC = () => {
               src={centerIcon}
               alt={centerTitle}
               className={styles.centerIcon}
+              loading="lazy"
+              decoding="async"
             />
             <div className={styles.centerTitle}>{centerTitle}</div>
             <div className={styles.centerTag}>{centerTag}</div>
@@ -443,6 +468,8 @@ const Software: React.FC = () => {
                 src={partner.logo}
                 alt={partner.name}
                 className={styles.partnerIcon}
+                loading="lazy"
+                decoding="async"
               />
               <div className={styles.partnerTextWrapper}>
                 <div className={styles.partnerName}>{partner.name}</div>
@@ -453,26 +480,14 @@ const Software: React.FC = () => {
         </div>
 
         <div className={styles.bottomFeatures}>
-          <div className={styles.featureCard}>
-            <div className={styles.featureIcon}>⚡</div>
-            <h4>Modern</h4>
-            <p>Tech Stack</p>
-          </div>
-          <div className={styles.featureCard}>
-            <div className={styles.featureIcon}>🚀</div>
-            <h4>Fast</h4>
-            <p>Development</p>
-          </div>
-          <div className={styles.featureCard}>
-            <div className={styles.featureIcon}>💜</div>
-            <h4>Scalable</h4>
-            <p>Solutions</p>
-          </div>
-          <div className={styles.featureCard}>
-            <div className={styles.featureIcon}>🛡️</div>
-            <h4>Enterprise</h4>
-            <p>Grade</p>
-          </div>
+          {featureCards.map((item) => (
+            <div key={item.title} className={styles.featureCard}>
+              <div className={styles.featureIconBase}>{item.emoji}</div>
+
+              <h4>{item.title}</h4>
+              <p>{item.subtitle}</p>
+            </div>
+          ))}
         </div>
       </section>
     </div>

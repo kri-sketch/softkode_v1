@@ -76,7 +76,13 @@ const ContactPopup: React.FC<Props> = ({ open, onClose }) => {
           ×
         </button>
         <div>
-          <img src={girlpic} alt="Get in touch" className={styles.leftImage} />
+          <img
+            src={girlpic}
+            alt="Get in touch"
+            className={styles.leftImage}
+            loading="lazy"
+            decoding="async"
+          />
         </div>
         <div className={styles.form}>
           <h2>Get in touch</h2>

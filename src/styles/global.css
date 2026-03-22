@@ -37,6 +37,30 @@ body {
   font-size: 16px;
 }
 
+body.theme-exclusion {
+  mix-blend-mode: exclusion;
+  /* background: #111; */
+  color: #f3f3f3;
+}
+
+/* Keep media from inheriting body blend mode in dark theme to avoid color distortion */
+body.theme-exclusion img,
+body.theme-exclusion video,
+body.theme-exclusion svg,
+body.theme-exclusion picture,
+body.theme-exclusion iframe,
+body.theme-exclusion .blend-exclude {
+  mix-blend-mode: normal !important;
+  isolation: isolate !important;
+  opacity: 1 !important;
+  filter: none !important;
+  background: transparent !important;
+}
+
+body.theme-exclusion .header {
+  background: rgba(20, 20, 20, 0.85) !important;
+}
+
 /* Smooth scroll for anchor navigation */
 html {
   scroll-behavior: smooth;

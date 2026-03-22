@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import { Helmet } from "react-helmet-async";
 import { Routes, Route } from "react-router-dom";
 import HomePage from "./HomePage";
@@ -9,8 +9,50 @@ import Software from "./components/Software/Software";
 import Client from "./components/Client/Client";
 import Footer from "./shared/Footer/Footer";
 import Contact from "./components/Contact/Contact";
+import ContactPopup from "./shared/ContactPopup/ContactPopup";
 import BackButton from "./shared/BackButton/BackButton";
+
+const CONTACT_POPUP_SUPPRESS_KEY = "contactPopupSuppressedUntil";
+
 const App: React.FC = () => {
+  const [popupOpen, setPopupOpen] = useState(false);
+  const [suppressUntil, setSuppressUntil] = useState<number>(0);
+
+  useEffect(() => {
+    const saved = localStorage.getItem(CONTACT_POPUP_SUPPRESS_KEY);
+    if (saved) {
+      const until = Number(saved);
+      if (Number.isFinite(until) && until > Date.now()) {
+        setSuppressUntil(until);
+      }
+    }
+  }, []);
+
+  useEffect(() => {
+    const checkPopup = () => {
+      if (Date.now() >= suppressUntil) {
+        setPopupOpen(true);
+      }
+    };
+
+    // show first time one minute after the user lands if not suppressed
+    const initialTimer = setTimeout(checkPopup, 60_000);
+    const interval = setInterval(checkPopup, 60_000);
+
+    return () => {
+      clearTimeout(initialTimer);
+      clearInterval(interval);
+    };
+  }, [suppressUntil]);
+
+  const handlePopupClose = () => {
+    setPopupOpen(false);
+    const muteDuration = 60_000; // 1 minute
+    const next = Date.now() + muteDuration;
+    setSuppressUntil(next);
+    localStorage.setItem(CONTACT_POPUP_SUPPRESS_KEY, String(next));
+  };
+
   return (
     <>
       <Helmet>
@@ -80,6 +122,9 @@ const App: React.FC = () => {
           }
         />
       </Routes>
+
+      <ContactPopup open={popupOpen} onClose={handlePopupClose} />
+
       <Footer />
     </>
   );

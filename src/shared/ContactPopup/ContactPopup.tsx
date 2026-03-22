@@ -29,21 +29,40 @@ const ContactPopup: React.FC<Props> = ({ open, onClose }) => {
     }
   }, []);
 
-  const submit = async () => {
+  const validate = () => {
+    if (!name.trim()) {
+      setStatus({ type: "error", text: "Please enter your name." });
+      return false;
+    }
     if (!email || !/^[\w-.]+@[\w-]+\.[a-z]{2,}$/i.test(email)) {
-      setStatus({ type: "error", text: "Please enter a valid email" });
+      setStatus({ type: "error", text: "Please enter a valid email address." });
+      return false;
+    }
+    if (!message.trim()) {
+      setStatus({ type: "error", text: "Please enter a message." });
+      return false;
+    }
+    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY || !CONTACT_TO) {
+      setStatus({
+        type: "error",
+        text: "Email service is not configured properly.",
+      });
+      return false;
+    }
+    return true;
+  };
+
+  const sendForm = async () => {
+    if (!validate()) {
       return;
     }
-    if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
-      setStatus({ type: "error", text: "Email service not configured" });
-      return;
-    }
+
     setSending(true);
     const params = {
-      from_name: name || email.split("@")[0] || "",
-      from_email: email,
-      contact: phone,
-      message,
+      from_name: name.trim(),
+      from_email: email.trim(),
+      contact: phone.trim(),
+      message: message.trim(),
       to_email: CONTACT_TO,
     };
 
@@ -54,10 +73,13 @@ const ContactPopup: React.FC<Props> = ({ open, onClose }) => {
       setEmail("");
       setPhone("");
       setMessage("");
-      setTimeout(() => onClose(), 1500);
+      setTimeout(() => onClose(), 1600);
     } catch (err: any) {
       const text = err && (err.text || err.message || JSON.stringify(err));
-      setStatus({ type: "error", text: text || "Failed to send" });
+      setStatus({
+        type: "error",
+        text: text || "Failed to send, please try again.",
+      });
     } finally {
       setSending(false);
     }
@@ -84,49 +106,80 @@ const ContactPopup: React.FC<Props> = ({ open, onClose }) => {
             decoding="async"
           />
         </div>
-        <div className={styles.form}>
+        <form
+          className={styles.form}
+          onSubmit={(e) => {
+            e.preventDefault();
+            sendForm();
+          }}
+          noValidate
+        >
           <h2>Get in touch</h2>
-          <input
-            className={styles.input}
-            placeholder="Name"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-          />
-          <input
-            className={styles.input}
-            placeholder="Email"
-            value={email}
-            onChange={(e) => setEmail(e.target.value)}
-          />
-          <input
-            className={styles.input}
-            placeholder="Contact"
-            value={phone}
-            onChange={(e) => setPhone(e.target.value)}
-          />
-          <textarea
-            className={styles.textarea}
-            placeholder="Message"
-            value={message}
-            onChange={(e) => setMessage(e.target.value)}
-          />
-          <button
-            className={styles.submitBtn}
-            onClick={submit}
-            disabled={sending}
-          >
-            {sending ? "Sending..." : "Get in touch"}
+
+          <div className={styles.fieldGroup}>
+            <label htmlFor="popup-name">Name</label>
+            <input
+              id="popup-name"
+              className={styles.input}
+              placeholder="Enter your name"
+              value={name}
+              onChange={(e) => setName(e.target.value)}
+              required
+            />
+          </div>
+
+          <div className={styles.fieldGroup}>
+            <label htmlFor="popup-email">Email</label>
+            <input
+              id="popup-email"
+              className={styles.input}
+              type="email"
+              placeholder="Enter your email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              required
+            />
+          </div>
+
+          <div className={styles.fieldGroup}>
+            <label htmlFor="popup-contact">Contact (optional)</label>
+            <input
+              id="popup-contact"
+              className={styles.input}
+              type="tel"
+              placeholder="Enter phone number"
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+            />
+          </div>
+
+          <div className={styles.fieldGroup}>
+            <label htmlFor="popup-message">Message</label>
+            <textarea
+              id="popup-message"
+              className={styles.textarea}
+              placeholder="Please enter your message"
+              value={message}
+              onChange={(e) => setMessage(e.target.value)}
+              required
+            />
+          </div>
+
+          <button className={styles.submitBtn} type="submit" disabled={sending}>
+            {sending ? "Sending..." : "Send Message"}
           </button>
+
           {status && (
             <div
               className={`${styles.status} ${
                 status.type === "success" ? styles.success : styles.error
               }`}
+              role="alert"
             >
               {status.text}
             </div>
           )}
-        </div>
+        </form>
       </div>
     </div>
   );

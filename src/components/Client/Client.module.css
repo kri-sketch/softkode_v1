@@ -4,8 +4,8 @@ body {
 }
 
 .testimonialsWrapper {
-  padding: 60px 20px;
-  background-color: #fdfcff;
+  padding: 80px 24px;
+  background-color: #f8f4ff;
   font-family: "Poppins", sans-serif;
   text-align: center;
   width: 100%;
@@ -16,220 +16,248 @@ body {
 
 .testimonialHeader {
   min-height: 55vh;
+  background: linear-gradient(130deg, #f7f2ff 0%, #eff6ff 40%, #fefcff 100%);
+  border-radius: 40px;
+  box-shadow:
+    0 14px 35px rgba(45, 44, 66, 0.09),
+    0 2px 12px rgba(88, 84, 121, 0.08);
+  border: 1px solid rgba(201, 190, 255, 0.3);
+  overflow: hidden;
+  position: relative;
+}
 
-  background-color: #f9f4ff;
+.testimonialHeader::before,
+.testimonialHeader::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.45;
+  z-index: 1;
+}
 
-  border-radius: 30px;
-  box-shadow: 0px -1px 14px 0px rgba(0, 0, 0, 0.5) inset;
+.testimonialHeader::before {
+  width: 260px;
+  height: 260px;
+  background: #cdb5ff;
+  top: -80px;
+  left: -80px;
+}
 
-  box-shadow: -17px 0px 20px 0px rgba(255, 255, 255, 0.55) inset;
+.testimonialHeader::after {
+  width: 300px;
+  height: 300px;
+  background: #8cbcff;
+  bottom: -120px;
+  right: -120px;
 }
 
 .testimonialCard {
-  padding: 40px;
-
+  padding: 50px 40px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-
-  gap: 30px;
-  margin-bottom: 50px;
+  align-items: flex-start;
+  gap: 35px;
+  margin-bottom: 35px;
+  position: relative;
+  z-index: 2;
 }
 
 .leftColumn {
   flex: 1;
-  min-width: 250px;
-  text-align: left;
-  font-size: 35px;
+  min-width: 280px;
+  font-size: clamp(2rem, 4vw, 3.8rem);
   font-family: "Sora", sans-serif;
-  line-height: 140%;
-  letter-spacing: -4%;
-  font-weight: 600;
-  text-align: center;
-  margin-top: 50px;
-  margin-right: 150px;
-  margin-left: 50px;
+  line-height: 1.08;
+  font-weight: 800;
+  color: #111;
+  text-align: left;
+  margin: 24px 0 0 40px;
 }
 
 .rightColumn {
-  flex: 2;
-  min-width: 300px;
+  flex: 1.8;
+  min-width: 320px;
   text-align: left;
-  margin-left: 100px;
-  margin-top: -90px;
+  margin: 0;
 }
 
 .highlight {
-  background: linear-gradient(180deg, #df87ff 50%, #ae99ff 50%, #7facff 100%);
-
+  background: linear-gradient(180deg, #8b7dff, #9968ff 55%, #8cc5ff);
+  color: transparent;
   background-clip: text;
-  -webkit-text-fill-color: transparent;
   -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+}
 
-  opacity: 0.5;
+.quotesColumn {
+  position: relative;
+  margin-bottom: 12px;
 }
 
 .quoteIcon {
+  font-size: 5rem;
+  line-height: 1;
+  color: #baa5ff;
+  font-weight: 800;
+  opacity: 0.35;
   display: inline-block;
-  transform: rotate(0deg) scaleX(-1); /* Rotate + Mirror */
-  /* Adjust size as needed */
-  font-weight: bold;
-
-  background: linear-gradient(180deg, #df87ff 73%, #ae99ff 50%, #7facff 100%);
-
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text;
-  font-size: 10rem;
-  opacity: 0.5;
-  margin: -5px;
+  margin-bottom: -22px;
 }
-
-.feedback {
-  font-size: 1rem;
-  color: #333;
-  margin: 15px 0;
-}
-
-.clientName {
-  font-weight: bold;
-  font-size: 1rem;
-  margin-top: 10px;
-}
-
-.clientRole {
-  font-size: 0.9rem;
-  color: #666;
-}
-
-.logoRow {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 90px;
-  align-items: center;
-}
-
-.logoRow img {
-  height: 110px;
-  object-fit: contain;
-  max-width: 100px;
-}
-
-/* Responsive */
 
 .carousel {
   position: relative;
   width: 100%;
-  overflow: hidden;
-  min-height: 120px;
-  margin-left: 90px;
-  margin-top: -40px;
+  min-height: 175px;
+  margin-top: 8px;
 }
 
 .slide {
   display: none;
-  transition: opacity 0.5s ease-in-out;
+  opacity: 0;
+  transition:
+    opacity 0.6s ease,
+    transform 0.6s ease;
+  transform: translateY(12px);
 }
 
 .slide.active {
   display: block;
+  opacity: 1;
+  transform: translateY(0);
 }
 
-.controls button {
-  background-color: transparent;
-  border: none;
-  font-size: 20px;
-  cursor: pointer;
-  color: #7facff;
+.slideInner {
+  background: #ffffff;
+  border: 1px solid rgba(143, 130, 255, 0.18);
+  box-shadow: 0 10px 30px rgba(46, 43, 90, 0.08);
+  border-radius: 20px;
+  padding: 28px 24px;
+  text-align: left;
+  max-width: 780px;
+  margin: 0 auto;
 }
 
 .feedback {
-  display: flex;
-  flex-direction: column;
-  gap: 4px;
   font-family: "DM Sans", sans-serif;
-  font-size: 16px;
-  color: #333;
-  width: 70%;
+  font-size: clamp(0.95rem, 2vw, 1.05rem);
+  color: #2f2f3c;
+  line-height: 1.75;
+  margin: 0 0 18px;
 }
 
 .clientName {
-  font-weight: bold;
-  margin-top: 10px;
+  font-weight: 900;
+  font-size: 1.07rem;
+  color: #1b1a2b;
 }
 
 .clientRole {
-  font-size: 14px;
-  color: gray;
+  font-size: 0.95rem;
+  color: #656876;
+  margin-top: 4px;
+}
+
+.logoRow {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 60px;
+  margin: 0 auto 28px;
+  position: relative;
+  z-index: 2;
+}
+
+.logoRow img {
+  max-width: 120px;
+  height: auto;
+  object-fit: contain;
+  filter: grayscale(100%);
+  opacity: 0.85;
+  transition:
+    filter 0.25s ease,
+    opacity 0.25s ease,
+    transform 0.25s ease;
+}
+
+.logoRow img:hover {
+  filter: none;
+  opacity: 1;
+  transform: translateY(-3px);
+}
+
+@media (max-width: 1024px) {
+  .testimonialCard {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 30px;
+  }
+
+  .leftColumn {
+    text-align: center;
+    margin: 0;
+  }
+
+  .rightColumn {
+    width: 100%;
+  }
+
+  .testimonialHeader {
+    min-height: auto;
+  }
+
+  .logoRow {
+    gap: 42px;
+  }
+
+  .logoRow img {
+    max-width: 90px;
+  }
 }
 
 @media (max-width: 768px) {
   .testimonialsWrapper {
-    padding: 30px 20px;
-    width: 90%;
-  }
-
-  .testimonialHeader {
-    height: auto;
-    padding: 20px;
-    border-radius: 20px;
+    padding: 40px 14px;
   }
 
   .testimonialCard {
-    flex-direction: column;
-    align-items: center;
-    gap: 20px;
-    padding: 20px;
+    padding: 24px;
+    gap: 18px;
   }
 
   .leftColumn {
-    font-size: 28px;
-    margin: 0;
-    text-align: center;
-  }
-
-  .rightColumn {
-    margin: 0;
-    text-align: center;
-  }
-
-  .quotesColumn {
-    margin-right: 260px;
+    font-size: 1.84rem;
   }
 
   .quoteIcon {
-    font-size: 4rem;
-    margin: 0px;
+    font-size: 3.5rem;
   }
 
-  .carousel {
-    margin: 20px auto 0;
-    margin-left: 0;
-    width: 100%;
-    min-height: 100px;
+  .slideInner {
+    padding: 16px;
   }
 
   .feedback {
-    width: 100%;
-    font-size: 15px;
+    font-size: 0.94rem;
   }
 
   .clientName {
-    font-size: 16px;
+    font-size: 1rem;
   }
 
   .clientRole {
-    font-size: 13px;
+    font-size: 0.83rem;
   }
 
   .logoRow {
-    gap: 30px;
-    padding-top: 20px;
+    gap: 24px;
   }
 
   .logoRow img {
-    height: 60px;
-    max-width: 70px;
+    max-width: 73px;
   }
 }

@@ -3,6 +3,7 @@ import Home from "./components/Home/Home.tsx";
 import "./App.css";
 import Software from "./components/Software/Software.tsx";
 import Hiring from "./components/Hiring/Hiring";
+import LatestNews from "./components/LatestNews/LatestNews";
 
 import Pricing from "./components/Pricing/Pricing.tsx";
 import Client from "./components/Client/Client.tsx";
@@ -23,6 +24,7 @@ const HomePage: React.FC = () => {
       <Pricing />
       <Client />
       <GetForm />
+      <LatestNews />
       {/* <OurStory /> */}
 
       {/* Footer is rendered globally in App.tsx */}

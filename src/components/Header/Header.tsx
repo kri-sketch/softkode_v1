@@ -1,11 +1,25 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
-import { FaBars } from "react-icons/fa";
+import { FaBars, FaMoon, FaSun } from "react-icons/fa";
 import softkodeLogo from "../../shared/image/positive.png";
 
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
+  const [isExclusionMode, setExclusionMode] = useState(false);
+
+  useEffect(() => {
+    const saved = localStorage.getItem("themeExclusion") === "true";
+    setExclusionMode(saved);
+    document.body.classList.toggle("theme-exclusion", saved);
+  }, []);
+
+  const toggleTheme = () => {
+    const next = !isExclusionMode;
+    setExclusionMode(next);
+    localStorage.setItem("themeExclusion", String(next));
+    document.body.classList.toggle("theme-exclusion", next);
+  };
 
   const toggleMenu = () => setMenuOpen(!isMenuOpen);
 
@@ -38,16 +52,30 @@ const Header = () => {
             <Link to="/services">Services</Link>
           </li>
           <li>
-            <Link to="/pricing">Pricing</Link>
+            <Link to="/ourstory">Our story</Link>
           </li>
           <li>
-            <Link to="/ourstory">Our story</Link>
+            <Link to="/#latest-news">Tech Updates</Link>
           </li>
           <li>
             <Link to="/caseStudy">Case Study</Link>
           </li>
         </ul>
       </nav>
+
+      <button
+        className={styles.themeToggle}
+        onClick={toggleTheme}
+        aria-label="Toggle dark/night blend mode"
+        type="button"
+      >
+        <span className={styles.iconContainer}>
+          {isExclusionMode ? <FaSun /> : <FaMoon />}
+        </span>
+        <span className={styles.themeLabel}>
+          {isExclusionMode ? "Light Mode" : "Dark Mode"}
+        </span>
+      </button>
 
       <div className={styles.hamburger} onClick={toggleMenu}>
         <FaBars />

@@ -31,7 +31,6 @@ const Client: React.FC = () => {
           <div className={styles.rightColumn}>
             <div className={styles.quotesColumn}>
               <span className={styles.quoteIcon}>,</span>
-              <span className={styles.quoteIcon}>,</span>
             </div>
 
             <div className={styles.carousel}>
@@ -42,9 +41,11 @@ const Client: React.FC = () => {
                   }`}
                   key={index}
                 >
-                  <p className={styles.feedback}>{testimonial.message}</p>
-                  <p className={styles.clientName}>{testimonial.name}</p>
-                  <p className={styles.clientRole}>{testimonial.role}</p>
+                  <div className={styles.slideInner}>
+                    <p className={styles.feedback}>{testimonial.message}</p>
+                    <p className={styles.clientName}>{testimonial.name}</p>
+                    <p className={styles.clientRole}>{testimonial.role}</p>
+                  </div>
                 </div>
               ))}
             </div>

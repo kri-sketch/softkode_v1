@@ -42,15 +42,36 @@
   flex-direction: column;
   gap: 10px;
 }
+.fieldGroup {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+.fieldGroup label {
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #2b2d3a;
+  letter-spacing: 0.02em;
+}
 .input,
 .textarea {
   padding: 10px 12px;
   border-radius: 8px;
   border: 1px solid #e6e6e6;
   font-size: 14px;
+  background: #fff;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
+.input:focus,
+.textarea:focus {
+  border-color: #8e80ff;
+  box-shadow: 0 0 0 3px rgba(141, 128, 255, 0.16);
+  outline: none;
 }
 .textarea {
-  height: 110px;
+  min-height: 110px;
   resize: vertical;
 }
 .submitBtn {
@@ -61,6 +82,10 @@
   border: none;
   cursor: pointer;
   font-weight: 700;
+}
+.submitBtn:disabled {
+  opacity: 0.65;
+  cursor: not-allowed;
 }
 .status {
   font-size: 0.95rem;
@@ -88,7 +113,7 @@
     padding: 18px;
     grid-template-columns: 1fr;
     gap: 12px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
     margin: 0 8px;
   }
 
@@ -117,18 +142,28 @@
     width: 100%;
   }
 
-  .textarea {height:140px}
+  .textarea {
+    height: 140px;
+  }
 
   .submitBtn {
     width: 100%;
     padding: 12px 14px;
   }
 
-  .status {font-size:0.95rem}
+  .status {
+    font-size: 0.95rem;
+  }
 }
 
 @media (max-width: 420px) {
-  .modal {padding:12px}
-  .leftImage {height:140px}
-  .closeBtn{font-size:16px}
+  .modal {
+    padding: 12px;
+  }
+  .leftImage {
+    height: 140px;
+  }
+  .closeBtn {
+    font-size: 16px;
+  }
 }

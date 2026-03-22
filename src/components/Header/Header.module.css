@@ -67,6 +67,55 @@
   background-color: #222;
 }
 
+.themeToggle {
+  background: rgba(0, 0, 0, 0.06);
+  border: 1px solid rgba(92, 91, 112, 0.2);
+  border-radius: 9999px;
+  color: #2f2b58;
+  min-width: 110px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  padding: 0 0.6rem;
+  cursor: pointer;
+  margin-right: 0.6rem;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease;
+}
+
+.themeToggle:hover {
+  background: rgba(0, 0, 0, 0.12);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.iconContainer {
+  display: grid;
+  place-items: center;
+  animation: pulseIcon 1.6s infinite ease-in-out;
+}
+
+.themeLabel {
+  font-size: 0.78rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+@keyframes pulseIcon {
+  0%,
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.85;
+  }
+}
+
 .hamburger {
   display: none;
   background-color: black;

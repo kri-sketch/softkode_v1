@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState } from "react";
 import styles from "./ChatAssistant.module.css";
 import emailjs from "@emailjs/browser";
 import softkodeLogo from "../../shared/image/positive.png";
@@ -14,8 +14,26 @@ type ChatMessage = {
   text: string;
 };
 
+const techMotivation = [
+  "Tiny code change today can scale to millions of users tomorrow!",
+  "Every line you write is an opportunity to build something meaningful.",
+  "Optimized architecture frees time to innovate, not just iterate.",
+  "In software, the best feature is the one that makes users’ lives easier.",
+  "Resilience in code is the same as resilience in thinking — keep going.",
+  "Did you know Facebook built React to solve UI complexity at scale?",
+  "JavaScript was created in 10 days and now powers millions of apps.",
+  "Google’s first search engine used Python and C++ in the backend.",
+  "Linux started as a personal project and now runs most cloud servers.",
+  "Edge performance usually wins users more than a shiny UI.",
+];
+
 const ChatAssistant: React.FC = () => {
   const [chatOpen, setChatOpen] = useState(false);
+  const [borderActive, setBorderActive] = useState(false);
+  const [showTipBanner, setShowTipBanner] = useState(false);
+  const [latestTip, setLatestTip] = useState<string>(
+    "Softkode Assistant is ready with a new tech insight!",
+  );
   const [chatMessages, setChatMessages] = useState<ChatMessage[]>([
     {
       id: 1,
@@ -36,6 +54,73 @@ const ChatAssistant: React.FC = () => {
     type: "success" | "error";
     text: string;
   }>(null);
+
+  const addChatMessage = useCallback(
+    (from: "assistant" | "user", text: string) => {
+      setChatMessages((prev) => {
+        if (
+          from === "assistant" &&
+          prev.length > 0 &&
+          prev[prev.length - 1].text === text
+        ) {
+          return prev;
+        }
+
+        const next = [...prev, { id: prev.length + 1, from, text }];
+        return next.slice(-10); // keep last 10 messages
+      });
+
+      if (from === "assistant") {
+        setLatestTip(text);
+      }
+    },
+    [],
+  );
+
+  useEffect(() => {
+    if (!chatOpen) return;
+
+    // immediate first tip on open
+    addChatMessage(
+      "assistant",
+      techMotivation[Math.floor(Math.random() * techMotivation.length)],
+    );
+
+    const interval = setInterval(() => {
+      addChatMessage(
+        "assistant",
+        techMotivation[Math.floor(Math.random() * techMotivation.length)],
+      );
+    }, 15000);
+
+    return () => clearInterval(interval);
+  }, [chatOpen, addChatMessage]);
+
+  useEffect(() => {
+    const pickTip = () => {
+      const tip =
+        techMotivation[Math.floor(Math.random() * techMotivation.length)];
+      setLatestTip(tip);
+      setShowTipBanner(true);
+      setBorderActive(true);
+      const timeout = window.setTimeout(() => {
+        setShowTipBanner(false);
+        setBorderActive(false);
+      }, 4000);
+      return timeout;
+    };
+
+    let hideTimeout = pickTip();
+    const interval = window.setInterval(() => {
+      clearTimeout(hideTimeout);
+      hideTimeout = pickTip();
+    }, 30000);
+
+    return () => {
+      clearInterval(interval);
+      clearTimeout(hideTimeout);
+    };
+  }, []);
 
   useEffect(() => {
     if (PUBLIC_KEY) {
@@ -72,10 +157,6 @@ const ChatAssistant: React.FC = () => {
     }
 
     return emailjs.send(SERVICE_ID, TEMPLATE_ID, templateParams, PUBLIC_KEY);
-  };
-
-  const addChatMessage = (from: "assistant" | "user", text: string) => {
-    setChatMessages((prev) => [...prev, { id: prev.length + 1, from, text }]);
   };
 
   const handleChatInputSubmit = (e: React.FormEvent) => {
@@ -146,9 +227,18 @@ const ChatAssistant: React.FC = () => {
   return (
     <>
       <button
-        className={styles.chatLauncher}
+        className={`${styles.chatLauncher} ${borderActive ? styles.chatLauncherActive : ""}`}
         type="button"
-        onClick={() => setChatOpen((s) => !s)}
+        onClick={() =>
+          setChatOpen((s) => {
+            const next = !s;
+            if (next) {
+              setBorderActive(false);
+              setShowTipBanner(false);
+            }
+            return next;
+          })
+        }
         aria-label="Open Softkode chat assistant"
       >
         <img
@@ -159,6 +249,23 @@ const ChatAssistant: React.FC = () => {
           decoding="async"
         />
       </button>
+
+      {!chatOpen && showTipBanner && (
+        <div className={styles.tipBanner} role="status" aria-live="polite">
+          <span>💡 Softkode Tip:</span>
+          <strong>{latestTip}</strong>
+          <button
+            type="button"
+            className={styles.openChatFromTip}
+            onClick={() => {
+              setChatOpen(true);
+              setShowTipBanner(false);
+            }}
+          >
+            Open Chat
+          </button>
+        </div>
+      )}
 
       {chatOpen && (
         <div
@@ -171,6 +278,9 @@ const ChatAssistant: React.FC = () => {
               <h3>Softkode Chat Assistant</h3>
               <p className={styles.chatTagline}>
                 Your in-app support for any page.
+              </p>
+              <p className={styles.proTipLabel}>
+                Pro Tip: Check these quick tech insights every 15s.
               </p>
             </div>
             <button

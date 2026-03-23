@@ -73,11 +73,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(
-    160deg,
-    rgba(8, 15, 55, 0.86),
-    rgba(18, 32, 79, 0.72)
-  );
+  background: bottom;
   z-index: 1;
 }
 

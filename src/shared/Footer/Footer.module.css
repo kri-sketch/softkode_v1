@@ -21,14 +21,40 @@
   position: relative;
   border-radius: 18px;
   overflow: visible;
+  background: linear-gradient(140deg, #091018 0%, #171f36 100%);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  padding: 20px;
 }
 
-.imageBox img {
-  width: 100%;
-  height: auto;
-  display: block;
+.brandBox {
+  text-align: center;
+  color: #fff;
+  margin-bottom: 14px;
+}
+
+.brandBox h3 {
+  margin: 10px 0 6px;
+  font-size: 1.6rem;
+  letter-spacing: 0.02em;
+}
+
+.brandBox p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.45;
+  color: rgba(255, 255, 255, 0.9);
+}
+
+.brandLogo {
+  width: 78px;
+  height: 78px;
   border-radius: 18px;
-  object-fit: cover;
+  border: 1px solid rgba(255, 255, 255, 0.18);
+  background: #fff;
+  padding: 8px;
+  object-fit: contain;
+  margin: 0 auto;
+  display: block;
 }
 
 /* Wrapper to push content to top */
@@ -38,7 +64,7 @@
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
-  bottom: -28px;
+  bottom: -50px;
   width: 420px;
   border-radius: 14px;
   padding: 14px 18px;
@@ -262,9 +288,11 @@
     position: relative;
   }
 
-  .girlimage {
-    width: 90%;
-    margin-top: 0;
+  .brandLogo {
+    width: 60px;
+    height: 60px;
+    border-radius: 16px;
+    object-fit: contain;
   }
 
   .newsletterBox {

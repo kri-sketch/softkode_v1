@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import styles from "./ContactPopup.module.css";
-import girlpic from "../image/girl.png";
+import softkodeLogo from "../image/positive.png";
+import bgImage from "../image/bg.png";
 import emailjs from "@emailjs/browser";
 
 const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID || "";
@@ -97,14 +98,32 @@ const ContactPopup: React.FC<Props> = ({ open, onClose }) => {
         >
           ×
         </button>
-        <div>
-          <img
-            src={girlpic}
-            alt="Get in touch"
-            className={styles.leftImage}
-            loading="lazy"
-            decoding="async"
-          />
+        <div
+          className={styles.brandPanel}
+          style={{
+            backgroundImage: `linear-gradient(180deg, rgba(5,11,33,.72), rgba(17,29,58,.75)), url(${bgImage})`,
+            backgroundPosition: "center",
+            backgroundSize: "cover",
+          }}
+        >
+          <div className={styles.brandPanelContent}>
+            <div className={styles.brandLogoRow}>
+              <img
+                src={softkodeLogo}
+                alt="SoftKode logo"
+                className={styles.brandLogo}
+              />
+              <div className={styles.badge}>
+                <span className={styles.badgeIcon}>📩</span>
+                <span>Get in Touch</span>
+              </div>
+            </div>
+            <h3>SoftKode Contact Hub</h3>
+            <p>
+              High-impact lead capture with the same rich visuals as the hero
+              section. Stylishly consistent, simple, and strongly branded.
+            </p>
+          </div>
         </div>
         <form
           className={styles.form}
@@ -118,51 +137,71 @@ const ContactPopup: React.FC<Props> = ({ open, onClose }) => {
 
           <div className={styles.fieldGroup}>
             <label htmlFor="popup-name">Name</label>
-            <input
-              id="popup-name"
-              className={styles.input}
-              placeholder="Enter your name"
-              value={name}
-              onChange={(e) => setName(e.target.value)}
-              required
-            />
+            <div className={styles.inputWrapper}>
+              <span className={styles.inputIcon} aria-hidden="true">
+                👤
+              </span>
+              <input
+                id="popup-name"
+                className={styles.input}
+                placeholder="Enter your name"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                required
+              />
+            </div>
           </div>
 
           <div className={styles.fieldGroup}>
             <label htmlFor="popup-email">Email</label>
-            <input
-              id="popup-email"
-              className={styles.input}
-              type="email"
-              placeholder="Enter your email"
-              value={email}
-              onChange={(e) => setEmail(e.target.value)}
-              required
-            />
+            <div className={styles.inputWrapper}>
+              <span className={styles.inputIcon} aria-hidden="true">
+                ✉️
+              </span>
+              <input
+                id="popup-email"
+                className={styles.input}
+                type="email"
+                placeholder="Enter your email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                required
+              />
+            </div>
           </div>
 
           <div className={styles.fieldGroup}>
             <label htmlFor="popup-contact">Contact (optional)</label>
-            <input
-              id="popup-contact"
-              className={styles.input}
-              type="tel"
-              placeholder="Enter phone number"
-              value={phone}
-              onChange={(e) => setPhone(e.target.value)}
-            />
+            <div className={styles.inputWrapper}>
+              <span className={styles.inputIcon} aria-hidden="true">
+                📞
+              </span>
+              <input
+                id="popup-contact"
+                className={styles.input}
+                type="tel"
+                placeholder="Enter phone number"
+                value={phone}
+                onChange={(e) => setPhone(e.target.value)}
+              />
+            </div>
           </div>
 
           <div className={styles.fieldGroup}>
             <label htmlFor="popup-message">Message</label>
-            <textarea
-              id="popup-message"
-              className={styles.textarea}
-              placeholder="Please enter your message"
-              value={message}
-              onChange={(e) => setMessage(e.target.value)}
-              required
-            />
+            <div className={styles.inputWrapper}>
+              <span className={styles.inputIcon} aria-hidden="true">
+                📝
+              </span>
+              <textarea
+                id="popup-message"
+                className={styles.textarea}
+                placeholder="Please enter your message"
+                value={message}
+                onChange={(e) => setMessage(e.target.value)}
+                required
+              />
+            </div>
           </div>
 
           <button className={styles.submitBtn} type="submit" disabled={sending}>

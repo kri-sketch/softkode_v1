@@ -35,7 +35,7 @@ const Contact: React.FC = () => {
       }
     } else {
       console.warn(
-        "EmailJS public key not set (REACT_APP_EMAILJS_PUBLIC_KEY)."
+        "EmailJS public key not set (REACT_APP_EMAILJS_PUBLIC_KEY).",
       );
     }
   }, []);
@@ -45,7 +45,7 @@ const Contact: React.FC = () => {
     if (!formRef.current) return;
     if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
       alert(
-        "Email service is not configured. Please set EmailJS keys in your environment. See README or .env.example."
+        "Email service is not configured. Please set EmailJS keys in your environment. See README or .env.example.",
       );
       return;
     }
@@ -86,7 +86,7 @@ const Contact: React.FC = () => {
         SERVICE_ID,
         TEMPLATE_ID,
         templateParams,
-        PUBLIC_KEY
+        PUBLIC_KEY,
       );
       console.log("EmailJS send success:", resp);
       setStatus({ type: "success", text: "Message sent — thank you!" });
@@ -126,7 +126,7 @@ const Contact: React.FC = () => {
                 {status.text}
               </div>
             )}
-            <p>Pune, Maharashtra, India, 411033</p>
+            <p>Pune, Maharashtra, India, 411015</p>
           </div>
 
           <div className={styles.card}>

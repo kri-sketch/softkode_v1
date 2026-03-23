@@ -11,6 +11,7 @@ import Footer from "./shared/Footer/Footer";
 import Contact from "./components/Contact/Contact";
 import ContactPopup from "./shared/ContactPopup/ContactPopup";
 import BackButton from "./shared/BackButton/BackButton";
+import ChatAssistant from "./shared/ChatAssistant/ChatAssistant";
 
 const CONTACT_POPUP_SUPPRESS_KEY = "contactPopupSuppressedUntil";
 
@@ -123,6 +124,7 @@ const App: React.FC = () => {
         />
       </Routes>
 
+      <ChatAssistant />
       <ContactPopup open={popupOpen} onClose={handlePopupClose} />
 
       <Footer />

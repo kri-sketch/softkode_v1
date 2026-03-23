@@ -55,6 +55,18 @@ const Hiring: React.FC = () => {
         ],
       },
       {
+        id: 5,
+        icon: "⏱️",
+        title: "Average time to hire",
+        value: "2 Weeks",
+        subtitle: "Efficient delivery with no compromise",
+        tags: [
+          "Structured timelines",
+          "Rapid shortlist turn-around",
+          "Dedicated hiring coordinators",
+        ],
+      },
+      {
         id: 3,
         icon: "🌍",
         title: "Global clients",
@@ -77,6 +89,38 @@ const Hiring: React.FC = () => {
           "12L - 30L Mid-senior",
           "30L - 50L Chief roles",
         ],
+      },
+      {
+        id: 6,
+        icon: "🎯",
+        title: "Retention rate",
+        value: "92%",
+        subtitle: "Sustained success across placements",
+        tags: [
+          "Post-hire support",
+          "Performance coaching",
+          "Client feedback loop",
+        ],
+      },
+      {
+        id: 7,
+        icon: "🤝",
+        title: "Diversity coverage",
+        value: "40%",
+        subtitle: "Inclusive talent from underrepresented groups",
+        tags: [
+          "Bias-minimized screening",
+          "Diverse sourcing matrix",
+          "Inclusive hiring policy",
+        ],
+      },
+      {
+        id: 8,
+        icon: "📊",
+        title: "Quality checks",
+        value: "100%",
+        subtitle: "Compliance and assessment completed",
+        tags: ["Policy alignment", "Skill audit", "Security clearance"],
       },
     ],
     [],
@@ -120,11 +164,39 @@ const Hiring: React.FC = () => {
             Hiring for Partners & Vetted Resources
           </h2>
           <p className={styles.lead}>
-            We provide hand-picked engineers and teams to enterprise partners —
-            over 50+ resources delivered to leading firms. Our multi-stage
-            screening and coding rounds ensure every talent performs at the
-            highest standards.
+            Hand-picked engineering teams for enterprise partners, with 50+
+            placements. Rigorous multi-stage screening and coding validation at
+            every phase.
           </p>
+
+          <div
+            style={{
+              textAlign: "left",
+              maxWidth: "780px",
+              margin: "0 auto 1.4rem",
+            }}
+          >
+            <h3 style={{ margin: "0.2rem 0 0.6rem", color: "#2f2b66" }}>
+              Hiring Excellence Principles
+            </h3>
+            <ul style={{ paddingLeft: "1rem", color: "#4f5278", margin: 0 }}>
+              <li>
+                Governed sourcing: verified pipelines with diversity and
+                compliance.
+              </li>
+              <li>
+                Data-backed evaluation: technical scorecards + culture fit.
+              </li>
+              <li>
+                Outcome commitment: SLA-backed delivery and retention
+                guarantees.
+              </li>
+              <li>
+                Strategic enablement: reskilling pathways and transition
+                support.
+              </li>
+            </ul>
+          </div>
 
           <div className={styles.processingPanel}>
             <div className={styles.processingHeader}>
@@ -192,6 +264,25 @@ const Hiring: React.FC = () => {
                   A modern treatment of all major hiring outcomes with real-time
                   insights
                 </p>
+                <ul
+                  style={{
+                    paddingLeft: "1.15rem",
+                    margin: "0.5rem 0 1.2rem",
+                    color: "#555a80",
+                  }}
+                >
+                  <li>
+                    Transparent reporting for every stage of candidate
+                    qualification.
+                  </li>
+                  <li>
+                    Continuous improvement via quarterly skill-gap analysis.
+                  </li>
+                  <li>
+                    Client alignment checks at key milestones for retention
+                    outcomes.
+                  </li>
+                </ul>
               </div>
 
               <div className={styles.unifiedMetricCard}>

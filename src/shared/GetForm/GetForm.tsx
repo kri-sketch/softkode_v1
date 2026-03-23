@@ -1,6 +1,5 @@
 import React, { useRef, useState, useEffect } from "react";
 import styles from "./GetForm.module.css";
-import grouppic from "../../shared/image/group.png";
 import emailjs from "@emailjs/browser";
 
 const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID || "";
@@ -26,50 +25,64 @@ const GetForm: React.FC = () => {
     }
   }, []);
 
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!formRef.current) return;
+  const sendEmail = async (payload: {
+    name: string;
+    email: string;
+    contact: string;
+    message: string;
+  }) => {
     if (!SERVICE_ID || !TEMPLATE_ID || !PUBLIC_KEY) {
-      setStatus({
-        type: "error",
-        text: "Email service is not configured. Please set EmailJS keys in your environment.",
-      });
-      return;
+      throw new Error("Email service is not configured.");
     }
 
-    setSending(true);
-    const form = formRef.current;
-    const formData = new FormData(form);
     const templateParams = {
-      name: (formData.get("name") as string) || "",
-      email: (formData.get("email") as string) || "",
-      contact: (formData.get("contact") as string) || "",
-      message: (formData.get("message") as string) || "",
-      from_name: (formData.get("name") as string) || "",
-      from_email: (formData.get("email") as string) || "",
-      reply_to: (formData.get("email") as string) || "",
+      ...payload,
+      from_name: payload.name,
+      from_email: payload.email,
+      reply_to: payload.email,
       to_email: ACCOUNT_EMAIL,
     };
 
     try {
-      try {
-        emailjs.init(PUBLIC_KEY);
-      } catch {}
-      const resp = await emailjs.send(
-        SERVICE_ID,
-        TEMPLATE_ID,
-        templateParams,
-        PUBLIC_KEY,
-      );
-      console.log("GetForm email sent:", resp);
+      emailjs.init(PUBLIC_KEY);
+    } catch {
+      // ignore if already inited
+    }
+
+    const resp = await emailjs.send(
+      SERVICE_ID,
+      TEMPLATE_ID,
+      templateParams,
+      PUBLIC_KEY,
+    );
+    return resp;
+  };
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    if (!formRef.current) return;
+
+    setSending(true);
+    setStatus(null);
+
+    const form = formRef.current;
+    const formData = new FormData(form);
+    const payload = {
+      name: (formData.get("name") as string) || "",
+      email: (formData.get("email") as string) || "",
+      contact: (formData.get("contact") as string) || "",
+      message: (formData.get("message") as string) || "",
+    };
+
+    try {
+      await sendEmail(payload);
       setStatus({ type: "success", text: "Message sent — thank you!" });
       form.reset();
     } catch (err: any) {
-      console.error("GetForm email error:", err);
       const text = err && (err.text || err.message || JSON.stringify(err));
       setStatus({
         type: "error",
-        text: text || "Test failed. Check EmailJS configuration and console.",
+        text: text || "Email send failed. Check configuration.",
       });
     } finally {
       setSending(false);
@@ -77,33 +90,45 @@ const GetForm: React.FC = () => {
   };
 
   return (
-    <div className={styles.contactContainer} data-reveal>
-      {/* Left: Form */}
+    <section className={styles.contactContainer} data-reveal>
       <div className={styles.formSection}>
-        <h2>Get in touch</h2>
-        <form ref={formRef} onSubmit={handleSubmit}>
-          <label>
-            Name
+        <div className={styles.cardHeader}>
+          <h2>Reach out to Us</h2>
+          <p>
+            Submit your request here or use the quick chat assistant in the
+            corner.
+          </p>
+        </div>
+
+        <form
+          ref={formRef}
+          onSubmit={handleSubmit}
+          className={styles.formContent}
+        >
+          <label className={styles.fieldRow} htmlFor="getform-name">
+            <span>Name</span>
             <input
               id="getform-name"
               name="name"
               type="text"
-              placeholder="Enter name"
+              placeholder="Enter your name"
               required
             />
           </label>
-          <label>
-            Email
+
+          <label className={styles.fieldRow} htmlFor="getform-email">
+            <span>Email</span>
             <input
               id="getform-email"
               name="email"
               type="email"
-              placeholder="Enter email"
+              placeholder="Enter your email"
               required
             />
           </label>
-          <label>
-            Contact
+
+          <label className={styles.fieldRow} htmlFor="getform-contact">
+            <span>Contact</span>
             <input
               id="getform-contact"
               name="contact"
@@ -111,8 +136,9 @@ const GetForm: React.FC = () => {
               placeholder="Enter mobile number"
             />
           </label>
-          <label>
-            Message
+
+          <label className={styles.fieldRow} htmlFor="getform-message">
+            <span>Message</span>
             <textarea
               id="getform-message"
               name="message"
@@ -120,29 +146,30 @@ const GetForm: React.FC = () => {
               required
             />
           </label>
-          <button type="submit" disabled={sending}>
-            {sending ? "Sending..." : "Get in touch"}
-          </button>
-        </form>
-        {status && (
-          <div
-            className={
-              status.type === "success"
-                ? styles.successMessage
-                : styles.errorMessage
-            }
-            role="status"
-          >
-            {status.text}
-          </div>
-        )}
-      </div>
 
-      {/* Right: Image */}
-      <div className={styles.imageSection}>
-        <img src={grouppic} alt="Group Pic" loading="lazy" decoding="async" />
+          <button
+            type="submit"
+            disabled={sending}
+            className={styles.primaryButton}
+          >
+            {sending ? "Sending..." : "Send Message"}
+          </button>
+
+          {status && (
+            <div
+              className={
+                status.type === "success"
+                  ? styles.successMessage
+                  : styles.errorMessage
+              }
+              role="status"
+            >
+              {status.text}
+            </div>
+          )}
+        </form>
       </div>
-    </div>
+    </section>
   );
 };
 

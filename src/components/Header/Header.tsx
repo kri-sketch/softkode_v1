@@ -33,11 +33,7 @@ const Header = () => {
           loading="lazy"
           decoding="async"
         />
-        <span>
-          Soft
-          <br />
-          Kode
-        </span>
+        <span>SoftKode</span>
       </div>
 
       <nav className={`${styles.nav} ${isMenuOpen ? styles.show : ""}`}>
@@ -59,6 +55,9 @@ const Header = () => {
           </li>
           <li>
             <Link to="/caseStudy">Case Study</Link>
+          </li>
+          <li>
+            <Link to="/contact">Contact</Link>
           </li>
         </ul>
       </nav>

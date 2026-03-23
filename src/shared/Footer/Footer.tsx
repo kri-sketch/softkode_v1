@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
-import girlpic from "../../shared/image/girl.png";
+import softkodeLogo from "../../shared/image/positive.png";
 import emailjs from "@emailjs/browser";
 
 const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID || "";
@@ -91,13 +91,20 @@ const Footer: React.FC = () => {
         <div className={styles.topSection}>
           {/* Left: Image + Newsletter */}
           <div className={styles.imageBox}>
-            <img
-              src={girlpic}
-              alt="Woman digital portrait"
-              className={styles.girlimage}
-              loading="lazy"
-              decoding="async"
-            />
+            <div className={styles.brandBox}>
+              <img
+                src={softkodeLogo}
+                alt="SoftKode logo"
+                className={styles.brandLogo}
+                loading="lazy"
+                decoding="async"
+              />
+              <h3>SoftKode</h3>
+              <p>
+                Professional software engineering with passion. Build scalable,
+                modern products with the softkode coder mindset.
+              </p>
+            </div>
             <div className={styles.newsletterBox}>
               <p className={styles.title}>Keep in touch</p>
               <div className={styles.inputGroup}>
@@ -139,14 +146,14 @@ const Footer: React.FC = () => {
           {/* Right: Footer Navigation */}
           <div className={styles.footerLinks}>
             <div className={styles.logoBox}>
-              <h3>Soft Kode</h3>
+              <h3>SoftKode</h3>
               <div
                 className={styles.contactItem}
                 onClick={openMap}
                 role="button"
               >
                 <span className={styles.icon}>📍</span>
-                <span>Pune, Maharashtra, India, 411033</span>
+                <span>Pune, Maharashtra, India, 411015</span>
               </div>
               <div
                 className={styles.contactItem}

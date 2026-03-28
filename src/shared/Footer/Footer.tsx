@@ -215,7 +215,7 @@ const Footer: React.FC = () => {
       </div>
       {/* Bottom bar */}
       <div className={styles.bottomBar}>
-        <p>2024 Softkode Technologies Pvt. Designed by Softkode</p>
+        <p>&copy; {new Date().getFullYear()} Softkode Technologies Pvt. Ltd. All Rights Reserved.</p>
         <div className={styles.socialIcons}>
           <div
             className={styles.btn}

@@ -106,8 +106,11 @@ const LatestNews: React.FC = () => {
               article.timestamp;
 
             const formattedDate = publishedAt
-              ? new Date(publishedAt).toLocaleDateString()
-              : "";
+              ? new Date(publishedAt).toLocaleDateString("en-US", {
+                  month: "short",
+                  year: "numeric",
+                })
+              : "Recent";
 
             const headline =
               article.title ||
@@ -129,11 +132,11 @@ const LatestNews: React.FC = () => {
               category,
               icon,
               headline,
-              date: formattedDate || "Now",
+              date: formattedDate,
               summary:
                 (article.summary && article.summary.trim()) ||
                 (article.body && article.body.trim()) ||
-                "See the full article for details.",
+                "Stay informed with the latest developments in technology and industry trends.",
               url: normalizedUrl,
               badge: "Live",
             };
@@ -146,7 +149,7 @@ const LatestNews: React.FC = () => {
       })
       .catch((err) => {
         if (err.name !== "AbortError") {
-          setError("Could not load live news. Showing curated content.");
+          setError("Showing curated insights while live updates load.");
           console.error("LatestNews fetch error", err);
         }
       });
@@ -158,17 +161,16 @@ const LatestNews: React.FC = () => {
     <section className={styles.newsSection} id="latest-news" data-reveal>
       <div className={styles.newsInner}>
         <div className={styles.newsHeader}>
-          <p className={styles.eyebrow}>
-            Latest insights from global tech trends
-          </p>
-          <h2 className={styles.title}>Latest News in AI, IT, and Talent</h2>
+          <span className={styles.eyebrow}>Tech Pulse 2026</span>
+          <h2 className={styles.title}>
+            The Future of <span className="gradient-text">AI & Enterprise</span> Technology
+          </h2>
           <p className={styles.description}>
-            Stay ahead with curated updates on information technology,
-            generative AI, top hiring, and modern application architecture for
-            enterprise-grade products.
+            Curated intelligence on AI strategy, modern devops, and the next-gen 
+            digital platforms shaping the future of global industries.
           </p>
           {error && (
-            <p style={{ color: "#cc0000", marginTop: "12px", fontWeight: 600 }}>
+            <p style={{ color: "var(--primary-2)", marginTop: "16px", fontWeight: 600, fontSize: "0.9rem" }}>
               {error}
             </p>
           )}
@@ -178,8 +180,8 @@ const LatestNews: React.FC = () => {
           {news.map((item) => (
             <article key={item.id} className={styles.newsCard}>
               <div className={styles.cardMeta}>
-                <span className={styles.icon}>{item.icon}</span>
-                <div>
+                <div className={styles.iconWrapper}>{item.icon}</div>
+                <div className={styles.metaText}>
                   <span className={styles.category}>{item.category}</span>
                   <span className={styles.date}>{item.date}</span>
                 </div>
@@ -187,14 +189,16 @@ const LatestNews: React.FC = () => {
               <h3 className={styles.cardTitle}>{item.headline}</h3>
               <p className={styles.cardSummary}>{item.summary}</p>
               <div className={styles.cardFooter}>
-                <span className={styles.badge}>{item.badge}</span>
+                <span className={`${styles.badge} ${styles[item.badge] || ""}`}>
+                  {item.badge}
+                </span>
                 <a
                   href={item.url}
                   className={styles.readMore}
                   target="_blank"
                   rel="noopener noreferrer"
                 >
-                  Read more →
+                  Explore Insight →
                 </a>
               </div>
             </article>

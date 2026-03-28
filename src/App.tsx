@@ -14,6 +14,8 @@ import BackButton from "./shared/BackButton/BackButton";
 import ChatAssistant from "./shared/ChatAssistant/ChatAssistant";
 import BottomNav from "./shared/BottomNav/BottomNav";
 import CaseStudy from "./components/CaseStudy/CaseStudy";
+import ScrollToTop from "./shared/ScrollToTop/ScrollToTop";
+
 import CaseStudyList from "./components/CaseStudy/CaseStudyList";
 
 
@@ -74,6 +76,7 @@ const App: React.FC = () => {
         <meta property="og:image" content="/logo192.png" />
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route

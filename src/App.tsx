@@ -80,6 +80,7 @@ const App: React.FC = () => {
         <meta name="twitter:card" content="summary_large_image" />
       </Helmet>
       <ScrollToTop />
+      <Header />
       <Suspense fallback={
         <div style={{
           display: 'flex',
@@ -113,7 +114,6 @@ const App: React.FC = () => {
             element={
               <>
                 <BackButton />
-                <Header />
                 <Pricing />
               </>
             }
@@ -124,7 +124,7 @@ const App: React.FC = () => {
             element={
               <>
                 <BackButton />
-                <Header /> <Software />
+                <Software />
               </>
             }
           />
@@ -133,7 +133,6 @@ const App: React.FC = () => {
             element={
               <>
                 <BackButton />
-                <Header />
                 <Client />
               </>
             }
@@ -143,7 +142,6 @@ const App: React.FC = () => {
             element={
               <>
                 <BackButton />
-                <Header />
                 <Contact />
               </>
             }
@@ -153,7 +151,6 @@ const App: React.FC = () => {
             element={
               <>
                 <BackButton />
-                <Header />
                 <OurStory />
               </>
             }
@@ -163,7 +160,6 @@ const App: React.FC = () => {
             element={
               <>
                 <BackButton />
-                <Header />
                 <CaseStudyList />
               </>
             }
@@ -173,7 +169,6 @@ const App: React.FC = () => {
             element={
               <>
                 <BackButton />
-                <Header />
                 <CaseStudyList />
               </>
             }
@@ -183,7 +178,6 @@ const App: React.FC = () => {
             element={
               <>
                 <BackButton />
-                <Header />
                 <CaseStudy />
               </>
             }
@@ -193,7 +187,6 @@ const App: React.FC = () => {
             element={
               <>
                 <BackButton />
-                <Header />
                 <JobService />
               </>
             }

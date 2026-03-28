@@ -7,6 +7,15 @@ import softkodeLogo from "../../shared/image/softkode_icon_transparent.png";
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);
   const [isExclusionMode, setExclusionMode] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 40);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   useEffect(() => {
     const saved = localStorage.getItem("themeExclusion") === "true";
@@ -24,7 +33,7 @@ const Header = () => {
   const toggleMenu = () => setMenuOpen(!isMenuOpen);
 
   return (
-    <header className={styles.header}>
+    <header className={`${styles.header} ${scrolled ? styles.scrolled : ""}`}>
       <div className={styles.logo}>
         <img
           src={softkodeLogo}

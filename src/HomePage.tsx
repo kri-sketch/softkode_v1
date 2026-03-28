@@ -8,15 +8,12 @@ import LatestNews from "./components/LatestNews/LatestNews";
 import Pricing from "./components/Pricing/Pricing.tsx";
 import Client from "./components/Client/Client.tsx";
 import GetForm from "./shared/GetForm/GetForm.tsx";
-import Header from "./components/Header/Header.tsx";
 import CaseStudyList from "./components/CaseStudy/CaseStudyList";
 // import OurStory from "./components/OurStory/OurStory.tsx";
 const HomePage: React.FC = () => {
   return (
     <div className="App">
-      {/* Background section */}
       <div className="heroWrapper" id="home">
-        <Header />
         <Home />
       </div>
 

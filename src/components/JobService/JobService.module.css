@@ -1,0 +1,281 @@
+.jobSection {
+  padding: 100px 24px;
+  background: radial-gradient(circle at top right, rgba(123, 97, 255, 0.04), transparent),
+              radial-gradient(circle at bottom left, rgba(255, 110, 199, 0.04), transparent);
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.jobInner {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.jobHeader {
+  text-align: center;
+  margin-bottom: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.eyebrow {
+  display: inline-block;
+  padding: 8px 20px;
+  background: rgba(123, 97, 255, 0.1);
+  color: var(--primary-2);
+  border-radius: 999px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(123, 97, 255, 0.2);
+}
+
+.title {
+  font-size: clamp(2.2rem, 6vw, 3.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin-bottom: 24px;
+  background: linear-gradient(135deg, var(--text) 0%, #4a5f86 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  width: 100%;
+}
+
+.description {
+  max-width: 700px;
+  margin: 0 auto;
+  color: var(--muted);
+  font-size: 1.2rem;
+  line-height: 1.6;
+}
+
+/* Steps System */
+.stepsContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: rgba(255, 255, 255, 0.5);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.4);
+  padding: 40px;
+  border-radius: 32px;
+  margin-bottom: 60px;
+  gap: 20px;
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.03);
+}
+
+.stepItem {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  flex: 1;
+}
+
+.stepNumber {
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: rgba(123, 97, 255, 0.15);
+  line-height: 1;
+}
+
+.stepText h4 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 4px;
+}
+
+.stepText p {
+  font-size: 0.9rem;
+  color: var(--muted);
+  line-height: 1.4;
+}
+
+.stepArrow {
+  font-size: 1.5rem;
+  color: var(--primary-2);
+  opacity: 0.4;
+}
+
+.jobGrid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 32px;
+}
+
+.jobCard {
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.35);
+  padding: 40px;
+  border-radius: 32px;
+  transition: all 0.5s cubic-bezier(0.19, 1, 0.22, 1);
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 15px 45px rgba(0, 0, 0, 0.04);
+}
+
+.jobCard:hover {
+  transform: translateY(-10px);
+  background: rgba(255, 255, 255, 0.95);
+  border-color: var(--primary-2);
+  box-shadow: 0 32px 64px rgba(123, 97, 255, 0.15);
+}
+
+@media (max-width: 992px) {
+  .stepsContainer {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 30px;
+  }
+  
+  .stepArrow {
+    display: none;
+  }
+}
+
+.cardTop {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 24px;
+  gap: 20px;
+}
+
+.jobLabel {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--text);
+  margin: 0;
+  line-height: 1.2;
+}
+
+.metaRow {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 24px;
+  flex-wrap: wrap;
+}
+
+.metaBadge {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 16px;
+  background: rgba(0, 0, 0, 0.04);
+  border-radius: 12px;
+  font-size: 0.95rem;
+  font-weight: 600;
+}
+
+.skillsWrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 24px;
+}
+
+.skillChip {
+  padding: 6px 14px;
+  background: rgba(123, 97, 255, 0.08);
+  color: var(--primary-2);
+  border-radius: 10px;
+  font-size: 0.85rem;
+  font-weight: 700;
+  border: 1px solid rgba(123, 97, 255, 0.15);
+}
+
+.jobSummary {
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: #444;
+  margin-bottom: 32px;
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.applySection {
+  margin-top: auto;
+  background: rgba(123, 97, 255, 0.04);
+  border: 1px solid rgba(123, 97, 255, 0.08);
+  border-radius: 20px;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-items: center;
+  gap: 24px;
+}
+
+.applyInstr {
+  font-size: 0.9rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.applyInstr strong {
+  display: block;
+  color: var(--primary-2);
+  font-size: 1rem;
+  margin-bottom: 6px;
+}
+
+.applyBtn {
+  background: var(--gradient);
+  color: white;
+  padding: 14px 32px;
+  border-radius: 16px;
+  font-weight: 700;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(123, 97, 255, 0.35);
+  display: inline-block;
+  text-align: center;
+}
+
+.applyBtn:hover {
+  transform: scale(1.04);
+  box-shadow: 0 10px 30px rgba(123, 97, 255, 0.45);
+}
+
+.loadingContainer, .errorContainer {
+  display: grid;
+  place-items: center;
+  padding: 150px 20px;
+  text-align: center;
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: var(--muted);
+}
+
+.errorContainer {
+  color: #d32f2f;
+}
+
+@media (min-width: 992px) {
+  .jobGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .applySection {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  
+  .jobCard {
+    padding: 24px;
+  }
+}

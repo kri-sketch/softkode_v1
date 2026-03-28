@@ -51,7 +51,7 @@ const Footer: React.FC = () => {
     try {
       try {
         emailjs.init(PUBLIC_KEY);
-      } catch {}
+      } catch { }
       const resp = await emailjs.send(
         SERVICE_ID,
         TEMPLATE_ID,
@@ -131,18 +131,17 @@ const Footer: React.FC = () => {
               </div>
               {status && (
                 <div
-                  className={`${styles.newsStatus} ${
-                    status.type === "success"
+                  className={`${styles.newsStatus} ${status.type === "success"
                       ? styles.newsSuccess
                       : styles.newsError
-                  }`}
+                    }`}
                   role="status"
                 >
                   {status.text}
                 </div>
               )}
             </div>
-                    
+
           </div>
 
           {/* Right: Footer Navigation */}
@@ -207,6 +206,9 @@ const Footer: React.FC = () => {
                 </li>
                 <li>
                   <Link to="/faq">FAQ</Link>
+                </li>
+                <li>
+                  <Link to="/jobservice">Tech Jobs</Link>
                 </li>
               </ul>
             </div>

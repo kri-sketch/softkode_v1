@@ -29,7 +29,7 @@ const HiringHeader = () => (
     <div className={styles.eyebrow}>We hire &amp; partner</div>
     <h2 className={styles.title}>Hiring for Partners & Vetted Resources</h2>
     <p className={styles.lead}>
-      Hand-picked engineering teams for enterprise partners, with 50+ placements. 
+      Hand-picked engineering teams for enterprise partners, with 50+ placements.
       Rigorous multi-stage screening and coding validation at every phase.
     </p>
 
@@ -54,7 +54,7 @@ const ProcessFlowPanel = ({ activeStep, steps }: { activeStep: number; steps: ty
       {steps.map((step, idx) => {
         const isActive = idx === activeStep;
         const isDone = idx < activeStep;
-        
+
         return (
           <div
             key={step.title}
@@ -217,7 +217,7 @@ const Hiring: React.FC = () => {
 
         <div className={styles.processingPanelOuter}>
           <ProcessFlowPanel activeStep={activeStep} steps={STEPS} />
-          
+
           <div className={styles.metricPanelContainer}>
             <MetricsDetailedPanel />
           </div>

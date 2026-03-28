@@ -17,7 +17,7 @@ import CaseStudy from "./components/CaseStudy/CaseStudy";
 import ScrollToTop from "./shared/ScrollToTop/ScrollToTop";
 
 import CaseStudyList from "./components/CaseStudy/CaseStudyList";
-
+import JobService from "./components/JobService/JobService";
 
 const CONTACT_POPUP_SUPPRESS_KEY = "contactPopupSuppressedUntil";
 
@@ -156,6 +156,16 @@ const App: React.FC = () => {
               <BackButton />
               <Header />
               <CaseStudy />
+            </>
+          }
+        />
+        <Route
+          path="/jobservice"
+          element={
+            <>
+              <BackButton />
+              <Header />
+              <JobService />
             </>
           }
         />

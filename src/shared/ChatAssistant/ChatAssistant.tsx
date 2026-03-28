@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from "react";
+import React, { useCallback, useEffect, useState, memo } from "react";
 import styles from "./ChatAssistant.module.css";
 import emailjs from "@emailjs/browser";
 import softkodeLogo from "../../shared/image/softkode_icon_transparent.png";
@@ -391,4 +391,4 @@ const ChatAssistant: React.FC = () => {
   );
 };
 
-export default ChatAssistant;
+export default memo(ChatAssistant);

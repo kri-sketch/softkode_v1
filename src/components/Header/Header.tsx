@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, memo } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import { FaBars, FaMoon, FaSun } from "react-icons/fa";
@@ -90,4 +90,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default memo(Header);

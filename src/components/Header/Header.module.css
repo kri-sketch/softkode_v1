@@ -13,6 +13,7 @@
   -webkit-backdrop-filter: blur(20px) saturate(160%);
   border-bottom: 1px solid rgba(0, 0, 0, 0.04);
   box-shadow: 0 4px 30px rgba(0, 0, 0, 0.02);
+  will-change: backdrop-filter;
 }
 
 .logo {

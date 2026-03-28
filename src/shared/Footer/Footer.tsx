@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, memo } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
 import softkodeLogo from "../../shared/image/softkode_icon_transparent.png";
@@ -175,40 +175,25 @@ const Footer: React.FC = () => {
             </div>
 
             <div className={styles.linksGroup}>
-              <h4>Quick Links</h4>
+              <h4>Ecosystem</h4>
               <ul>
                 <li>
-                  <Link to="/">Home</Link>
+                  <Link to="/" onClick={() => window.scrollTo(0, 0)}>Home</Link>
                 </li>
                 <li>
-                  <Link to="/ourstory">About us</Link>
+                  <Link to="/services" onClick={() => window.scrollTo(0, 0)}>Services</Link>
                 </li>
                 <li>
-                  <Link to="/services">Services</Link>
+                  <Link to="/casestudy" onClick={() => window.scrollTo(0, 0)}>Case Study</Link>
                 </li>
                 <li>
-                  <Link to="/contact">Contact</Link>
-                </li>
-              </ul>
-            </div>
-
-            <div className={styles.linksGroup}>
-              <h4>Company</h4>
-              <ul>
-                <li>
-                  <Link to="/ourstory">Our story</Link>
+                  <Link to="/ourstory" onClick={() => window.scrollTo(0, 0)}>Our story</Link>
                 </li>
                 <li>
-                  <Link to="/team">Team</Link>
+                  <Link to="/jobservice" onClick={() => window.scrollTo(0, 0)}>Tech Jobs</Link>
                 </li>
                 <li>
-                  <Link to="/support">Support</Link>
-                </li>
-                <li>
-                  <Link to="/faq">FAQ</Link>
-                </li>
-                <li>
-                  <Link to="/jobservice">Tech Jobs</Link>
+                  <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Contact</Link>
                 </li>
               </ul>
             </div>
@@ -220,20 +205,20 @@ const Footer: React.FC = () => {
         <p>&copy; {new Date().getFullYear()} Softkode Technologies Pvt. Ltd. All Rights Reserved.</p>
         <div className={styles.socialIcons}>
           <div
-            className={styles.btn}
+            className={styles.socialBtn}
             role="button"
-            onClick={() => openSocial("https://www.facebook.com/")}
-            aria-label="facebook"
+            onClick={() => openSocial("https://www.linkedin.com/company/softkode/")}
+            aria-label="LinkedIn"
           >
-            f
+            LinkedIn
           </div>
           <div
-            className={styles.btn}
+            className={styles.socialBtn}
             role="button"
-            onClick={() => openSocial("https://twitter.com/")}
-            aria-label="x"
+            onClick={() => openSocial("https://instagram.com/softkode.io/")}
+            aria-label="Instagram"
           >
-            x
+            Instagram
           </div>
         </div>
       </div>
@@ -241,4 +226,4 @@ const Footer: React.FC = () => {
   );
 };
 
-export default Footer;
+export default memo(Footer);

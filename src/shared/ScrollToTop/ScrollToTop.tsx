@@ -6,14 +6,18 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     if (hash) {
-      // If there's a hash, find the element and scroll to it
+      // If there's a hash, find the element and scroll to it smoothly
       const element = document.getElementById(hash.replace("#", ""));
       if (element) {
         element.scrollIntoView({ behavior: "smooth" });
       }
     } else {
-      // Otherwise, scroll to the top
-      window.scrollTo(0, 0);
+      // Otherwise, jump to the top instantly for a snappier feel
+      window.scrollTo({
+        top: 0,
+        left: 0,
+        behavior: "instant" as any, // Cast to any because some typings might not have 'instant'
+      });
     }
   }, [pathname, hash]);
 

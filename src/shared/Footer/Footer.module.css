@@ -1,212 +1,182 @@
 .footerContainer {
-  background-color: #000;
+  background: linear-gradient(180deg, #0a0a0a 0%, #000000 100%);
   color: #fff;
-  padding: clamp(24px, 6vw, 80px) clamp(16px, 4vw, 56px) clamp(32px, 8vw, 100px);
-  font-family: "Poppins", sans-serif;
+  padding: clamp(60px, 10vw, 100px) clamp(20px, 5vw, 80px) clamp(40px, 5vw, 60px);
+  font-family: "Inter", sans-serif;
   position: relative;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
 .topSection {
   display: flex;
-  gap: 40px;
-  align-items: center;
+  gap: 60px;
+  align-items: flex-start;
   justify-content: space-between;
-  margin-bottom: 40px;
+  margin-bottom: 80px;
 }
 
-/* Left: Image and email input */
 .imageBox {
-  width: 520px;
-  max-width: 48%;
-  position: relative;
-  border-radius: 18px;
-  overflow: visible;
-  background: linear-gradient(140deg, #091018 0%, #171f36 100%);
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  padding: 20px;
+  flex: 1;
+  max-width: 460px;
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
 }
 
 .brandBox {
   color: #fff;
-  margin-bottom: 14px;
 }
 
 .brandHeader {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 12px;
-  margin-bottom: 6px;
+  gap: 16px;
+  margin-bottom: 20px;
 }
 
 .brandBox h3 {
   margin: 0;
-  font-size: 1.6rem;
-  letter-spacing: 0.02em;
+  font-size: 1.8rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
 }
 
 .brandBox p {
   margin: 0;
-  font-size: 0.95rem;
-  line-height: 1.45;
-  color: rgba(255, 255, 255, 0.9);
+  font-size: 1rem;
+  line-height: 1.6;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 400;
 }
 
 .brandLogo {
-  width: 58px;
-  height: 58px;
-  border-radius: 14px;
-  border: 1px solid rgba(255, 255, 255, 0.18);
+  width: 52px;
+  height: 52px;
+  border-radius: 12px;
   background: #fff;
   padding: 8px;
   object-fit: contain;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
 }
 
-/* Wrapper to push content to top */
-
-/* Box styling */
 .newsletterBox {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  bottom: -50px;
-  width: 420px;
-  border-radius: 14px;
-  padding: 14px 18px;
+  width: 100%;
+  border-radius: 16px;
+  padding: 24px;
   display: flex;
   flex-direction: column;
-  gap: 10px;
-  color: #111;
-  box-shadow: 0 18px 40px rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
-  background: rgba(255, 255, 255, 0.18);
-  border: 1px solid rgba(255, 255, 255, 0.06);
+  gap: 16px;
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(10px);
 }
 
-/* Title */
 .title {
-  font-weight: 700;
-  font-size: 15px;
-  color: #111;
+  font-weight: 600;
+  font-size: 1rem;
+  color: #fff;
   margin: 0;
-  text-align: center;
 }
 
-/* Input and Button Container */
 .inputGroup {
   display: flex;
   width: 100%;
-  height: 44px;
-  flex-direction: row;
-  align-items: center;
-  gap: 8px;
+  gap: 12px;
 }
 
-.newsStatus {
-  margin-top: 8px;
-  font-size: 0.9rem;
-  color: #fff;
-}
-
-.newsStatus.success {
-  color: #9ff3b8;
-}
-
-.newsStatus.error {
-  color: #ffb4b4;
-}
-
-/* Module-scoped helpers for status colors */
-.newsSuccess {
-  color: #9ff3b8;
-}
-
-.newsError {
-  color: #ffb4b4;
-}
-
-/* Input field */
 .gmail {
   flex: 1;
-  padding: 10px 14px;
-  border: none;
+  padding: 12px 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   outline: none;
-  font-size: 14px;
-  border-radius: 8px;
-  background: #fff;
+  font-size: 0.9rem;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  transition: border-color 0.2s;
 }
 
-/* Button */
+.gmail:focus {
+  border-color: rgba(255, 255, 255, 0.3);
+}
+
 .btnn {
-  background-color: #000;
-  color: #fff;
-  padding: 10px 18px;
+  background-color: #fff;
+  color: #000;
+  padding: 12px 24px;
   border: none;
   cursor: pointer;
-  font-size: 13px;
-  font-weight: 700;
-  border-radius: 8px;
-  display: inline-flex;
-  align-items: center;
-  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.5);
+  font-size: 0.9rem;
+  font-weight: 600;
+  border-radius: 10px;
+  transition: all 0.2s ease;
+  white-space: nowrap;
 }
 
-/* Right: Footer content */
+.btnn:hover {
+  background-color: rgba(255, 255, 255, 0.9);
+  transform: translateY(-1px);
+}
+
+.btnn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
 .footerLinks {
   display: flex;
-  gap: 40px;
-  flex: 1 1 50%;
-  min-width: 280px;
-  align-items: flex-start;
+  gap: 80px;
   flex-wrap: wrap;
 }
 
 .logoBox {
-  min-width: 220px;
+  min-width: 240px;
 }
 
 .logoBox h3 {
-  font-size: 1.4rem;
-  margin-bottom: 16px;
-  font-weight: 700;
+  font-size: 1.1rem;
+  margin-bottom: 24px;
+  font-weight: 600;
   color: #fff;
+  opacity: 0.4;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 .contactItem {
   display: flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 12px;
-  color: rgba(255, 255, 255, 0.95);
-}
-
-.contactItem .icon {
-  width: 28px;
-  height: 28px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  color: #fff;
-  border-radius: 50%;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  background: rgba(255, 255, 255, 0.02);
-  font-size: 14px;
-}
-
-.contactItem span {
+  gap: 14px;
+  margin-bottom: 20px;
+  color: rgba(255, 255, 255, 0.7);
+  transition: color 0.2s;
   cursor: pointer;
 }
 
-.contactItem:hover span,
-.contactItem:hover .icon {
-  opacity: 0.9;
+.contactItem:hover {
+  color: #fff;
+}
+
+.contactItem .icon {
+  width: 32px;
+  height: 32px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  font-size: 14px;
 }
 
 .linksGroup h4 {
-  margin-bottom: 14px;
-  font-size: 1rem;
+  margin-bottom: 24px;
+  font-size: 1.1rem;
   font-weight: 600;
   color: #fff;
+  opacity: 0.4;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
 }
 
 .linksGroup ul {
@@ -215,210 +185,116 @@
 }
 
 .linksGroup li {
-  margin-bottom: 10px;
-  font-size: 0.95rem;
-  cursor: pointer;
-  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 14px;
 }
 
 .linksGroup a {
-  color: inherit;
+  color: rgba(255, 255, 255, 0.6);
   text-decoration: none;
+  font-size: 1rem;
+  transition: all 0.2s ease;
+  display: inline-block;
 }
 
-.linksGroup li:hover a {
+.linksGroup a:hover {
   color: #fff;
-  text-decoration: underline;
+  transform: translateX(4px);
 }
 
-/* Bottom section */
 .bottomBar {
   display: flex;
-  flex-direction: column;
+  justify-content: space-between;
   align-items: center;
-  gap: 16px;
-  font-size: 0.85rem;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
-  padding: 40px 0 20px;
-  text-align: center;
+  padding: 40px 0 0;
+}
+
+.bottomBar p {
+  color: rgba(255, 255, 255, 0.4);
+  margin: 0;
+  font-size: 0.9rem;
 }
 
 .socialIcons {
   display: flex;
-  gap: 12px;
-  align-items: center;
+  gap: 16px;
 }
 
-.btn {
-  width: 28px;
-  height: 28px;
-  border-radius: 6px;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  background: rgba(255, 255, 255, 0.06);
+.socialBtn {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  font-weight: 500;
+  cursor: pointer;
+  transition: color 0.2s;
+  padding: 4px 0;
+  position: relative;
+}
+
+.socialBtn::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 0;
+  height: 1px;
+  background: #fff;
+  transition: width 0.2s;
+}
+
+.socialBtn:hover {
   color: #fff;
 }
 
-.btn[role="button"] {
-  cursor: pointer;
+.socialBtn:hover::after {
+  width: 100%;
 }
 
-.btn:hover {
-  filter: brightness(1.2);
-  transform: translateY(-1px);
-}
-
-.bottomBar p {
-  color: rgba(255, 255, 255, 0.6);
-  margin: 0;
-  order: 2;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
+@media (max-width: 1024px) {
   .topSection {
     flex-direction: column;
-    gap: 40px;
-    align-items: center;
+    gap: 60px;
   }
-
+  
   .imageBox {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    position: relative;
-  }
-
-  .brandLogo {
-    width: 60px;
-    height: 60px;
-    border-radius: 16px;
-    object-fit: contain;
-  }
-
-  .newsletterBox {
-    position: static;
-    transform: none;
-    width: 100%;
-    margin-top: 20px;
-    padding: 24px;
-    background: rgba(255, 255, 255, 0.05);
-  }
-
-  .inputGroup {
-    flex-direction: column;
-    height: auto;
-    gap: 12px;
-  }
-
-  .gmail {
-    width: 100%;
-    border-radius: 8px;
-    height: 44px;
-  }
-
-  .btnn {
-    width: 100%;
-    background-color: #fff;
-    color: #000;
-    padding: 0 20px;
-    border: none;
-    cursor: pointer;
-    font-size: 14px;
-    font-weight: 600;
-    border-radius: 8px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 44px;
-    white-space: nowrap;
+    max-width: 100%;
   }
 
   .footerLinks {
-    flex-direction: column;
-    align-items: center;
-    gap: 30px;
-    text-align: center;
+    gap: 60px;
   }
+}
 
-  .logoBox,
-  .linksGroup {
-    width: 100%;
+@media (max-width: 768px) {
+  .footerContainer {
+    padding: 60px 24px 40px;
   }
 
   .bottomBar {
-    padding-top: 30px;
-    gap: 20px;
-  }
-
-  .socialIcons {
-    justify-content: center;
-    position: static;
-    margin-top: 12px;
-  }
-
-  .bottomBar p {
-    font-size: 0.8rem;
-    line-height: 1.5;
-  }
-}
-
-/* Extra small devices */
-@media (max-width: 420px) {
-  .footerContainer {
-    padding: 24px 12px 40px;
-  }
-
-  .newsletterBox {
-    margin-top: 12px;
-    padding: 12px;
-  }
-
-  .inputGroup {
-    flex-direction: column;
-    gap: 8px;
-    height: auto;
-  }
-
-  .gmail {
-    width: 100%;
-    padding: 12px 14px;
-    border-radius: 8px;
-    font-size: 16px;
-  }
-
-  .btnn {
-    width: 100%;
-    padding: 12px 14px;
-    border-radius: 8px;
-    height: auto;
-    margin-top: 0;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-  }
-
-  .newsStatus {
+    flex-direction: column-reverse;
+    gap: 24px;
     text-align: center;
   }
 
   .footerLinks {
+    flex-direction: column;
+    gap: 40px;
+  }
+
+  .logoBox, .linksGroup {
     min-width: auto;
+  }
+
+  .logoBox h3, .linksGroup h4 {
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .inputGroup {
+    flex-direction: column;
+  }
+
+  .btnn {
     width: 100%;
-    gap: 24px;
-  }
-
-  .logoBox {
-    min-width: auto;
-    width: 100%;
-  }
-
-  .bottomBar p {
-    font-size: 0.78rem;
-  }
-
-  .socialIcons {
-    gap: 8px;
   }
 }

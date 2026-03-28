@@ -73,7 +73,7 @@
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(123, 97, 255, 0.1);
-  box-shadow: 0 16px 40px rgba(33, 20, 70, 0.04), inset 0 -4px 16px rgba(0,0,0,0.01);
+  box-shadow: 0 16px 40px rgba(33, 20, 70, 0.04), inset 0 -4px 16px rgba(0, 0, 0, 0.01);
   transition: transform 0.4s cubic-bezier(0.2, 0.9, 0.2, 1), box-shadow 0.4s ease, border-color 0.4s ease;
 }
 
@@ -103,7 +103,8 @@
 .purple {
   background: linear-gradient(160deg, rgba(230, 227, 255, 0.65) 0%, rgba(240, 238, 255, 0.4) 50%, rgba(255, 255, 255, 0.7) 100%);
   border-top: 2px solid rgba(123, 97, 255, 0.4);
-  transform: scale(1.03); /* Emphasize middle card */
+  transform: scale(1.03);
+  /* Emphasize middle card */
 }
 
 .purple:hover {
@@ -139,7 +140,8 @@
   color: var(--muted);
   line-height: 1.5;
   margin: 0 0 2rem;
-  min-height: 45px; /* Alignment placeholder */
+  min-height: 45px;
+  /* Alignment placeholder */
 }
 
 .offerBox {
@@ -198,15 +200,21 @@
   .cardContainer {
     grid-template-columns: repeat(2, 1fr);
   }
-  .purple { transform: scale(1); }
-  .purple:hover { transform: translateY(-12px) scale(1.01); }
+
+  .purple {
+    transform: scale(1);
+  }
+
+  .purple:hover {
+    transform: translateY(-12px) scale(1.01);
+  }
 }
 
 @media (max-width: 768px) {
   .pricingContainer {
     padding: 4rem 1rem 5rem;
   }
-  
+
   .cardContainer {
     grid-template-columns: 1fr;
     gap: 2rem;
@@ -221,8 +229,10 @@
   .card h3 {
     font-size: 2rem;
   }
-  
-  .subtitle { min-height: auto; }
+
+  .subtitle {
+    min-height: auto;
+  }
 }
 
 @media (max-width: 420px) {

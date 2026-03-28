@@ -6,19 +6,23 @@
   --bg: #fbf8ff;
   --text: #0f1720;
   --muted: #6b6b7a;
-  --primary-1: #ff6ec7; /* pink */
-  --primary-2: #7b61ff; /* purple */
+  --primary-1: #ff6ec7;
+  /* pink */
+  --primary-2: #7b61ff;
+  /* purple */
   --gradient: linear-gradient(90deg, var(--primary-1), var(--primary-2));
 }
 
 * {
   box-sizing: border-box;
 }
+
 html,
 body,
 #root {
   height: 100%;
 }
+
 body {
   margin: 0;
   font-family:
@@ -78,6 +82,7 @@ html {
     opacity: 0;
     transform: translateY(12px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
@@ -96,6 +101,7 @@ html {
     opacity 600ms ease,
     transform 600ms ease;
 }
+
 .reveal-visible {
   opacity: 1;
   transform: translateY(0);
@@ -137,9 +143,11 @@ svg {
 h1 {
   font-size: clamp(1.6rem, 4.5vw, 3.2rem);
 }
+
 h2 {
   font-size: clamp(1.25rem, 3.6vw, 2.25rem);
 }
+
 p {
   font-size: clamp(0.95rem, 2.2vw, 1.05rem);
 }
@@ -149,6 +157,7 @@ p {
   font-size: clamp(1rem, 2.4vw, 1.15rem);
   color: #333;
 }
+
 .visually-hidden {
   position: absolute !important;
   height: 1px;
@@ -157,6 +166,7 @@ p {
   clip: rect(1px, 1px, 1px, 1px);
   white-space: nowrap;
 }
+
 .btn {
   display: inline-block;
   padding: 0.6rem 1rem;
@@ -182,9 +192,11 @@ header {
   body {
     font-size: 15px;
   }
+
   .container {
     padding: 0 0.75rem;
   }
+
   .btn {
     padding: 0.55rem 0.9rem;
   }
@@ -199,6 +211,7 @@ header {
 
 /* Mobile: thinner scrollbar */
 @media (max-width: 768px) {
+
   html::-webkit-scrollbar,
   body::-webkit-scrollbar,
   .App::-webkit-scrollbar {
@@ -225,11 +238,9 @@ body::-webkit-scrollbar,
 html::-webkit-scrollbar-track,
 body::-webkit-scrollbar-track,
 .App::-webkit-scrollbar-track {
-  background: linear-gradient(
-    180deg,
-    rgba(19, 8, 50, 0.07),
-    rgba(123, 97, 255, 0.12)
-  );
+  background: linear-gradient(180deg,
+      rgba(19, 8, 50, 0.07),
+      rgba(123, 97, 255, 0.12));
   border: 1px solid rgba(114, 94, 255, 0.4);
   border-radius: 14px;
   backdrop-filter: blur(5px);
@@ -240,11 +251,9 @@ body::-webkit-scrollbar-track,
 html::-webkit-scrollbar-thumb,
 body::-webkit-scrollbar-thumb,
 .App::-webkit-scrollbar-thumb {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 110, 199, 0.88),
-    rgba(123, 97, 255, 0.95)
-  );
+  background: linear-gradient(180deg,
+      rgba(255, 110, 199, 0.88),
+      rgba(123, 97, 255, 0.95));
   border: 2px solid rgba(255, 255, 255, 0.82);
   border-radius: 999px;
   box-shadow: 0 0 15px rgba(71, 36, 114, 0.4);
@@ -253,11 +262,9 @@ body::-webkit-scrollbar-thumb,
 html::-webkit-scrollbar-thumb:hover,
 body::-webkit-scrollbar-thumb:hover,
 .App::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(
-    180deg,
-    rgba(255, 110, 199, 1),
-    rgba(123, 97, 255, 1)
-  );
+  background: linear-gradient(180deg,
+      rgba(255, 110, 199, 1),
+      rgba(123, 97, 255, 1));
 }
 
 html::-webkit-scrollbar-corner,

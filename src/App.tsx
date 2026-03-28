@@ -57,14 +57,14 @@ const App: React.FC = () => {
   return (
     <>
       <Helmet>
-        <title>Skode | Custom Software & Digital Products</title>
+        <title>Softkode | Custom Software & Digital Products</title>
         <meta
           name="description"
-          content="Skode builds custom software and digital products that help businesses grow. Located in Pune, India."
+          content="Softkode builds custom software and digital products that help businesses grow. Located in Pune, India."
         />
         <meta name="robots" content="index, follow" />
         <link rel="canonical" href="https://softkode.io/" />
-        <meta property="og:site_name" content="Skode | Softkode Technologies" />
+        <meta property="og:site_name" content="Softkode | Softkode Technologies" />
         <meta property="og:type" content="website" />
         <meta property="og:url" content="https://softkode.io/" />
         <meta property="og:image" content="/logo192.png" />

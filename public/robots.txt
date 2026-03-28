@@ -1,6 +1,17 @@
 User-agent: *
-Disallow:
+Allow: /
+Disallow: /api/
+
+# Specifically allow major AI search engine bots to crawl for context gathering
+User-agent: GPTBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Bingbot
+Allow: /
+
 Sitemap: https://softkode.io/sitemap.xml
-# https://www.robotstxt.org/robotstxt.html
-User-agent: *
-Disallow:

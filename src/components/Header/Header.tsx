@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Header.module.css";
 import { FaBars, FaMoon, FaSun } from "react-icons/fa";
-import softkodeLogo from "../../shared/image/positive.png";
+import softkodeLogo from "../../shared/image/softkode_icon_transparent.png";
 
 const Header = () => {
   const [isMenuOpen, setMenuOpen] = useState(false);

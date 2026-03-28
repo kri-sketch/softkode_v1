@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import styles from "./ContactPopup.module.css";
-import softkodeLogo from "../image/positive.png";
+import softkodeLogo from "../image/softkode_icon_transparent.png";
 import bgImage from "../image/bg.png";
 import emailjs from "@emailjs/browser";
 

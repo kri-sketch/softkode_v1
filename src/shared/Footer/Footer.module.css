@@ -27,13 +27,20 @@
 }
 
 .brandBox {
-  text-align: center;
   color: #fff;
   margin-bottom: 14px;
 }
 
+.brandHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-bottom: 6px;
+}
+
 .brandBox h3 {
-  margin: 10px 0 6px;
+  margin: 0;
   font-size: 1.6rem;
   letter-spacing: 0.02em;
 }
@@ -46,15 +53,13 @@
 }
 
 .brandLogo {
-  width: 78px;
-  height: 78px;
-  border-radius: 18px;
+  width: 58px;
+  height: 58px;
+  border-radius: 14px;
   border: 1px solid rgba(255, 255, 255, 0.18);
   background: #fff;
   padding: 8px;
   object-fit: contain;
-  margin: 0 auto;
-  display: block;
 }
 
 /* Wrapper to push content to top */

@@ -1,7 +1,7 @@
 import React, { useCallback, useEffect, useState } from "react";
 import styles from "./ChatAssistant.module.css";
 import emailjs from "@emailjs/browser";
-import softkodeLogo from "../../shared/image/positive.png";
+import softkodeLogo from "../../shared/image/softkode_icon_transparent.png";
 
 const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID || "";
 const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || "";
@@ -15,16 +15,26 @@ type ChatMessage = {
 };
 
 const techMotivation = [
-  "Tiny code change today can scale to millions of users tomorrow!",
-  "Every line you write is an opportunity to build something meaningful.",
-  "Optimized architecture frees time to innovate, not just iterate.",
-  "In software, the best feature is the one that makes users’ lives easier.",
-  "Resilience in code is the same as resilience in thinking — keep going.",
-  "Did you know Facebook built React to solve UI complexity at scale?",
-  "JavaScript was created in 10 days and now powers millions of apps.",
-  "Google’s first search engine used Python and C++ in the backend.",
-  "Linux started as a personal project and now runs most cloud servers.",
-  "Edge performance usually wins users more than a shiny UI.",
+  "Performance is a feature, not just an afterthought.",
+  "Every line of code is an opportunity to build something meaningful.",
+  "Optimized cloud architecture frees time to innovate, not just iterate.",
+  "In software, the best UI is the one that makes users' work invisible.",
+  "Resilience in code comes from anticipating edge cases before they happen.",
+  "Did you know Facebook built React to solve exponential UI complexity?",
+  "Modern SaaS platforms live and die by their onboarding friction.",
+  "Great engineering scales the business, not just the servers.",
+  "Linux started as a personal project and now runs the global cloud ecosystem.",
+  "A milliseconds drop in latency can dramatically increase user conversion.",
+  "Simplicity is the soul of software efficiency.",
+  "Code debt is like financial debt—if you don't pay it, it compounds.",
+  "Next-generation applications don't just process data; they predict it.",
+  "Building for accessibility means building a better product for everyone.",
+  "The best error message is the one that never needs to be shown.",
+  "Scalability isn't about handling success tomorrow; it's about not breaking today.",
+  "Test-driven development is an investment in your future sanity.",
+  "The cloud is just somebody else's computer, but making it dance is an art.",
+  "Good design is obvious. Great design is completely transparent.",
+  "SoftKode focuses on building foundations that empower your future growth."
 ];
 
 const ChatAssistant: React.FC = () => {
@@ -91,7 +101,7 @@ const ChatAssistant: React.FC = () => {
         "assistant",
         techMotivation[Math.floor(Math.random() * techMotivation.length)],
       );
-    }, 15000);
+    }, 45000);
 
     return () => clearInterval(interval);
   }, [chatOpen, addChatMessage]);
@@ -114,7 +124,7 @@ const ChatAssistant: React.FC = () => {
     const interval = window.setInterval(() => {
       clearTimeout(hideTimeout);
       hideTimeout = pickTip();
-    }, 30000);
+    }, 60000);
 
     return () => {
       clearInterval(interval);

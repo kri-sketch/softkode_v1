@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
-import softkodeLogo from "../../shared/image/positive.png";
+import softkodeLogo from "../../shared/image/softkode_icon_transparent.png";
 import emailjs from "@emailjs/browser";
 
 const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID || "";
@@ -92,14 +92,16 @@ const Footer: React.FC = () => {
           {/* Left: Image + Newsletter */}
           <div className={styles.imageBox}>
             <div className={styles.brandBox}>
-              <img
-                src={softkodeLogo}
-                alt="SoftKode logo"
-                className={styles.brandLogo}
-                loading="lazy"
-                decoding="async"
-              />
-              <h3>SoftKode</h3>
+              <div className={styles.brandHeader}>
+                <img
+                  src={softkodeLogo}
+                  alt="SoftKode logo"
+                  className={styles.brandLogo}
+                  loading="lazy"
+                  decoding="async"
+                />
+                <h3>SoftKode</h3>
+              </div>
               <p>
                 Professional software engineering with passion. Build scalable,
                 modern products with the softkode coder mindset.

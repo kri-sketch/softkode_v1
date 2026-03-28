@@ -13,6 +13,9 @@ import ContactPopup from "./shared/ContactPopup/ContactPopup";
 import BackButton from "./shared/BackButton/BackButton";
 import ChatAssistant from "./shared/ChatAssistant/ChatAssistant";
 import BottomNav from "./shared/BottomNav/BottomNav";
+import CaseStudy from "./components/CaseStudy/CaseStudy";
+import CaseStudyList from "./components/CaseStudy/CaseStudyList";
+
 
 const CONTACT_POPUP_SUPPRESS_KEY = "contactPopupSuppressedUntil";
 
@@ -120,6 +123,36 @@ const App: React.FC = () => {
               <BackButton />
               <Header />
               <OurStory />
+            </>
+          }
+        />
+        <Route
+          path="/case-study"
+          element={
+            <>
+              <BackButton />
+              <Header />
+              <CaseStudyList />
+            </>
+          }
+        />
+        <Route
+          path="/casestudy"
+          element={
+            <>
+              <BackButton />
+              <Header />
+              <CaseStudyList />
+            </>
+          }
+        />
+        <Route
+          path="/casestudy/:id"
+          element={
+            <>
+              <BackButton />
+              <Header />
+              <CaseStudy />
             </>
           }
         />

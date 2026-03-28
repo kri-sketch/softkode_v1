@@ -17,6 +17,7 @@
   z-index: 9999;
   transition: transform 0.25s cubic-bezier(0.2, 0.8, 0.2, 1);
   overflow: hidden;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .chatLauncherIcon {
@@ -203,6 +204,7 @@
   cursor: pointer;
   color: #fff;
   transition: transform 0.2s ease;
+  flex-shrink: 0;
 }
 
 .chatCloseButton:hover {
@@ -223,6 +225,7 @@
   overflow-y: auto;
   min-height: 150px;
   max-height: 240px;
+  -webkit-overflow-scrolling: touch;
 }
 
 .chatAssistant {
@@ -234,6 +237,8 @@
   align-self: flex-start;
   font-size: 0.9rem;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+  max-width: 85%;
+  word-break: break-word;
 }
 
 .chatUser {
@@ -244,6 +249,8 @@
   align-self: flex-end;
   font-size: 0.9rem;
   box-shadow: 0 6px 16px rgba(138, 43, 226, 0.3);
+  max-width: 85%;
+  word-break: break-word;
 }
 
 .chatInputForm,
@@ -263,8 +270,9 @@
   border-radius: 10px;
   padding: 12px;
   outline: none;
-  font-size: 0.92rem;
+  font-size: 16px;
   color: #fff;
+  box-sizing: border-box;
 }
 
 .chatInputForm input::placeholder,
@@ -325,4 +333,66 @@
   background: #fff1f0;
   border: 1px solid #f5c2c0;
   color: #8a1f1f;
+}
+
+/* ---- Mobile: Full-width chat widget ---- */
+@media (max-width: 768px) {
+  .chatLauncher {
+    right: 14px;
+    bottom: 14px;
+    width: 56px;
+    height: 56px;
+  }
+
+  .tipBanner {
+    right: 14px;
+    bottom: 80px;
+    max-width: calc(100vw - 28px);
+    font-size: 0.8rem;
+  }
+
+  .chatWidget {
+    right: 0;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    max-height: 100vh;
+    max-height: 100dvh;
+    min-height: 100vh;
+    min-height: 100dvh;
+    border-radius: 0;
+    box-shadow: none;
+  }
+
+  .chatBody {
+    max-height: none;
+    flex: 1;
+    min-height: 200px;
+  }
+
+  .chatHeader h3 {
+    font-size: 0.95rem;
+  }
+
+  .chatTagline {
+    max-width: 140px;
+    font-size: 0.72rem;
+  }
+}
+
+/* ---- Small mobile ---- */
+@media (max-width: 420px) {
+  .chatLauncher {
+    right: 10px;
+    bottom: 10px;
+    width: 50px;
+    height: 50px;
+  }
+
+  .tipBanner {
+    right: 10px;
+    bottom: 70px;
+    padding: 10px 12px;
+    font-size: 0.78rem;
+  }
 }

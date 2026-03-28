@@ -154,10 +154,11 @@
 /* Right: Footer content */
 .footerLinks {
   display: flex;
-  gap: 80px;
+  gap: 40px;
   flex: 1 1 50%;
-  min-width: 360px;
-  align-items: center;
+  min-width: 280px;
+  align-items: flex-start;
+  flex-wrap: wrap;
 }
 
 .logoBox {
@@ -232,18 +233,17 @@
 
 /* Bottom section */
 .bottomBar {
-  position: relative;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
   font-size: 0.85rem;
   border-top: 1px solid rgba(255, 255, 255, 0.06);
-  padding-top: 56px;
-  padding-bottom: 6px;
+  padding: 40px 0 20px;
+  text-align: center;
 }
 
 .socialIcons {
-  position: absolute;
-  right: 56px;
-  bottom: 8px;
   display: flex;
   gap: 12px;
   align-items: center;
@@ -270,11 +270,9 @@
 }
 
 .bottomBar p {
-  position: absolute;
-  left: 50%;
-  transform: translateX(-50%);
-  color: rgba(255, 255, 255, 0.85);
+  color: rgba(255, 255, 255, 0.6);
   margin: 0;
+  order: 2;
 }
 
 /* Responsive */
@@ -301,47 +299,41 @@
   }
 
   .newsletterBox {
-    position: relative;
-    left: auto;
-    bottom: auto;
-    width: 95%;
-    margin-top: -40px;
-    padding: 16px;
+    position: static;
+    transform: none;
+    width: 100%;
+    margin-top: 20px;
+    padding: 24px;
+    background: rgba(255, 255, 255, 0.05);
   }
 
   .inputGroup {
-    width: 100%;
-    flex-direction: row;
-    height: 44px;
+    flex-direction: column;
+    height: auto;
+    gap: 12px;
   }
 
   .gmail {
-    padding: 14px 18px;
-    border: none;
-    outline: none;
-    font-size: 13px;
-    border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
-    border-top-right-radius: 0;
-    border-bottom-right-radius: 0;
+    width: 100%;
+    border-radius: 8px;
+    height: 44px;
   }
 
   .btnn {
-    background-color: #000;
-    color: white;
-    padding: 14px 20px;
+    width: 100%;
+    background-color: #fff;
+    color: #000;
+    padding: 0 20px;
     border: none;
     cursor: pointer;
-    font-size: 12px;
-    font-weight: 500;
-    border-top-right-radius: 8px;
-    border-bottom-right-radius: 8px;
-    border-top-left-radius: 0px;
-    border-bottom-left-radius: 0px;
+    font-size: 14px;
+    font-weight: 600;
+    border-radius: 8px;
     display: flex;
     align-items: center;
-    height: 30px;
-    margin-top: 6px;
+    justify-content: center;
+    height: 44px;
+    white-space: nowrap;
   }
 
   .footerLinks {
@@ -357,11 +349,8 @@
   }
 
   .bottomBar {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    gap: 12px;
-    padding-top: 20px;
+    padding-top: 30px;
+    gap: 20px;
   }
 
   .socialIcons {
@@ -371,33 +360,65 @@
   }
 
   .bottomBar p {
-    position: static;
-    left: auto;
-    transform: none;
-    margin-top: 8px;
+    font-size: 0.8rem;
+    line-height: 1.5;
   }
 }
 
 /* Extra small devices */
 @media (max-width: 420px) {
+  .footerContainer {
+    padding: 24px 12px 40px;
+  }
+
   .newsletterBox {
     margin-top: 12px;
     padding: 12px;
   }
+
   .inputGroup {
     flex-direction: column;
     gap: 8px;
+    height: auto;
   }
+
   .gmail {
     width: 100%;
     padding: 12px 14px;
+    border-radius: 8px;
+    font-size: 16px;
   }
+
   .btnn {
     width: 100%;
     padding: 12px 14px;
     border-radius: 8px;
+    height: auto;
+    margin-top: 0;
+    border-top-left-radius: 8px;
+    border-bottom-left-radius: 8px;
   }
+
   .newsStatus {
     text-align: center;
+  }
+
+  .footerLinks {
+    min-width: auto;
+    width: 100%;
+    gap: 24px;
+  }
+
+  .logoBox {
+    min-width: auto;
+    width: 100%;
+  }
+
+  .bottomBar p {
+    font-size: 0.78rem;
+  }
+
+  .socialIcons {
+    gap: 8px;
   }
 }

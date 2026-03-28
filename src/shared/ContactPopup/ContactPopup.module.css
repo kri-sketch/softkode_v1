@@ -12,9 +12,14 @@
   align-items: center;
   justify-content: center;
   z-index: 9999;
+  padding: 16px;
 }
+
 .modal {
-  width: min(760px, 92%);
+  width: min(760px, 100%);
+  max-height: 90vh;
+  max-height: 90dvh;
+  overflow-y: auto;
   background: #020926;
   border-radius: 20px;
   padding: 0;
@@ -26,6 +31,7 @@
   overflow: hidden;
   border: 1px solid rgba(36, 62, 124, 0.38);
   animation: popupScale 0.26s ease-out;
+  -webkit-overflow-scrolling: touch;
 }
 
 @keyframes popupScale {
@@ -38,6 +44,7 @@
     transform: scale(1);
   }
 }
+
 .closeBtn {
   position: absolute;
   right: 12px;
@@ -53,7 +60,10 @@
   justify-content: center;
   font-size: 16px;
   cursor: pointer;
+  z-index: 10;
+  -webkit-tap-highlight-color: transparent;
 }
+
 .brandPanel {
   width: 100%;
   min-height: 100%;
@@ -86,33 +96,17 @@
 }
 
 .brandPanel h3 {
-  margin: 10px 0 6px;
-  font-size: 1.4rem;
-  font-weight: 900;
-  color: #f6f8ff;
+  margin: 8px 0 6px;
+  font-size: 1.3rem;
+  font-weight: 800;
+  color: #fff;
 }
 
 .brandPanel p {
   margin: 0;
   font-size: 0.95rem;
-  color: rgba(245, 248, 255, 0.88);
-  line-height: 1.6;
-}
-
-.brandLogoRow {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  margin-bottom: 14px;
-}
-
-.brandLogo {
-  width: 46px;
-  height: 46px;
-  object-fit: contain;
-  border-radius: 12px;
-  background: rgba(255, 255, 255, 0.17);
-  padding: 8px;
+  color: rgba(234, 239, 255, 0.87);
+  line-height: 1.45;
 }
 
 .brandLogoRow {
@@ -129,20 +123,6 @@
   border-radius: 12px;
   background: rgba(255, 255, 255, 0.2);
   padding: 6px;
-}
-
-.brandPanel h3 {
-  margin: 8px 0 6px;
-  font-size: 1.3rem;
-  font-weight: 800;
-  color: #fff;
-}
-
-.brandPanel p {
-  margin: 0;
-  font-size: 0.95rem;
-  color: rgba(234, 239, 255, 0.87);
-  line-height: 1.45;
 }
 
 .badge {
@@ -183,22 +163,26 @@
   font-size: 1.45rem;
   letter-spacing: 0.01em;
 }
+
 .fieldGroup {
   display: flex;
   flex-direction: column;
   gap: 6px;
 }
+
 .fieldGroup label {
   font-size: 0.9rem;
   font-weight: 600;
   color: #d4d9f8;
   letter-spacing: 0.02em;
 }
+
 .inputWrapper {
   position: relative;
   display: flex;
   align-items: center;
 }
+
 .inputIcon {
   position: absolute;
   left: 12px;
@@ -206,20 +190,23 @@
   color: #5868b1;
   pointer-events: none;
 }
+
 .input,
 .textarea {
   width: 100%;
   padding: 12px 14px 12px 36px;
   border-radius: 10px;
   border: 1px solid rgba(148, 166, 218, 0.48);
-  font-size: 14px;
+  font-size: 16px;
   background: rgba(241, 247, 255, 0.96);
   color: #1d2a4b;
+  box-sizing: border-box;
   transition:
     border-color 0.2s ease,
     box-shadow 0.2s ease,
     transform 0.2s ease;
 }
+
 .input:focus,
 .textarea:focus {
   border-color: #8da5ff;
@@ -227,12 +214,14 @@
   outline: none;
   transform: scale(1);
 }
+
 .textarea {
-  min-height: 130px;
+  min-height: 100px;
   resize: vertical;
   transition: transform 0.2s ease;
   padding-top: 12px;
 }
+
 .submitBtn {
   background: linear-gradient(140deg, #1e2a5a, #111c39);
   color: #f4f7ff;
@@ -243,99 +232,133 @@
   font-weight: 700;
   box-shadow: 0 9px 24px rgba(0, 0, 0, 0.24);
   letter-spacing: 0.02em;
+  width: 100%;
   transition:
     transform 0.2s ease,
     filter 0.2s ease;
 }
+
 .submitBtn:hover:not(:disabled) {
   filter: brightness(1.08);
   transform: translateY(-1px);
 }
-.submitBtn:disabled {
-  opacity: 0.7;
-  cursor: not-allowed;
-}
+
 .submitBtn:disabled {
   opacity: 0.65;
   cursor: not-allowed;
 }
+
 .status {
   font-size: 0.95rem;
   margin-top: 6px;
-}
-.status.success {
-  color: #2ea96a;
-}
-.status.error {
-  color: #d9534f;
 }
 
 .success {
   color: #2ea96a;
 }
+
 .error {
   color: #d9534f;
 }
 
-/* Mobile adjustments */
-@media (max-width: 768px) {
+/* ---- Tablet ---- */
+@media (max-width: 900px) {
   .modal {
-    width: calc(100% - 32px);
-    max-width: 720px;
-    padding: 18px;
     grid-template-columns: 1fr;
-    gap: 12px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
-    margin: 0 8px;
+    max-width: 480px;
   }
 
-  .closeBtn {
-    right: 8px;
-    top: 8px;
-    font-size: 18px;
-    padding: 6px 8px;
+  .brandPanel {
+    border-right: none;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.12);
+    min-height: auto;
+    padding: 24px 20px;
   }
 
-  .leftImage {
-    width: 100%;
-    height: 180px;
-    object-fit: cover;
-    border-radius: 8px;
+  .brandPanelContent {
+    max-width: 100%;
+    text-align: center;
   }
 
-  .form {
-    padding: 0;
-    gap: 10px;
-  }
-
-  .input,
-  .textarea {
-    font-size: 15px;
-    width: 100%;
-  }
-
-  .textarea {
-    height: 140px;
-  }
-
-  .submitBtn {
-    width: 100%;
-    padding: 12px 14px;
-  }
-
-  .status {
-    font-size: 0.95rem;
+  .brandLogoRow {
+    justify-content: center;
   }
 }
 
+/* ---- Mobile ---- */
+@media (max-width: 768px) {
+  .overlay {
+    padding: 8px;
+    align-items: flex-end;
+  }
+
+  .modal {
+    width: 100%;
+    max-height: 85vh;
+    max-height: 85dvh;
+    padding: 0;
+    grid-template-columns: 1fr;
+    gap: 0;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.25);
+    border-radius: 20px 20px 0 0;
+    overflow-y: auto;
+  }
+
+  .closeBtn {
+    right: 12px;
+    top: 12px;
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+
+  .brandPanel {
+    padding: 20px 16px;
+  }
+
+  .brandPanel h3 {
+    font-size: 1.1rem;
+  }
+
+  .brandPanel p {
+    font-size: 0.88rem;
+  }
+
+  .form {
+    padding: 20px 16px;
+    gap: 10px;
+    border: none;
+    border-radius: 0;
+  }
+
+  .form h2 {
+    font-size: 1.2rem;
+  }
+
+  .textarea {
+    min-height: 80px;
+  }
+}
+
+/* ---- Small mobile ---- */
 @media (max-width: 420px) {
   .modal {
-    padding: 12px;
+    border-radius: 16px 16px 0 0;
   }
-  .leftImage {
-    height: 140px;
+
+  .form {
+    padding: 16px 12px;
   }
-  .closeBtn {
-    font-size: 16px;
+
+  .brandPanel {
+    padding: 16px 12px;
+  }
+
+  .form h2 {
+    font-size: 1.1rem;
+  }
+
+  .badge {
+    font-size: 0.78rem;
   }
 }

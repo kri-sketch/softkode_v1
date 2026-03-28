@@ -124,47 +124,139 @@
   padding: 0.56rem;
   cursor: pointer;
   font-size: 1.1rem;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
 }
 
-/* Mobile view */
-@media screen and (max-width: 768px) {
-  .nav {
-    position: absolute;
-    top: 70px;
-    right: 2rem;
-    flex-direction: column;
-    align-items: center;
-    width: 200px;
-    transform: scaleY(0);
-    transform-origin: top;
-    overflow: hidden;
-    z-index: 999;
+/* ---- Tablet view ---- */
+@media screen and (max-width: 1024px) {
+  .nav li {
+    margin: 0 0.45rem;
   }
 
+  .nav a {
+    padding: 6px 8px;
+    font-size: 0.9rem;
+  }
+
+  .themeToggle {
+    min-width: 96px;
+    height: 34px;
+    padding: 0 0.5rem;
+  }
+
+  .themeLabel {
+    font-size: 0.72rem;
+  }
+}
+
+/* ---- Mobile view ---- */
+@media screen and (max-width: 768px) {
   .header {
     padding: 0.6rem 0.9rem;
   }
 
+  .nav {
+    display: none !important;
+  }
+
   .nav.show {
     transform: scaleY(1);
+    opacity: 1;
     background-color: black;
-    padding: 1rem;
+    padding: 1.2rem;
     border-radius: 1rem;
+    box-shadow: 0 16px 40px rgba(0, 0, 0, 0.35);
   }
 
   .nav ul {
     flex-direction: column;
+    width: 100%;
+    align-items: center;
   }
 
   .nav li {
-    margin: 10px 0;
+    margin: 8px 0;
+    width: 100%;
+    text-align: center;
+  }
+
+  .nav a {
+    display: block;
+    padding: 10px 16px;
+    font-size: 1rem;
+    border-radius: 12px;
+  }
+
+  .nav a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
   }
 
   .hamburger {
-    display: block;
+    display: none !important;
+  }
+
+  .themeToggle {
+    min-width: auto;
+    height: 34px;
+    padding: 0 0.5rem;
+    gap: 4px;
+    margin-right: 0.4rem;
+  }
+
+  .themeLabel {
+    display: none;
   }
 
   .softkode {
-    margin-left: -8px;
+    width: 38px;
+    height: 34px;
+    margin-left: 8px;
+  }
+
+  .logo img {
+    width: 36px;
+    margin-right: 8px;
+  }
+
+  .logo span {
+    font-size: 0.95rem;
+  }
+}
+
+/* ---- Small mobile ---- */
+@media screen and (max-width: 420px) {
+  .header {
+    padding: 0.5rem 0.7rem;
+  }
+
+  .nav {
+    top: 60px;
+    left: 0.5rem;
+    right: 0.5rem;
+  }
+
+  .nav a {
+    font-size: 0.95rem;
+    padding: 9px 12px;
+  }
+
+  .softkode {
+    width: 32px;
+    height: 28px;
+    margin-left: 4px;
+  }
+
+  .logo img {
+    width: 30px;
+    margin-right: 6px;
+  }
+
+  .logo span {
+    font-size: 0.88rem;
+  }
+
+  .hamburger {
+    display: none !important;
   }
 }

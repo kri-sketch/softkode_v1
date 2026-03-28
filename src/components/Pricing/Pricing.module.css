@@ -224,3 +224,44 @@
   
   .subtitle { min-height: auto; }
 }
+
+@media (max-width: 420px) {
+  .pricingContainer {
+    padding: 3rem 0.75rem 4rem;
+  }
+
+  .cardContainer {
+    max-width: 100%;
+    gap: 1.5rem;
+  }
+
+  .card {
+    padding: 2rem 1.2rem;
+    border-radius: 20px;
+  }
+
+  .card h3 {
+    font-size: 1.6rem;
+  }
+
+  .subtitle {
+    font-size: 0.9rem;
+  }
+
+  .offerBox {
+    padding: 1rem;
+  }
+
+  .offer {
+    font-size: 0.95rem;
+  }
+
+  .ctaButton {
+    padding: 0.9rem 1.2rem;
+    font-size: 0.95rem;
+  }
+
+  .heading {
+    font-size: 2rem;
+  }
+}

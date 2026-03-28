@@ -35,6 +35,12 @@ body {
   -moz-osx-font-smoothing: grayscale;
   line-height: 1.45;
   font-size: 16px;
+  overflow-x: hidden;
+  -webkit-text-size-adjust: 100%;
+}
+
+html {
+  overflow-x: hidden;
 }
 
 body.theme-exclusion {
@@ -188,6 +194,16 @@ header {
 @media (max-width: 420px) {
   body {
     font-size: 14px;
+  }
+}
+
+/* Mobile: thinner scrollbar */
+@media (max-width: 768px) {
+  html::-webkit-scrollbar,
+  body::-webkit-scrollbar,
+  .App::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
   }
 }
 

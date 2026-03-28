@@ -525,4 +525,29 @@
   .progressLabel { width: 100%; max-width: 100%; text-align: center; }
   .bottomFeaturesContainer { flex-direction: column; align-items: stretch; }
   .featureCard { justify-content: flex-start; }
+  .sectionTabs { flex-wrap: wrap; justify-content: center; gap: 4px; }
+  .tabButton { padding: 0.5rem 1rem; font-size: 0.9rem; }
+}
+
+@media screen and (max-width: 420px) {
+  .softwareContainer { padding: 1.5rem 0.75rem 3rem; }
+  .beliefSection { margin-bottom: 4rem; }
+  .beliefFaded { font-size: 1.5rem; }
+  .beliefText { font-size: 1.2rem; padding: 0 0.5rem; }
+  .progressBarWrapper { width: 95%; }
+  .progressLabel { font-size: 0.82rem; }
+  .softwareHeading { font-size: 1.8rem; }
+  .softwareSubheading { font-size: 0.95rem; }
+  .centerHub { width: 140px; height: 140px; }
+  .centerIcon { width: 45px; height: 45px; }
+  .centerTitle { font-size: 1.3rem; }
+  .centerTag { font-size: 0.75rem; padding: 0.2rem 0.6rem; }
+  .partnerNode { padding: 0.7rem 0.8rem; border-radius: 14px; }
+  .partnerName { font-size: 0.88rem; }
+  .partnerTag { font-size: 0.75rem; }
+  .partnerIconWrap { width: 40px; height: 40px; padding: 6px; }
+  .featureCard { padding: 0.8rem 1rem; gap: 0.8rem; }
+  .featureIconBase { width: 42px; height: 42px; font-size: 1.2rem; }
+  .featureTextBase h4 { font-size: 0.95rem; }
+  .featureTextBase p { font-size: 0.82rem; }
 }

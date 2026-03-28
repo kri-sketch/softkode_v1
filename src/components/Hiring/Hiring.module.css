@@ -31,7 +31,9 @@
   margin-bottom: 1rem;
   background: var(--gradient);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
+  color: transparent;
   display: inline-block;
   padding: 0.4rem 1rem;
   border-radius: 999px;
@@ -624,4 +626,35 @@
   .compactHighlightGrid { grid-template-columns: 1fr; }
   .primaryCta { width: 100%; padding: 1.2rem; justify-content: center; }
   .principlesContainer { padding: 1.5rem; }
+}
+
+@media (max-width: 420px) {
+  .hiringSection { padding: 3rem 0.75rem; }
+  .title { font-size: 1.8rem; }
+  .lead { font-size: 0.95rem; }
+  .metricDetailedWrap, .processingPanelInner { padding: 1.5rem 1rem; }
+  .metricHeadContent h3 { font-size: 1.4rem; }
+  .metricHeadContent p { font-size: 0.95rem; }
+  .metricBadge { width: 50px; height: 50px; font-size: 1.5rem; }
+  .unifiedImpactCard { padding: 1.4rem 1rem; }
+  .unifiedCardValue { font-size: 1.6rem; }
+  .unifiedCardTitle { font-size: 0.9rem; }
+  .unifiedIcon { width: 38px; height: 38px; font-size: 1.1rem; }
+  .metricCardGrid { grid-template-columns: 1fr; gap: 1.2rem; }
+  .compactChip { padding: 0.8rem 1rem; flex-direction: column; gap: 6px; align-items: flex-start; }
+  .compactChipLabel { font-size: 0.95rem; }
+  .compactChipBadge, .compactChipValue { font-size: 0.85rem; }
+  .compactHighlight { padding: 1rem; gap: 0.8rem; }
+  .highlightEmoji { font-size: 1.3rem; }
+  .highlightContent strong { font-size: 0.9rem; }
+  .highlightContent p { font-size: 0.8rem; }
+  .principlesContainer { padding: 1.2rem; }
+  .principlesTitle { font-size: 1.05rem; }
+  .principlesList { font-size: 0.9rem; padding-left: 1.2rem; }
+  .primaryCta { font-size: 1rem; padding: 1rem; }
+  .ctaSubtext { font-size: 0.9rem; }
+  .impactIntro { padding: 1.2rem; }
+  .impactIntro h4 { font-size: 1.1rem; }
+  .impactIntro p { font-size: 0.9rem; }
+  .introBadge { font-size: 0.78rem; padding: 0.3rem 0.9rem; }
 }

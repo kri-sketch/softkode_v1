@@ -100,6 +100,34 @@ const JobCard: React.FC<{ job: JobOpening }> = ({ job }) => {
   );
 };
 
+const JobSkeletonCard: React.FC = () => (
+  <article className={`${styles.jobCard} ${styles.skeletonCard}`}>
+    <div className={styles.cardTop}>
+      <div className={`${styles.skeletonLine} ${styles.skeletonTitle}`} />
+    </div>
+    <div className={styles.metaRow}>
+      <div className={`${styles.skeletonLine} ${styles.skeletonBadge}`} />
+      <div className={`${styles.skeletonLine} ${styles.skeletonBadge}`} />
+    </div>
+    <div className={styles.skillsWrap}>
+      <div className={`${styles.skeletonLine} ${styles.skeletonChip}`} />
+      <div className={`${styles.skeletonLine} ${styles.skeletonChip}`} />
+      <div className={`${styles.skeletonLine} ${styles.skeletonChip}`} />
+    </div>
+    <div className={`${styles.skeletonLine} ${styles.skeletonText}`} />
+    <div className={`${styles.skeletonLine} ${styles.skeletonText}`} />
+    <div className={`${styles.skeletonLine} ${styles.skeletonText} ${styles.skeletonTextShort}`} />
+    
+    <div className={styles.applySection}>
+      <div className={styles.applyInstr}>
+        <div className={`${styles.skeletonLine} ${styles.skeletonText}`} style={{ marginBottom: "6px" }} />
+        <div className={`${styles.skeletonLine} ${styles.skeletonTextShort}`} />
+      </div>
+      <div className={`${styles.skeletonLine} ${styles.skeletonBtn}`} />
+    </div>
+  </article>
+);
+
 const JobService: React.FC = () => {
   const [jobs, setJobs] = useState<JobOpening[]>([]);
   const [loading, setLoading] = useState(true);
@@ -139,7 +167,6 @@ const JobService: React.FC = () => {
     }
   };
 
-  if (loading) return <div className={styles.loadingContainer}>Synchronizing Live Openings...</div>;
   if (error) return <div className={styles.errorContainer}>{error}</div>;
 
   return (
@@ -182,9 +209,18 @@ const JobService: React.FC = () => {
         </div>
 
         <div className={styles.jobGrid}>
-          {jobs.map((job) => (
-            <JobCard key={job.id} job={job} />
-          ))}
+          {loading ? (
+            <>
+              <JobSkeletonCard />
+              <JobSkeletonCard />
+              <JobSkeletonCard />
+              <JobSkeletonCard />
+            </>
+          ) : (
+            jobs.map((job) => (
+              <JobCard key={job.id} job={job} />
+            ))
+          )}
         </div>
       </div>
     </section>

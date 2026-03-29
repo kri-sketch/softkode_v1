@@ -107,29 +107,22 @@ const ChatAssistant: React.FC = () => {
   }, [chatOpen, addChatMessage]);
 
   useEffect(() => {
-    const pickTip = () => {
-      const tip =
-        techMotivation[Math.floor(Math.random() * techMotivation.length)];
+    // Only show the tip banner ONCE after 5 seconds
+    const showTimeout = window.setTimeout(() => {
+      const tip = techMotivation[Math.floor(Math.random() * techMotivation.length)];
       setLatestTip(tip);
       setShowTipBanner(true);
       setBorderActive(true);
-      const timeout = window.setTimeout(() => {
+      
+      const hideTimeout = window.setTimeout(() => {
         setShowTipBanner(false);
         setBorderActive(false);
-      }, 4000);
-      return timeout;
-    };
+      }, 5000);
+      
+      return () => clearTimeout(hideTimeout);
+    }, 5000);
 
-    let hideTimeout = pickTip();
-    const interval = window.setInterval(() => {
-      clearTimeout(hideTimeout);
-      hideTimeout = pickTip();
-    }, 60000);
-
-    return () => {
-      clearInterval(interval);
-      clearTimeout(hideTimeout);
-    };
+    return () => clearTimeout(showTimeout);
   }, []);
 
   useEffect(() => {

@@ -89,114 +89,84 @@ const Footer: React.FC = () => {
     <footer className={styles.footerContainer}>
       <div className="container">
         <div className={styles.topSection}>
-          {/* Left: Image + Newsletter */}
-          <div className={styles.imageBox}>
-            <div className={styles.brandBox}>
-              <div className={styles.brandHeader}>
-                <img
-                  src={softkodeLogo}
-                  alt="SoftKode logo"
-                  className={styles.brandLogo}
-                  loading="lazy"
-                  decoding="async"
-                />
-                <h3>SoftKode</h3>
-              </div>
-              <p>
-                Professional software engineering with passion. Build scalable,
-                modern products with the softkode coder mindset.
-              </p>
-            </div>
-            <div className={styles.newsletterBox}>
-              <p className={styles.title}>Keep in touch</p>
-              <div className={styles.inputGroup}>
-                <input
-                  type="email"
-                  id="newsletterEmail"
-                  name="newsletterEmail"
-                  placeholder="Email address"
-                  className={styles.gmail}
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  aria-label="Newsletter email"
-                />
-                <button
-                  className={styles.btnn}
-                  onClick={submitNewsletter}
-                  disabled={sending}
-                  aria-disabled={sending}
-                >
-                  {sending ? "Sending..." : "Get in touch"}
-                </button>
-              </div>
-              {status && (
-                <div
-                  className={`${styles.newsStatus} ${status.type === "success"
-                      ? styles.newsSuccess
-                      : styles.newsError
-                    }`}
-                  role="status"
-                >
-                  {status.text}
-                </div>
-              )}
-            </div>
-
-          </div>
-
-          {/* Right: Footer Navigation */}
-          <div className={styles.footerLinks}>
-            <div className={styles.logoBox}>
+          {/* Brand & Contact Column */}
+          <div className={styles.brandBox}>
+            <div className={styles.brandHeader}>
+              <img
+                src={softkodeLogo}
+                alt="SoftKode logo"
+                className={styles.brandLogo}
+                loading="lazy"
+                decoding="async"
+              />
               <h3>SoftKode</h3>
-              <div
-                className={styles.contactItem}
-                onClick={openMap}
-                role="button"
-              >
+            </div>
+            <p className={styles.brandSubtitle}>
+              Professional software engineering with passion. Build scalable,
+              modern products with the softkode coder mindset.
+            </p>
+            <div className={styles.contactList}>
+              <div className={styles.contactItem} onClick={openMap} role="button">
                 <span className={styles.icon}>📍</span>
                 <span>Pune, Maharashtra, India, 411015</span>
               </div>
-              <div
-                className={styles.contactItem}
-                onClick={openPhone}
-                role="button"
-              >
+              <div className={styles.contactItem} onClick={openPhone} role="button">
                 <span className={styles.icon}>📞</span>
                 <span>8237989969</span>
               </div>
-              <div
-                className={styles.contactItem}
-                onClick={openMail}
-                role="button"
-              >
+              <div className={styles.contactItem} onClick={openMail} role="button">
                 <span className={styles.icon}>✉️</span>
                 <span>krishnasharma@softkode.io</span>
               </div>
             </div>
+          </div>
 
+          {/* Links Column */}
+          <div className={styles.footerLinks}>
             <div className={styles.linksGroup}>
               <h4>Ecosystem</h4>
               <ul>
-                <li>
-                  <Link to="/" onClick={() => window.scrollTo(0, 0)}>Home</Link>
-                </li>
-                <li>
-                  <Link to="/services" onClick={() => window.scrollTo(0, 0)}>Services</Link>
-                </li>
-                <li>
-                  <Link to="/casestudy" onClick={() => window.scrollTo(0, 0)}>Case Study</Link>
-                </li>
-                <li>
-                  <Link to="/ourstory" onClick={() => window.scrollTo(0, 0)}>Our story</Link>
-                </li>
-                <li>
-                  <Link to="/jobservice" onClick={() => window.scrollTo(0, 0)}>Tech Jobs</Link>
-                </li>
-                <li>
-                  <Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Contact</Link>
-                </li>
+                <li><Link to="/" onClick={() => window.scrollTo(0, 0)}>Home</Link></li>
+                <li><Link to="/services" onClick={() => window.scrollTo(0, 0)}>Services</Link></li>
+                <li><Link to="/casestudy" onClick={() => window.scrollTo(0, 0)}>Case Study</Link></li>
+                <li><Link to="/ourstory" onClick={() => window.scrollTo(0, 0)}>Our story</Link></li>
+                <li><Link to="/jobservice" onClick={() => window.scrollTo(0, 0)}>Tech Jobs</Link></li>
+                <li><Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Contact</Link></li>
               </ul>
             </div>
+          </div>
+
+          {/* Newsletter Column */}
+          <div className={styles.newsletterBox}>
+            <p className={styles.title}>Keep in touch</p>
+            <div className={styles.inputGroup}>
+              <input
+                type="email"
+                id="newsletterEmail"
+                name="newsletterEmail"
+                placeholder="Email address"
+                className={styles.gmail}
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                aria-label="Newsletter email"
+              />
+              <button
+                className={styles.btnn}
+                onClick={submitNewsletter}
+                disabled={sending}
+                aria-disabled={sending}
+              >
+                {sending ? "Sending..." : "Get in touch"}
+              </button>
+            </div>
+            {status && (
+              <div
+                className={`${styles.newsStatus} ${status.type === "success" ? styles.newsSuccess : styles.newsError}`}
+                role="status"
+              >
+                {status.text}
+              </div>
+            )}
           </div>
         </div>
       </div>

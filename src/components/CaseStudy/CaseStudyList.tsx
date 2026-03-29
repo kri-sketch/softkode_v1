@@ -8,11 +8,11 @@ const CaseStudyList: React.FC = () => {
   const navigate = useNavigate();
 
   return (
-    <div className={styles.section} id="casestudies" data-reveal>
+    <div className={styles.section} id="casestudies">
       <div className={styles.container}>
         <div className={styles.header}>
-          <p className={styles.eyebrow}>Our Success Stories</p>
-          <h2 className={styles.title}>Selected Case Studies</h2>
+          <p className={styles.eyebrow} data-reveal>Our Success Stories</p>
+          <h2 className={styles.title} data-reveal>Selected Case Studies</h2>
           <p className={styles.description}>
             Explore how we've helped global brands and startups build innovative digital products that scale.
           </p>

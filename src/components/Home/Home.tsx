@@ -20,10 +20,6 @@ const Home: React.FC = () => {
 
   return (
     <section className={styles.heroSection} data-reveal>
-      {/* Decorative desktop ambient orbs */}
-      <div className={`${styles.ambientOrb} ${styles.orb1}`} />
-      <div className={`${styles.ambientOrb} ${styles.orb2}`} />
-      
       <div className={styles.content}>
         <h1 className={styles.title}>{HOME_CONTENT.heroTitle}</h1>
         <p className={styles.subtitle}>

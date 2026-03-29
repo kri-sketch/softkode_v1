@@ -13,7 +13,6 @@ const CaseStudy: React.FC = () => {
 
   useEffect(() => {
     initReveal();
-    window.scrollTo(0, 0);
   }, [id]);
 
   if (!study) {

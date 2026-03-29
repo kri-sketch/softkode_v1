@@ -18,58 +18,11 @@
   text-align: center;
   font-family: "Sora", sans-serif;
   color: var(--text);
-  background:
-    radial-gradient(
-      1200px 600px at 10% 20%,
-      rgba(123, 97, 255, 0.08),
-      transparent
-    ),
-    radial-gradient(
-      1000px 500px at 90% 80%,
-      rgba(255, 110, 199, 0.06),
-      transparent
-    );
+  background: transparent;
 
   overflow: hidden;
 }
 
-/* --- Desktop Abstract Orbs --- */
-.ambientOrb {
-  position: absolute;
-  border-radius: 50%;
-  pointer-events: none;
-  filter: blur(120px);
-  z-index: 0;
-  opacity: 0.6;
-}
-
-.orb1 {
-  width: 600px;
-  height: 600px;
-  background: var(--primary-1, #ff6ec7);
-  top: -200px;
-  left: -200px;
-  animation: driftRight 20s ease-in-out infinite alternate;
-}
-
-.orb2 {
-  width: 500px;
-  height: 500px;
-  background: var(--primary-2, #7b61ff);
-  bottom: -150px;
-  right: -100px;
-  animation: driftLeft 18s ease-in-out infinite alternate;
-}
-
-@keyframes driftRight {
-  0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
-  100% { transform: translate(30vw, 15vh) scale(1.2); opacity: 0.5; }
-}
-
-@keyframes driftLeft {
-  0% { transform: translate(0, 0) scale(1); opacity: 0.3; }
-  100% { transform: translate(-20vw, -10vh) scale(1.1); opacity: 0.5; }
-}
 
 .content {
   position: relative;

@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
 import softkodeLogo from "../../shared/image/softkode_icon_transparent.png";
 import emailjs from "@emailjs/browser";
+import { FaLinkedin, FaInstagram } from "react-icons/fa";
 
 const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID || "";
 const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || "";
@@ -126,12 +127,14 @@ const Footer: React.FC = () => {
             <div className={styles.linksGroup}>
               <h4>Ecosystem</h4>
               <ul>
-                <li><Link to="/" onClick={() => window.scrollTo(0, 0)}>Home</Link></li>
-                <li><Link to="/services" onClick={() => window.scrollTo(0, 0)}>Services</Link></li>
-                <li><Link to="/casestudy" onClick={() => window.scrollTo(0, 0)}>Case Study</Link></li>
-                <li><Link to="/ourstory" onClick={() => window.scrollTo(0, 0)}>Our story</Link></li>
-                <li><Link to="/jobservice" onClick={() => window.scrollTo(0, 0)}>Tech Jobs</Link></li>
-                <li><Link to="/contact" onClick={() => window.scrollTo(0, 0)}>Contact</Link></li>
+                <li><Link to="/">Home</Link></li>
+                <li><Link to="/about">About</Link></li>
+                <li><Link to="/services">Services</Link></li>
+                <li><Link to="/pricing">Pricing</Link></li>
+                <li><Link to="/casestudy">Case Study</Link></li>
+                <li><Link to="/ourstory">Our story</Link></li>
+                <li><Link to="/jobservice">Tech Jobs</Link></li>
+                <li><Link to="/contact">Contact</Link></li>
               </ul>
             </div>
           </div>
@@ -180,7 +183,7 @@ const Footer: React.FC = () => {
             onClick={() => openSocial("https://www.linkedin.com/company/softkode/")}
             aria-label="LinkedIn"
           >
-            LinkedIn
+            <FaLinkedin size={24} />
           </div>
           <div
             className={styles.socialBtn}
@@ -188,7 +191,7 @@ const Footer: React.FC = () => {
             onClick={() => openSocial("https://instagram.com/softkode.io/")}
             aria-label="Instagram"
           >
-            Instagram
+            <FaInstagram size={24} />
           </div>
         </div>
       </div>

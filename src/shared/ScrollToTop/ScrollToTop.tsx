@@ -6,22 +6,33 @@ const ScrollToTop = () => {
 
   useEffect(() => {
     if (hash) {
-      // If there's a hash, find the element and scroll to it smoothly
-      const element = document.getElementById(hash.replace("#", ""));
-      if (element) {
-        element.scrollIntoView({ behavior: "smooth" });
-      }
-    } else {
-      // Otherwise, jump to the top instantly for a snappier feel
-      window.scrollTo({
-        top: 0,
-        left: 0,
-        behavior: "instant" as any, // Cast to any because some typings might not have 'instant'
-      });
+      // For hash links, let smooth scroll work as expected
+      const timeout = setTimeout(() => {
+        const element = document.getElementById(hash.replace("#", ""));
+        if (element) {
+          element.scrollIntoView({ behavior: "smooth" });
+        }
+      }, 50);
+      return () => clearTimeout(timeout);
     }
+
+    // Force instant scroll to top — override CSS smooth-scroll
+    // so the user is never left mid-page on route transition
+    const html = document.documentElement;
+    html.style.scrollBehavior = "auto";
+    window.scrollTo(0, 0);
+    document.body.scrollTop = 0; // fallback for some mobile browsers
+
+    // Restore smooth scroll after a tick so anchor links still work
+    const restore = setTimeout(() => {
+      html.style.scrollBehavior = "";
+    }, 100);
+
+    return () => clearTimeout(restore);
   }, [pathname, hash]);
 
   return null;
 };
 
 export default ScrollToTop;
+

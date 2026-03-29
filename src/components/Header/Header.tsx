@@ -66,12 +66,12 @@ const Header = () => {
             <Link to="/caseStudy">Case Study</Link>
           </li>
           <li>
-            <Link to="/jobservice" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+            <Link to="/jobservice">
               Tech Jobs
             </Link>
           </li>
           <li>
-            <Link to="/contact" onClick={() => window.scrollTo({ top: 0, behavior: "smooth" })}>
+            <Link to="/contact">
               Contact
             </Link>
           </li>

@@ -9,7 +9,7 @@ import Pricing from "./components/Pricing/Pricing.tsx";
 import Client from "./components/Client/Client.tsx";
 import GetForm from "./shared/GetForm/GetForm.tsx";
 import CaseStudyList from "./components/CaseStudy/CaseStudyList";
-// import OurStory from "./components/OurStory/OurStory.tsx";
+import OurStory from "./components/OurStory/OurStory.tsx";
 const HomePage: React.FC = () => {
   return (
     <div className="App">
@@ -24,7 +24,7 @@ const HomePage: React.FC = () => {
       <CaseStudyList />
       <GetForm />
       <LatestNews />
-      {/* <OurStory /> */}
+      <OurStory />
 
       {/* Footer is rendered globally in App.tsx */}
     </div>

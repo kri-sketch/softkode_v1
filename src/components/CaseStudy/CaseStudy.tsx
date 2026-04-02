@@ -33,7 +33,7 @@ const CaseStudy: React.FC = () => {
         <div className={styles.heroBgBlur}></div>
         <div className={styles.container}>
           <div className={styles.heroContent} data-reveal>
-            <span className={styles.categoryTag}>{study.category}</span>
+            <p className="eyebrow">Case Study</p>
             <h1 className={styles.mainTitle}>{study.title}</h1>
             <p className={styles.briefText}>{study.brief}</p>
           </div>
@@ -96,8 +96,9 @@ const CaseStudy: React.FC = () => {
         <div className={styles.container}>
           <div className={styles.ctaBox} data-reveal>
             <h2>Ready to build your next success story?</h2>
+            <p style={{ color: "rgba(255,255,255,0.7)", marginBottom: "3rem", fontSize: "1.1rem" }}>Let's collaborate on your next digital innovation.</p>
             <button className={styles.primaryBtn} onClick={() => navigate("/contact")}>
-              Hire Us Now
+              Get a Free Quote
             </button>
           </div>
         </div>

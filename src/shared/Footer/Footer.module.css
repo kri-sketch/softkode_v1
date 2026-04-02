@@ -24,10 +24,6 @@
   color: #fff;
 }
 
-.brandBox {
-  color: #fff;
-}
-
 .brandHeader {
   display: flex;
   align-items: center;
@@ -214,36 +210,22 @@
 
 .socialIcons {
   display: flex;
-  gap: 16px;
+  gap: 20px;
+  align-items: center;
 }
 
 .socialBtn {
-  font-size: 0.9rem;
   color: rgba(255, 255, 255, 0.6);
-  font-weight: 500;
   cursor: pointer;
-  transition: color 0.2s;
-  padding: 4px 0;
-  position: relative;
-}
-
-.socialBtn::after {
-  content: "";
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 0;
-  height: 1px;
-  background: #fff;
-  transition: width 0.2s;
+  transition: all 0.3s var(--ease-smooth);
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .socialBtn:hover {
   color: #fff;
-}
-
-.socialBtn:hover::after {
-  width: 100%;
+  transform: translateY(-3px);
 }
 
 @media (max-width: 1024px) {
@@ -280,11 +262,7 @@
     gap: 40px;
   }
 
-  .logoBox, .linksGroup {
-    min-width: auto;
-  }
-
-  .logoBox h3, .linksGroup h4 {
+  .linksGroup h4 {
     margin-bottom: 16px;
   }
 }

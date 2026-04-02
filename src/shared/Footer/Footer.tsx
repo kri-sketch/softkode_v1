@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import styles from "./Footer.module.css";
 import softkodeLogo from "../../shared/image/softkode_icon_transparent.png";
 import emailjs from "@emailjs/browser";
-import { FaLinkedin, FaInstagram } from "react-icons/fa";
+import { FaLinkedin, FaInstagram } from "react-icons/fa6";
 
 const SERVICE_ID = process.env.REACT_APP_EMAILJS_SERVICE_ID || "";
 const TEMPLATE_ID = process.env.REACT_APP_EMAILJS_TEMPLATE_ID || "";
@@ -103,8 +103,8 @@ const Footer: React.FC = () => {
               <h3>SoftKode</h3>
             </div>
             <p className={styles.brandSubtitle}>
-              Professional software engineering with passion. Build scalable,
-              modern products with the softkode coder mindset.
+              Architecting enterprise-grade digital solutions and delivering elite 
+              engineering talent. We build for scale, precision, and measurable impact.
             </p>
             <div className={styles.contactList}>
               <div className={styles.contactItem} onClick={openMap} role="button">
@@ -131,8 +131,8 @@ const Footer: React.FC = () => {
                 <li><Link to="/about">About</Link></li>
                 <li><Link to="/services">Services</Link></li>
                 <li><Link to="/pricing">Pricing</Link></li>
-                <li><Link to="/casestudy">Case Study</Link></li>
-                <li><Link to="/ourstory">Our story</Link></li>
+                <li><Link to="/case-study">Case Studies</Link></li>
+                <li><Link to="/ourstory">Our Story</Link></li>
                 <li><Link to="/jobservice">Tech Jobs</Link></li>
                 <li><Link to="/contact">Contact</Link></li>
               </ul>
@@ -183,7 +183,7 @@ const Footer: React.FC = () => {
             onClick={() => openSocial("https://www.linkedin.com/company/softkode/")}
             aria-label="LinkedIn"
           >
-            <FaLinkedin size={24} />
+            <FaLinkedin size={20} />
           </div>
           <div
             className={styles.socialBtn}
@@ -191,7 +191,7 @@ const Footer: React.FC = () => {
             onClick={() => openSocial("https://instagram.com/softkode.io/")}
             aria-label="Instagram"
           >
-            <FaInstagram size={24} />
+            <FaInstagram size={20} />
           </div>
         </div>
       </div>

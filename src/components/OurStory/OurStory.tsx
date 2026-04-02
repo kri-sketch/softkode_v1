@@ -1,54 +1,73 @@
 import React from "react";
 import styles from "./OurStory.module.css";
-import { FaFacebook, FaXTwitter } from "react-icons/fa6";
+import { FaLinkedin, FaInstagram } from "react-icons/fa6";
+
+const tags = ["Custom Software", "Talent Delivery", "UI/UX Design", "Enterprise SaaS", "Hiring Solutions", "Digital Products"];
 
 const OurStory: React.FC = () => {
   return (
-    <section id="our-story">
-      <div className={styles.wrapper}>
-        <div className={styles.card}>
-          <div className={styles.left}>
-            <h2 className={styles.heading}>Our story</h2>
-          </div>
-          <div className={styles.right}>
-            <p>
-              Founded in 2024 by Krishna Sharma, Softkode Technologies was built
-              on a vision to drive digital transformation through innovation and
-              excellence. With over five years of experience in the IT sector,
-              Krishna recognized the need for high-quality, tailored software
-              solutions that empower businesses to scale and thrive in a rapidly
-              evolving digital landscape.
-            </p>
-            <p>
-              From the very beginning, Softkode Technologies has been committed
-              to delivering cutting-edge digital products and custom software
-              solutions across industries. Our multidisciplinary team of expert
-              developers, designers, and strategists collaborates seamlessly to
-              transform ideas into impactful, scalable, and efficient solutions.
-            </p>
-            <p>
-              At Softkode, we prioritize long-term partnerships, working closely
-              with our clients to develop solutions that align with their unique
-              business objectives. Whether it’s enterprise software, UI/UX
-              design, or full-scale digital transformation, our goal is to drive
-              measurable success through technology.
-            </p>
-            <p>
-              Beyond our core services, we are dedicated to knowledge sharing
-              and innovation. We provide high-quality resources, industry
-              insights, and best practices, ensuring that our clients and the
-              broader technology community stay ahead in an ever-evolving
-              digital world.
-            </p>
+    <section id="our-story" className={styles.wrapper}>
+      <div className={styles.card}>
+        <div className={styles.left}>
 
-            <div className={styles.footer}>
-              <div className={styles.icons}>
-                <FaFacebook />
-                <FaXTwitter />
-              </div>
-              <span className={styles.year}>2024</span>
-            </div>
+          <p className="eyebrow" data-reveal>Our Identity</p>
+
+          <h2 className={styles.heading} data-reveal>
+            The Softkode Chronology
+          </h2>
+
+          <div className={styles.tagRow} data-reveal>
+            {tags.map((tag) => (
+              <span key={tag} className={styles.tag}>{tag}</span>
+            ))}
           </div>
+
+          <div className={styles.contentWrapper} data-reveal>
+            <p>
+              Founded in 2024 by <strong>Krishna Sharma</strong>, Softkode Technologies
+              was built with a developer-first mindset — the belief that great software
+              is crafted by engineers who think in systems, ship with precision, and build
+              for scale. With deep roots in the IT sector, we set out to solve two
+              interlinked problems: building exceptional digital products, and getting
+              the right engineering talent to power them.
+            </p>
+            <p>
+              On the software side, we deliver custom platforms, enterprise SaaS
+              products, real-time dashboards, and end-to-end digital transformation —
+              each engineered with production-grade quality and a clean, modern UX.
+              On the talent side, our multi-stage hiring engine has placed 50+ vetted
+              professionals across ₹6L–₹50L salary bands, with a 92% retention rate
+              and 100+ global enterprise partners trusting our process.
+            </p>
+            <p>
+              At Softkode, every line of code and every hire is backed by a commitment
+              to measurable impact — SLA-driven, compliance-verified, and built to
+              power the next generation of digital businesses.
+            </p>
+          </div>
+
+          <div className={styles.footer} data-reveal>
+            <div className={styles.icons}>
+              <a
+                href="https://www.linkedin.com/company/softkode/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="LinkedIn"
+              >
+                <FaLinkedin />
+              </a>
+              <a
+                href="https://instagram.com/softkode.io/"
+                target="_blank"
+                rel="noopener noreferrer"
+                aria-label="Instagram"
+              >
+                <FaInstagram />
+              </a>
+            </div>
+            <span className={styles.year}>EST 2024</span>
+          </div>
+
         </div>
       </div>
     </section>

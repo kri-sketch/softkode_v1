@@ -2,9 +2,9 @@
 
 export const HOME_CONTENT = {
   
-  heroTitle: "Redefining Digital Experiences",
+  heroTitle: "Build. Scale. Empower.",
   heroDescription:
-    "We are a cross-disciplinary team, blending our expertise to deliver impactful digital solutions across industries.",
+    "We architect enterprise-grade digital solutions and deliver elite engineering talent. Partner with Softkode to power the next generation of your business.",
   ctaButtonText: "Get in touch",
   scrollIndicator: "↓",
 };

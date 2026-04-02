@@ -26,6 +26,7 @@ const CaseStudyList: React.FC = () => {
               onClick={() => navigate(`/casestudy/${study.id}`)}
               data-reveal
             >
+              <div className={styles.cardDecoration}></div>
               <div className={styles.cardInfo}>
                 <span className={styles.category}>{study.category}</span>
                 <h3 className={styles.cardTitle}>{study.title}</h3>

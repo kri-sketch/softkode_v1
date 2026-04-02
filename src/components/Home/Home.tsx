@@ -23,7 +23,7 @@ const Home: React.FC = () => {
       <div className={styles.content}>
         <h1 className={styles.title}>{HOME_CONTENT.heroTitle}</h1>
         <p className={styles.subtitle}>
-          We are a cross-disciplinary team, blending our expertise to deliver impactful digital solutions across industries.
+          {HOME_CONTENT.heroDescription}
         </p>
         <button className={styles.cta} onClick={() => navigate("/contact")}>
           {HOME_CONTENT.ctaButtonText}
